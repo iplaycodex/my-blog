@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="react-native,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="codecheese" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="写在前面如果你在做一个混合开发的APP,也就是说部分模块使用native去开发,部分模块使用react-native去开发.这个时候如何使用图片资源就有的玩了.如何合理的使用图片资源也是一个问题.  引申:在react-native中如何使用图片资源  根据官方文档所述:在react-native中使用image的话有几种方法:  1.使用APP中的图片资源也就是说在JS中直接访问APP沙盒中存在">
+<meta name="keywords" content="react-native">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-native打包安卓的一个坑">
+<meta property="og:url" content="http://codecheese.cn/2019/07/29/react-native打包安卓的一个坑/index.html">
+<meta property="og:site_name" content="codecheese">
+<meta property="og:description" content="写在前面如果你在做一个混合开发的APP,也就是说部分模块使用native去开发,部分模块使用react-native去开发.这个时候如何使用图片资源就有的玩了.如何合理的使用图片资源也是一个问题.  引申:在react-native中如何使用图片资源  根据官方文档所述:在react-native中使用image的话有几种方法:  1.使用APP中的图片资源也就是说在JS中直接访问APP沙盒中存在">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-12T06:45:14.574Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react-native打包安卓的一个坑">
+<meta name="twitter:description" content="写在前面如果你在做一个混合开发的APP,也就是说部分模块使用native去开发,部分模块使用react-native去开发.这个时候如何使用图片资源就有的玩了.如何合理的使用图片资源也是一个问题.  引申:在react-native中如何使用图片资源  根据官方文档所述:在react-native中使用image的话有几种方法:  1.使用APP中的图片资源也就是说在JS中直接访问APP沙盒中存在">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://codecheese.cn/2019/07/29/react-native打包安卓的一个坑/">
+
+
+
+
+
+  <title>react-native打包安卓的一个坑 | codecheese</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">codecheese</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">do something funny!</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://codecheese.cn/2019/07/29/react-native打包安卓的一个坑/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Allenliu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/icon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="codecheese">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">react-native打包安卓的一个坑</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-29T16:34:10+08:00">
+                2019-07-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/react-native/" itemprop="url" rel="index">
+                    <span itemprop="name">react-native</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>如果你在做一个混合开发的APP,也就是说部分模块使用<code>native</code>去开发,部分模块使用<code>react-native</code>去开发.这个时候如何使用图片资源就有的玩了.如何合理的使用图片资源也是一个问题.</p>
+<blockquote>
+<p>引申:在<code>react-native</code>中如何使用图片资源</p>
+</blockquote>
+<p>根据官方文档所述:在<code>react-native</code>中使用<code>image</code>的话有几种方法:</p>
+<ul>
+<li>1.使用APP中的图片资源<br>也就是说在JS中直接访问<code>APP</code>沙盒中存在的图片资源,<code>iOS</code>加载<code>assets</code>目录,安卓加载<code>drawable</code>目录.代码如下所示:</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Image source=&#123;&#123;<span class="attr">uri</span>:<span class="string">'test_img'</span>&#125;&#125; style=&#123;&#123;<span class="attr">width</span>:<span class="number">100</span>,<span class="attr">height</span>:<span class="number">100</span>&#125;&#125;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>使用这个方法加载图片资源的话不需要写后缀,但是!你必须要确保这个图片在APP的沙盒内部是一定存在的!<code>react-native</code>不会检查这个文件是否存在如果不存在则出现一个空白.</p>
+<ul>
+<li>2.使用网络图片<br>这个就很简单了,看下面的代码:</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Image</span> <span class="attr">source</span>=<span class="string">&#123;&#123;uri:</span> '<span class="attr">https:</span>//<span class="attr">facebook.github.io</span>/<span class="attr">react</span>/<span class="attr">logo-og.png</span>'&#125;&#125;</span></span><br><span class="line"><span class="tag">       <span class="attr">style</span>=<span class="string">&#123;&#123;width:</span> <span class="attr">400</span>, <span class="attr">height:</span> <span class="attr">400</span>&#125;&#125; /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意:<code>iOS</code>因为从<code>iOS8</code>开始只能使用<code>https</code>了,所以这里建议网络图片全部使用<code>https</code>,并且需要指定尺寸.</p>
+<a id="more"></a>
+
+<ul>
+<li>3.使用base64</li>
+</ul>
+<p>在<code>react-native</code>中是可以使用<code>base64</code>的图片的,在想目中一些<code>icon</code>你可以选择使用<code>iconFont</code>也可以选择使用<code>base64</code>.使用<code>base64</code>也很简单,找个在线转码的网站,把你需要转的图片转成<code>base64</code>就可以了.在代码中这样使用:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Image</span> <span class="attr">source</span>=<span class="string">&#123;&#123;uri:</span>"<span class="attr">data:image</span>/<span class="attr">png</span>;<span class="attr">base64</span>,<span class="attr">iVBORw0KGgoAAAANSUhEUgAAAD8AAAA</span>/<span class="attr">CAYAAABXXxDfAAAD0ElEQVR4Ae2aA5A8VxDGO7Ztv57D65mLbZvd7xjbRunv2LZt2045KsS27aSDvT7PZg87e</span>+<span class="attr">9X1aVbfY</span>/<span class="attr">f13MwWohEIpFIJBKJJL7VO</span>+<span class="attr">KJ6OU65</span>/<span class="attr">mOohWS3ILEZ9elYas</span>//<span class="attr">vhjMshDw3ZjpnYUJjniX53nP2qh0PMjSO2LwUCg58vtG2toAD5Ilu</span>+<span class="attr">YA</span>/<span class="attr">rCZbxllzcRX5IQb5Y0Na80JJWFlYeqMOW1XCpHOC9fdeqRq</span>/<span class="attr">uZdXmyNFJpGA81QB3J0kjy83</span>+<span class="attr">6GpcLC0F39FAwL</span>/<span class="attr">o9y3aYFWoEJLnnP</span>/<span class="attr">FJKltDd3CVnWYy</span>++<span class="attr">NTUGpH</span>/<span class="attr">FklbRR27l88ySc1Jv5Ms</span>+<span class="attr">93ieKj</span>+<span class="attr">Cg</span>+<span class="attr">94FX</span>++<span class="attr">K10MvDLpPloOCoLvX5ucWb</span>+<span class="attr">h1JrlxzzR2mhYKhXh5JLnOef1Qt</span>/<span class="attr">Ypfc80xUyLJ</span>/<span class="attr">ioWib</span>/<span class="attr">rNgh3LLPMblNBThrW3GvGhMJRSHJKxZXKsXUkjWUJ97KF8</span>/<span class="attr">KD1dCveIsGACS</span>+<span class="attr">1b4Jia</span>+<span class="attr">HnGgqHNxgIq9CTtTEdE</span>+<span class="attr">kSPJC4uVo58OBSG0IeUhSPrjbj9go5wFz6OAmMnku1</span>++<span class="attr">l5u27</span>/<span class="attr">d6X60hWhP</span>+<span class="attr">LJiGzZJ6BHGhO0DSos1BpuTS09xlFDdgU5jcJTuuOlVY6cDqoBKL2udHzZ6VgkIU1q7PzJCfaGV9hhdaZB</span>+<span class="attr">uePKVz9sMkqDL0sHbEX5jktikMFhoDzcF3axVm9hXNrL82ZsyYyWGw0K6LEf84VBmYhp1M9</span>+<span class="attr">mqwR3ZrHk9c23cU3XiPR9mxE</span>+<span class="attr">EwUTvR7OszoUqw</span>/<span class="attr">mwd</span>+<span class="attr">d</span>+<span class="attr">5zNgMNErriQ</span>+<span class="attr">De1QZaijM1fcfTBY6F1rltRHf9nc6aHKUB</span>+<span class="attr">gOeTfbfmz3vlQKdrpRC</span>+<span class="attr">fl5YUhUMgJy5tXhU9H4PEx1dSiQ</span>+<span class="attr">75Tm9kfhBY8ZOqHDGmzd0xB</span>+<span class="attr">bjP</span>/<span class="attr">WgLNuEyLx94NlbxNqboYBUOvdNY2GzaEcNLpixqug5wv1A</span>+<span class="attr">zTjrqsZamyPsfzp4Mlvi4Lm</span>+<span class="attr">Q0YzeYW</span>+<span class="attr">lb9fq5Y6hNQ3af16fNDVAm3rcsrvExSWX3Sgqpee0yvnM2ffDSLY3erSbN9iRyNDPkByQ5Tj8QCoRuTQ01vTVmNPjoFhqoh</span>/<span class="attr">dNwzIdC0PxsF5</span>/<span class="attr">oj13Rl33tm6Ztvm0J4HEr4</span>/<span class="attr">a1rW6vig</span>+<span class="attr">io</span>/<span class="attr">ie</span>/<span class="attr">4vjjkVf7St6qJj</span>+<span class="attr">5CYSWtfFvHtTkvJm0Hx0Xt</span>/<span class="attr">Fuflw</span>/<span class="attr">909dnN1UBgnV1dxhvbUFE01GXawIMkb</span>/<span class="attr">SpRy2uvqBbw</span>/<span class="attr">9bR</span>/<span class="attr">xOAevj7g5vQKvckLYsb5Z</span>/<span class="attr">TZRmfDU7ufeJPtbVLF9s0fyL83J</span>/<span class="attr">Q9aSgSXvk5emph3nUp9ftNJujr2xIpFIJBKJREYNfwIbCE1RyoFBpwAAAABJRU5ErkJggg</span>==<span class="string">"&#125;&#125; style=&#123;&#123;width:100,height:100&#125;&#125;&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>这种方式仅适合一些小图,例如一些<code>icon</code>之类的.同样需要指定图片的尺寸</p>
+<ul>
+<li>4.使用js自己的图片资源<br>把图片放在某处,使用<code>require</code>关键字来引用,如下所示:</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Image</span> <span class="attr">source</span>=<span class="string">&#123;require(</span>'<span class="attr">.</span>/<span class="attr">my-icon.png</span>')&#125; /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>说了这么多,其实在项目中我们使用的方法是:<code>小图使用base64+大图使用网络图片或者本地图片资源</code>.这样做的有什么好处呢?<br>因为项目是<code>混合开发</code>的一个项目,所以如果要做新模块的话,那么图片一般不会已经存在于<code>APP</code>的沙盒中,这就需要我们自己提供图片资源了.而且这样也比较好解耦,APP只需要下载我们的<code>zip</code>包.并且解压缩出来<code>bundle</code>包和图片资源即可完成静默升级.</p>
+<h2 id="继续"><a href="#继续" class="headerlink" title="继续:"></a>继续:</h2><p>之前有写过一个<code>react-native</code>拆包的文章,上次打包的时候在使用了命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node ./node_modules/react-native/local-cli/cli.js bundle --platform ios --dev false --entry-file index.js --bundle-output ./release-ios/myCenter.bundle --assets-dest ./release-ios/ --config bus.config.js</span><br></pre></td></tr></table></figure>
+
+<p>打出来的业务包的<code>bundle</code>和业务中的图片资源都在<code>realease-ios</code>目录下面,然后在<code>iOS</code>中直接把这个目标文件夹放在任何一个路径下面都是可以直接加载到的.</p>
+<p><strong>BUT:问题来了!执行了打包方法之后打包出来的安卓bundle以及图片资源.图片在安卓上面无法展示!!!</strong></p>
+<p>经过查看<code>react-native</code>的文档以及各种<code>google</code>和<code>stack-overflow</code>终于找到了问题,原来打包出来的图片资源只能放在安卓的特定的目录下面:这个目录如下所示:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">andorid -&gt; app -&gt; src -&gt; main -&gt; res -&gt; drawable-xhdpi/drawable-xxhdpi(对应的尺寸解压缩到同名的文件夹里)</span><br></pre></td></tr></table></figure>
+
+<p>这样就解决了混合APP中安卓无法加载<code>bundle</code>包中的图片资源.</p>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+
+<div id="gitalk-container"></div>     
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+    // gitalk的主要参数
+      clientID: `e4890482436f9cd96039`,
+      clientSecret: `0425bf39d0c5cdedf4ae60a72fbd7a3d58d7d99e`,
+      repo: `codeCheeseIssues`,
+      owner: 'wawsc5354524',
+      admin: ['wawsc5354524'],
+      id: 'react-native-r18g',
+        });
+      gitalk.render('gitalk-container');
+</script>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react-native/" rel="tag"># react-native</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/25/react-native-swiper的一个坑/" rel="next" title="react-native-swiper的一个坑">
+                <i class="fa fa-chevron-left"></i> react-native-swiper的一个坑
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/31/xcode官方下载地址-可用迅雷下载/" rel="prev" title="xcode官方下载地址,可用迅雷下载">
+                xcode官方下载地址,可用迅雷下载 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/icon.png" alt="Allenliu">
+            
+              <p class="site-author-name" itemprop="name">Allenliu</p>
+              <p class="site-description motion-element" itemprop="description">a Front-end programmer</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wawsc5354524" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="allenliu@188.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#继续"><span class="nav-number"></span> <span class="nav-text">继续:</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Allenliu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

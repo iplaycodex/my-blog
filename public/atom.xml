@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>codecheese</title>
+  
+  <subtitle>do something funny!</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://codecheese.cn/"/>
+  <updated>2019-11-12T10:03:02.267Z</updated>
+  <id>http://codecheese.cn/</id>
+  
+  <author>
+    <name>Allenliu</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>利用charles来拦截请求和响应</title>
+    <link href="http://codecheese.cn/2019/11/12/%E5%88%A9%E7%94%A8charles%E6%9D%A5%E6%8B%A6%E6%88%AA%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94/"/>
+    <id>http://codecheese.cn/2019/11/12/利用charles来拦截请求和响应/</id>
+    <published>2019-11-12T09:41:11.000Z</published>
+    <updated>2019-11-12T10:03:02.267Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天简单分享一下如何使用&lt;code&gt;charles&lt;/code&gt;来进行&lt;code&gt;HTTP&lt;/code&gt;的拦截和修改.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;charles&lt;/code&gt;是一款非常好用的&lt;code&gt;http&lt;/code&gt;调试工具,相信做开发的同学们应该都知道&lt;br&gt;其实使用&lt;code&gt;charles&lt;/code&gt;来做&lt;code&gt;HTTP&lt;/code&gt;拦截很简单.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;1-拦截请求&quot;&gt;&lt;a href=&quot;#1-拦截请求&quot; class=&quot;headerlink&quot; title=&quot;1.拦截请求&quot;&gt;&lt;/a&gt;1.拦截请求&lt;/h3&gt;&lt;p&gt;打开&lt;code&gt;charles&lt;/code&gt;,在输入框中输入要拦截的&lt;code&gt;API&lt;/code&gt;地址:&lt;br&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/006y8mN6gy1g8vef97dmqj30xt0azmym.jpg&quot; alt&gt;&lt;br&gt;在&lt;code&gt;API&lt;/code&gt;上鼠标右键选择&lt;code&gt;breakPoint&lt;/code&gt;即可打个断点.然后重新请求的时候这个&lt;code&gt;HTTP&lt;/code&gt;就会被拦截,如下所示:&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="调试" scheme="http://codecheese.cn/categories/%E8%B0%83%E8%AF%95/"/>
+    
+    
+      <category term="调试" scheme="http://codecheese.cn/tags/%E8%B0%83%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>node自动重启工具nodemon</title>
+    <link href="http://codecheese.cn/2019/11/07/node%E8%87%AA%E5%8A%A8%E9%87%8D%E5%90%AF%E5%B7%A5%E5%85%B7nodemon/"/>
+    <id>http://codecheese.cn/2019/11/07/node自动重启工具nodemon/</id>
+    <published>2019-11-07T07:50:48.000Z</published>
+    <updated>2019-11-08T02:36:38.554Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;p&gt;在开发&lt;code&gt;Node.js&lt;/code&gt;的项目的时候,需要频繁的手动&lt;code&gt;close&lt;/code&gt;掉,然后再重启,非常麻烦.经过百度以后发现了一个好用的工具:&lt;code&gt;nodemon&lt;/code&gt;.它的作用是监听代码文件的变动,当代码改动了以后,自动重启.&lt;/p&gt;
+&lt;h2 id=&quot;如何使用&quot;&gt;&lt;a href=&quot;#如何使用&quot; class=&quot;headerlink&quot; title=&quot;如何使用&quot;&gt;&lt;/a&gt;如何使用&lt;/h2&gt;&lt;p&gt;打开终端,&lt;code&gt;win&lt;/code&gt;平台使用命令行,输入以下指令完成安装.&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install -g nodemon&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="node" scheme="http://codecheese.cn/categories/node/"/>
+    
+    
+      <category term="node" scheme="http://codecheese.cn/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>模仿vue-cli写一个简单脚手架</title>
+    <link href="http://codecheese.cn/2019/11/04/%E6%A8%A1%E4%BB%BFvue-cli%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
+    <id>http://codecheese.cn/2019/11/04/模仿vue-cli写一个简单脚手架/</id>
+    <published>2019-11-04T06:54:59.000Z</published>
+    <updated>2019-11-04T08:02:59.758Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="前端工程化" scheme="http://codecheese.cn/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+    
+    
+      <category term="前端工程化" scheme="http://codecheese.cn/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>npm ERR! publish Failed PUT 403</title>
+    <link href="http://codecheese.cn/2019/11/02/npm-ERR-publish-Failed-PUT-403/"/>
+    <id>http://codecheese.cn/2019/11/02/npm-ERR-publish-Failed-PUT-403/</id>
+    <published>2019-11-02T05:33:25.000Z</published>
+    <updated>2019-11-02T06:14:02.339Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;p&gt;最近遇到的一个问题,最近在&lt;code&gt;npm&lt;/code&gt;发布了一个包.使用命令&lt;code&gt;npm publish&lt;/code&gt;之后发生了如下错误:&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm ERR! code E403&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm ERR! &lt;span class=&quot;number&quot;&gt;403&lt;/span&gt; Forbidden - PUT https:&lt;span class=&quot;comment&quot;&gt;//registry.npm.taobao.org/kda-cli - [no_perms] Private mode enable, only admin can publish this module&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm ERR! A complete log &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt; run can be found &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm ERR! &lt;span class=&quot;regexp&quot;&gt;/Users/&lt;/span&gt;allenliu/.npm/_logs/&lt;span class=&quot;number&quot;&gt;2019&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;-11&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;-02&lt;/span&gt;T05_52_32_439Z-debug.log&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;出现这个问题呢,一般都是因为修改了&lt;code&gt;npm&lt;/code&gt;的&lt;code&gt;源&lt;/code&gt;.我们可以在很多文档上看到因为国内的网络问题,很多时候文档上都建议修改&lt;code&gt;npm&lt;/code&gt;的源为&lt;code&gt;taobao&lt;/code&gt;源.&lt;/p&gt;
+&lt;h2 id=&quot;解决方法如下所示&quot;&gt;&lt;a href=&quot;#解决方法如下所示&quot; class=&quot;headerlink&quot; title=&quot;解决方法如下所示:&quot;&gt;&lt;/a&gt;解决方法如下所示:&lt;/h2&gt;&lt;h5 id=&quot;1-查看npm是否被设置成了taobao源-打开终端-输入&quot;&gt;&lt;a href=&quot;#1-查看npm是否被设置成了taobao源-打开终端-输入&quot; class=&quot;headerlink&quot; title=&quot;1.查看npm是否被设置成了taobao源,打开终端,输入:&quot;&gt;&lt;/a&gt;1.查看npm是否被设置成了taobao源,打开终端,输入:&lt;/h5&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm config get registry&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;这个时候会如下显示:(如果非淘宝源头也就不会出现上述问题了)&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;https://registry.npm.taobao.org/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://codecheese.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="http://codecheese.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>web开发规范之Javascript</title>
+    <link href="http://codecheese.cn/2019/10/31/web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E4%B9%8BJavascript/"/>
+    <id>http://codecheese.cn/2019/10/31/web开发规范之Javascript/</id>
+    <published>2019-10-31T10:09:16.000Z</published>
+    <updated>2019-10-31T10:12:54.143Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;团队内部整理的一份Javascript开发规范,供参考&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;JavaScript&lt;/code&gt; 作为最常用的前端编程语言，其编码规约是前端规范的重要组成部分。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ECMAScript 6.0&lt;/code&gt;（即 &lt;code&gt;ES6&lt;/code&gt;/&lt;code&gt;ES2015&lt;/code&gt;）作为 &lt;code&gt;JavaScript&lt;/code&gt; 语言的下一代标准，于 2015 年 6 月正式发布。&lt;code&gt;ES6&lt;/code&gt; 引入了诸多新的语言特性，与之前的 &lt;code&gt;JS&lt;/code&gt; 版本有很大差异，因此业界通常会以 ES6、ES5 模糊地区别 ES6 之后（包括 ES2016/ES2017..）、之前的 JS 版本，本规约中也会使用这种模糊的叫法。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ES6&lt;/code&gt; 经过几年的普及，已经成为未来使用的大趋势，尤其是新代码库基本都会使用 &lt;code&gt;ES6&lt;/code&gt; 编码。&lt;/li&gt;
+&lt;li&gt;因此，本规范使用 &lt;code&gt;ES6&lt;/code&gt; 编写。对于还在使用 &lt;code&gt;ES5&lt;/code&gt; 及之前版本 &lt;code&gt;JS&lt;/code&gt; 的同学，本规范的大部分内容也适用。&lt;h2 id=&quot;编码风格&quot;&gt;&lt;a href=&quot;#编码风格&quot; class=&quot;headerlink&quot; title=&quot;编码风格&quot;&gt;&lt;/a&gt;编码风格&lt;/h2&gt;&lt;h4 id=&quot;1-缩进&quot;&gt;&lt;a href=&quot;#1-缩进&quot; class=&quot;headerlink&quot; title=&quot;1.缩进&quot;&gt;&lt;/a&gt;1.缩进&lt;/h4&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;【强制】&lt;/code&gt;使用 4 个空格缩进。&lt;code&gt;eslint: indent&lt;/code&gt;.统一使用 4个空格缩进，不要使用 2个空格或 tab 缩进：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// bad&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;foo&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;∙∙&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; name;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// good&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;foo&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;∙∙∙∙&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; name;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://codecheese.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="http://codecheese.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>web开发规范之CSS</title>
+    <link href="http://codecheese.cn/2019/10/31/web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E4%B9%8BCSS/"/>
+    <id>http://codecheese.cn/2019/10/31/web开发规范之CSS/</id>
+    <published>2019-10-31T10:08:10.000Z</published>
+    <updated>2019-10-31T10:13:07.977Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;团队内部整理的一份CSS开发规范,供参考&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;基本规范&quot;&gt;&lt;a href=&quot;#基本规范&quot; class=&quot;headerlink&quot; title=&quot;基本规范&quot;&gt;&lt;/a&gt;基本规范&lt;/h2&gt;&lt;p&gt;1.【推荐】缩进使用四个空格&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* bad */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.mod-example&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;padding-left&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;15px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* good */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.mod-example&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;padding-left&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;15px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;2.在每个&lt;code&gt;声明块&lt;/code&gt;的&lt;code&gt;左花括号&lt;/code&gt;前添加一个空格&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* bad */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.mod-example&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;padding-left&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;15px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* good */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.mod-example&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;padding-left&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;15px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://codecheese.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="http://codecheese.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>web开发规范之HTML</title>
+    <link href="http://codecheese.cn/2019/10/31/web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E4%B9%8BHTML/"/>
+    <id>http://codecheese.cn/2019/10/31/web开发规范之HTML/</id>
+    <published>2019-10-31T10:01:37.000Z</published>
+    <updated>2019-10-31T10:05:05.013Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;团队内部整理的一份HTML开发规范,供参考&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;基本规范&quot;&gt;&lt;a href=&quot;#基本规范&quot; class=&quot;headerlink&quot; title=&quot;基本规范&quot;&gt;&lt;/a&gt;基本规范&lt;/h2&gt;&lt;h3 id=&quot;1-HTML5-doctype&quot;&gt;&lt;a href=&quot;#1-HTML5-doctype&quot; class=&quot;headerlink&quot; title=&quot;1.HTML5 doctype&quot;&gt;&lt;/a&gt;1.HTML5 doctype&lt;/h3&gt;&lt;p&gt;在每个 &lt;code&gt;HTML&lt;/code&gt; 页面开头使用这个简单地 &lt;code&gt;doctype&lt;/code&gt; 来启用标准模式，使其每个浏览器中尽可能一致的展现。&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- bad --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- good --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://codecheese.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="http://codecheese.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>web优化之离线化</title>
+    <link href="http://codecheese.cn/2019/10/28/web%E4%BC%98%E5%8C%96%E4%B9%8B%E7%A6%BB%E7%BA%BF%E5%8C%96/"/>
+    <id>http://codecheese.cn/2019/10/28/web优化之离线化/</id>
+    <published>2019-10-28T10:20:08.000Z</published>
+    <updated>2019-11-04T06:51:31.891Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h3&gt;&lt;p&gt;现在混合开发的应用场景越来越多了.业内的解决方案也有很多,例:&lt;code&gt;native + react-native&lt;/code&gt;的,支付宝或者微信的&lt;code&gt;native + 小程序&lt;/code&gt;的.当然应用更多的还是&lt;code&gt;native + webView&lt;/code&gt;这种场景.&lt;br&gt;使用&lt;code&gt;native + webView&lt;/code&gt;的优点很多:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;开发方便&lt;/li&gt;
+&lt;li&gt;方便快速迭代&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但是使用这套方案也有一个很致命的缺点:&lt;code&gt;那就是很慢!&lt;/code&gt;,在&lt;code&gt;native&lt;/code&gt;上点击了一个按钮触发一个打开&lt;code&gt;webView&lt;/code&gt;的&lt;code&gt;action&lt;/code&gt;操作,会经过以下几个过程:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;初始化webview&lt;/code&gt; =&amp;gt; &lt;code&gt;请求HTML,JS,CSS等静态资源&lt;/code&gt; =&amp;gt; &lt;code&gt;渲染模板&lt;/code&gt; =&amp;gt; &lt;code&gt;请求API&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这中间的时间很久.经过测试我们项目在安卓低端机上表现为平均加载完成时间为4 ~ 5秒.这是非常难以接受的!所以优化的需求就迫在眉睫了.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="性能优化" scheme="http://codecheese.cn/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+    
+      <category term="性能优化" scheme="http://codecheese.cn/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Smartgit使用30天过期解决办法</title>
+    <link href="http://codecheese.cn/2019/10/11/Smartgit%E4%BD%BF%E7%94%A830%E5%A4%A9%E8%BF%87%E6%9C%9F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>http://codecheese.cn/2019/10/11/Smartgit使用30天过期解决办法/</id>
+    <published>2019-10-11T06:36:45.000Z</published>
+    <updated>2019-10-11T06:49:15.314Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;code&gt;smartGit&lt;/code&gt;是一款&lt;code&gt;git&lt;/code&gt;比较好用的GUI工具.未注册版本提供30天的试用期,提供一个过期了以后还可以使用的方法:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1.打开&lt;code&gt;Finder&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;2.使用快捷
+        
+      
+    
+    </summary>
+    
+      <category term="Git" scheme="http://codecheese.cn/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="http://codecheese.cn/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入浅出react+redux之组件的生命周期</title>
+    <link href="http://codecheese.cn/2019/08/23/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact-redux%E4%B9%8B%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <id>http://codecheese.cn/2019/08/23/深入浅出react-redux之组件的生命周期/</id>
+    <published>2019-08-23T03:24:11.000Z</published>
+    <updated>2019-08-23T12:48:03.854Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="react.js" scheme="http://codecheese.cn/categories/react-js/"/>
+    
+    
+      <category term="react.js" scheme="http://codecheese.cn/tags/react-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入浅出react+redux之state和props</title>
+    <link href="http://codecheese.cn/2019/08/22/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact-redux%E4%B9%8Bstate%E5%92%8Cprops/"/>
+    <id>http://codecheese.cn/2019/08/22/深入浅出react-redux之state和props/</id>
+    <published>2019-08-22T09:49:39.000Z</published>
+    <updated>2019-08-23T03:25:15.890Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;state-和-prop&quot;&gt;&lt;a href=&quot;#state-和-prop&quot; class=&quot;headerlink&quot; title=&quot;state 和 prop&quot;&gt;&lt;/a&gt;state 和 prop&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;差劲的程序员操心代码，优秀的程序员操心数据结构和它们之间的关系。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;毫无疑问,在&lt;code&gt;react&lt;/code&gt;中处理数据是需要我们多关心的事情.页面是由数据进行驱动的,那么如何科学,高效的处理数据则成为我们需要思考的问题.&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;react&lt;/code&gt;中数据大体上分为两种:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;state&lt;ul&gt;
+&lt;li&gt;state 是组件内部的状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;prop&lt;ul&gt;
+&lt;li&gt;prop 是组件对外的接口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其实很简单,就一句话:&lt;code&gt;state用来处理组件的内部状态,prop用来和外部组件进行交互&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="react.js" scheme="http://codecheese.cn/categories/react-js/"/>
+    
+    
+      <category term="react.js" scheme="http://codecheese.cn/tags/react-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入浅出react+redux之jsx</title>
+    <link href="http://codecheese.cn/2019/08/22/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact+redux%E4%B9%8Bjsx/"/>
+    <id>http://codecheese.cn/2019/08/22/深入浅出react+redux之jsx/</id>
+    <published>2019-08-22T07:03:46.000Z</published>
+    <updated>2019-08-22T09:47:51.059Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h3&gt;&lt;p&gt;单独把&lt;code&gt;JSX&lt;/code&gt;拿出来说一下,因为我觉得这个东西有必要深入研究一下.下面是我当时学习&lt;code&gt;react.js&lt;/code&gt;的时候想到的几个问题:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;为什么要在&lt;code&gt;react.js&lt;/code&gt;中使用&lt;code&gt;jsx&lt;/code&gt;?&lt;/li&gt;
+&lt;li&gt;将事件声明写在了&lt;code&gt;JSX&lt;/code&gt;中是一种进步还是一种倒退?&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;react.js&lt;/code&gt;是如何根据&lt;code&gt;diff&lt;/code&gt;算法底层实现模板高性能重新渲染的?(因为我们知道每执行一次&lt;code&gt;setState()&lt;/code&gt;,都会执行一次&lt;code&gt;render()&lt;/code&gt;函数,&lt;code&gt;react.js&lt;/code&gt;底层做了什么?它是如何优化的?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面我们带着这几个问题,来深入研究一下什么是&lt;code&gt;JSX&lt;/code&gt;.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="react.js" scheme="http://codecheese.cn/categories/react-js/"/>
+    
+    
+      <category term="react.js" scheme="http://codecheese.cn/tags/react-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入浅出react+redux第一篇:基础篇</title>
+    <link href="http://codecheese.cn/2019/08/22/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact+redux%E7%AC%AC%E4%B8%80%E7%AF%87:%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    <id>http://codecheese.cn/2019/08/22/深入浅出react+redux第一篇:基础篇/</id>
+    <published>2019-08-22T06:34:19.000Z</published>
+    <updated>2019-08-22T07:04:44.910Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;p&gt;本篇连载是我学习&lt;code&gt;react.js&lt;/code&gt;的一个笔记,之前一直保存在&lt;code&gt;有道云笔记&lt;/code&gt;中,最近打算发到博客上面来.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;1-环境配置&quot;&gt;&lt;a href=&quot;#1-环境配置&quot; class=&quot;headerlink&quot; title=&quot;1.环境配置&quot;&gt;&lt;/a&gt;1.环境配置&lt;/h3&gt;&lt;p&gt;首先我们需要下载&lt;code&gt;react.js&lt;/code&gt;的一个官方的脚手架工具:&lt;code&gt;create-react-app&lt;/code&gt;.终端执行下面的命令:&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install -g create-react-app&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;即可安装,然后终端中输入&lt;code&gt;create-react-app -V&lt;/code&gt;,即可查看该脚手架的ban版本.目前最新版的是&lt;code&gt;3.0.1&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;脚手架已经安装完毕了,我们来创建一个&lt;code&gt;react.js&lt;/code&gt;的应用吧.&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 1.init project&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;create-react-app my-react-app&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 2.cd &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd my-react-app&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 3.run&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm run start&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;2-浅尝组件&quot;&gt;&lt;a href=&quot;#2-浅尝组件&quot; class=&quot;headerlink&quot; title=&quot;2.浅尝组件&quot;&gt;&lt;/a&gt;2.浅尝组件&lt;/h3&gt;&lt;p&gt;现代前端开发开始流行一种开发思想叫做:&lt;code&gt;组件式开发&lt;/code&gt;.不论是&lt;code&gt;vue.js&lt;/code&gt;,&lt;code&gt;anglar.js&lt;/code&gt;亦或者是我们今天要学习的&lt;code&gt;react.js&lt;/code&gt;都是倡导组件式开发,所谓&lt;code&gt;组件式开发&lt;/code&gt;即是把一个项目认为是一棵&lt;code&gt;组件树&lt;/code&gt;,而每一个页面/模块都是该组件树的一个分支,该分支上的页面又可以拆分为不同的小组件,各个组件堆砌组合成为了一个功能完整的页面乃至应用.&lt;/p&gt;
+&lt;p&gt;一个最简单的&lt;code&gt;react.js&lt;/code&gt;的组件如下所示:&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="react.js" scheme="http://codecheese.cn/categories/react-js/"/>
+    
+    
+      <category term="react.js" scheme="http://codecheese.cn/tags/react-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>react-native屏幕适配</title>
+    <link href="http://codecheese.cn/2019/08/09/react-native%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/"/>
+    <id>http://codecheese.cn/2019/08/09/react-native屏幕适配/</id>
+    <published>2019-08-09T06:11:14.000Z</published>
+    <updated>2019-08-12T06:46:09.494Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-写在前面&quot;&gt;&lt;a href=&quot;#1-写在前面&quot; class=&quot;headerlink&quot; title=&quot;1.写在前面&quot;&gt;&lt;/a&gt;1.写在前面&lt;/h2&gt;&lt;p&gt;在使用&lt;code&gt;react-native&lt;/code&gt;进行开发的时候我们参见官方文知道做屏幕适配是使用&lt;code&gt;flexBox&lt;/code&gt;来进行布局.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://reactnative.cn/docs/flexbox/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;戳我查看flexBox布局&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;有关&lt;code&gt;flexBox&lt;/code&gt;的属性这里不做太多介绍,不会的请参考官方文档.这里只是说一下,因为在做屏幕适配的时候的解决之道.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在react-native中我们使用StyleSheet这个对象来进行样式的开发.例如:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; &amp;#123; StyleSheet &amp;#125; &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;react-native&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 声明了一个style的变量,使用它来给组件添加样式&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; style = StyleSheet.crate(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    title:&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fontSize:&lt;span class=&quot;number&quot;&gt;14&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        color:&lt;span class=&quot;string&quot;&gt;&quot;#BBB&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    subTitle:&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        marginTop:&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        marginBottom:&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        paddingLeft:&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        paddingRight:&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="react-native" scheme="http://codecheese.cn/categories/react-native/"/>
+    
+    
+      <category term="react-native" scheme="http://codecheese.cn/tags/react-native/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>新建CustomStyleSheet废弃StyleSheet</title>
+    <link href="http://codecheese.cn/2019/08/08/%E6%96%B0%E5%BB%BACustomStyleSheet%E5%BA%9F%E5%BC%83StyleSheet/"/>
+    <id>http://codecheese.cn/2019/08/08/新建CustomStyleSheet废弃StyleSheet/</id>
+    <published>2019-08-08T10:38:00.000Z</published>
+    <updated>2019-08-12T06:38:00.243Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本来打算新开一篇文章写这个的,但是因为本人懒得写,算了.参见本人的另一个博客,写在了这里:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://codecheese.cn/2019/08/09/react-native%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/#more&quot;&gt;react-native屏幕适配,可能是比较好的解决方案&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;that’s all&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="react-native" scheme="http://codecheese.cn/categories/react-native/"/>
+    
+    
+      <category term="react-native" scheme="http://codecheese.cn/tags/react-native/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>修改react-native组件的默认属性</title>
+    <link href="http://codecheese.cn/2019/08/08/%E4%BF%AE%E6%94%B9react-native%E7%BB%84%E4%BB%B6%E7%9A%84%E9%BB%98%E8%AE%A4%E5%B1%9E%E6%80%A7/"/>
+    <id>http://codecheese.cn/2019/08/08/修改react-native组件的默认属性/</id>
+    <published>2019-08-08T09:08:17.000Z</published>
+    <updated>2019-08-12T06:42:47.859Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;p&gt;我们在做网页开发的时候知道标签有自己的默认样式,例如&lt;code&gt;&amp;lt;ul/&amp;gt;&lt;/code&gt;,&lt;code&gt;&amp;lt;li/&amp;gt;&lt;/code&gt;等等.所以一般我们在开发项目的时候首先要做的就是先把标签的默认样式给清除掉.在开发RN的时候发现有些组件的默认属性很烦人.同样的需要重写这些默认属性.例如:&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;Text&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;TextInput&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;这两个组件的&lt;code&gt;allowFontScaling=true&lt;/code&gt;即:属性默认跟随系统字体大小,超级坑爹.&lt;/p&gt;
+&lt;p&gt;还有这个组件:&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;TouchableOpacity&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;这个组件默认点击的时候会有一个阴影效果,因为它的默认透明度是&lt;code&gt;0.2&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;这些默认属性有时候会给我们带来很大的困扰,有些组件的属性默认值并不是我们想要的.那么该怎么做呢?在每次使用这个组件的时候手动修改该组件的属性值?&lt;/p&gt;
+&lt;p&gt;这样做可以满足需求,但是太蠢了.每次使用上述组件的时候都要修改某些属性值.太蠢.这个方法舍弃.&lt;/p&gt;
+&lt;h2 id=&quot;解决之道&quot;&gt;&lt;a href=&quot;#解决之道&quot; class=&quot;headerlink&quot; title=&quot;解决之道:&quot;&gt;&lt;/a&gt;解决之道:&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="react-native" scheme="http://codecheese.cn/categories/react-native/"/>
+    
+    
+      <category term="react-native" scheme="http://codecheese.cn/tags/react-native/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>react-native混合开发之热更新的实现</title>
+    <link href="http://codecheese.cn/2019/08/01/react-native%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E4%B9%8B%E7%83%AD%E6%9B%B4%E6%96%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://codecheese.cn/2019/08/01/react-native混合开发之热更新的实现/</id>
+    <published>2019-08-01T06:54:44.000Z</published>
+    <updated>2019-08-12T06:45:38.610Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;&lt;code&gt;react-native&lt;/code&gt;可以独立写APP,但是在更多的公司中以&lt;code&gt;混合开发模式&lt;/code&gt;居多.也就是说部分模块使用&lt;code&gt;native&lt;/code&gt;去开发,部分模块使用&lt;code&gt;react-native&lt;/code&gt;来进行开发.这种开发模式带来的优点是显而易见的,&lt;code&gt;native&lt;/code&gt;+&lt;code&gt;react-native&lt;/code&gt;可以在处理某些更新频繁,突发性需求或者对Ui页面灵活性要求比较高的地方.例如&lt;code&gt;618&lt;/code&gt;,&lt;code&gt;双11&lt;/code&gt;,&lt;code&gt;双12&lt;/code&gt;…这种页面通常都有具有很大的灵活性.如果这个时候我们都用&lt;code&gt;native&lt;/code&gt;来实现则灵活性欠佳.而使用&lt;code&gt;native&lt;/code&gt;+&lt;code&gt;react-native&lt;/code&gt;的混合开发模式则可以完美的解决这个问题.静默升级,用户体验佳.且&lt;code&gt;iOS&lt;/code&gt;不用发版,不用提交审即可更新,大大的提高了产品的迭代速度,为用户带来更好的体验&lt;/p&gt;
+&lt;h4 id=&quot;1-HOW&quot;&gt;&lt;a href=&quot;#1-HOW&quot; class=&quot;headerlink&quot; title=&quot;1.HOW&quot;&gt;&lt;/a&gt;1.HOW&lt;/h4&gt;&lt;p&gt;具体怎么做呢?首先当然是我们需要打包各平台对应的&lt;code&gt;bundle&lt;/code&gt;包.如何打包,参见上一篇文章:&lt;code&gt;react-native优化之拆包&lt;/code&gt;.下面的是已经打包好的图示:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;iOS&lt;br&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/006tNc79gy1g5k6ziz6kpj30bs04vglk.jpg&quot; alt=&quot;iOS包&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;android&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/006tNc79gy1g5k71duwz6j30be04r0sz.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以看到针对&lt;code&gt;ios&lt;/code&gt;和&lt;code&gt;android&lt;/code&gt;两个平台我们都已经打包出来的各自的&lt;code&gt;bundle&lt;/code&gt;包和静态资源.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="react-native" scheme="http://codecheese.cn/categories/react-native/"/>
+    
+    
+      <category term="react-native" scheme="http://codecheese.cn/tags/react-native/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>xcode官方下载地址,可用迅雷下载</title>
+    <link href="http://codecheese.cn/2019/07/31/xcode%E5%AE%98%E6%96%B9%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80-%E5%8F%AF%E7%94%A8%E8%BF%85%E9%9B%B7%E4%B8%8B%E8%BD%BD/"/>
+    <id>http://codecheese.cn/2019/07/31/xcode官方下载地址-可用迅雷下载/</id>
+    <published>2019-07-31T07:52:23.000Z</published>
+    <updated>2019-08-22T03:35:06.011Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在国内网络情况令人窒息,有需要更新&lt;code&gt;xcode&lt;/code&gt;的时候在&lt;code&gt;appStore&lt;/code&gt;上下载就非常的慢,下面是&lt;code&gt;xcode&lt;/code&gt;的官方下载地址:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/download/more/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;戳我使用迅雷下载xcode&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;mark一下,以备不时之需.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://codecheese.cn/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="http://codecheese.cn/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>react-native打包安卓的一个坑</title>
+    <link href="http://codecheese.cn/2019/07/29/react-native%E6%89%93%E5%8C%85%E5%AE%89%E5%8D%93%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/"/>
+    <id>http://codecheese.cn/2019/07/29/react-native打包安卓的一个坑/</id>
+    <published>2019-07-29T08:34:10.000Z</published>
+    <updated>2019-08-12T06:45:14.574Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h3&gt;&lt;p&gt;如果你在做一个混合开发的APP,也就是说部分模块使用&lt;code&gt;native&lt;/code&gt;去开发,部分模块使用&lt;code&gt;react-native&lt;/code&gt;去开发.这个时候如何使用图片资源就有的玩了.如何合理的使用图片资源也是一个问题.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;引申:在&lt;code&gt;react-native&lt;/code&gt;中如何使用图片资源&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;根据官方文档所述:在&lt;code&gt;react-native&lt;/code&gt;中使用&lt;code&gt;image&lt;/code&gt;的话有几种方法:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1.使用APP中的图片资源&lt;br&gt;也就是说在JS中直接访问&lt;code&gt;APP&lt;/code&gt;沙盒中存在的图片资源,&lt;code&gt;iOS&lt;/code&gt;加载&lt;code&gt;assets&lt;/code&gt;目录,安卓加载&lt;code&gt;drawable&lt;/code&gt;目录.代码如下所示:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;Image source=&amp;#123;&amp;#123;&lt;span class=&quot;attr&quot;&gt;uri&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&#39;test_img&#39;&lt;/span&gt;&amp;#125;&amp;#125; style=&amp;#123;&amp;#123;&lt;span class=&quot;attr&quot;&gt;width&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;,&lt;span class=&quot;attr&quot;&gt;height&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;&amp;#125;&amp;#125;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;使用这个方法加载图片资源的话不需要写后缀,但是!你必须要确保这个图片在APP的沙盒内部是一定存在的!&lt;code&gt;react-native&lt;/code&gt;不会检查这个文件是否存在如果不存在则出现一个空白.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2.使用网络图片&lt;br&gt;这个就很简单了,看下面的代码:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;Image&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;source&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;#123;&amp;#123;uri:&lt;/span&gt; &#39;&lt;span class=&quot;attr&quot;&gt;https:&lt;/span&gt;//&lt;span class=&quot;attr&quot;&gt;facebook.github.io&lt;/span&gt;/&lt;span class=&quot;attr&quot;&gt;react&lt;/span&gt;/&lt;span class=&quot;attr&quot;&gt;logo-og.png&lt;/span&gt;&#39;&amp;#125;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;       &lt;span class=&quot;attr&quot;&gt;style&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;#123;&amp;#123;width:&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;400&lt;/span&gt;, &lt;span class=&quot;attr&quot;&gt;height:&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;400&lt;/span&gt;&amp;#125;&amp;#125; /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;注意:&lt;code&gt;iOS&lt;/code&gt;因为从&lt;code&gt;iOS8&lt;/code&gt;开始只能使用&lt;code&gt;https&lt;/code&gt;了,所以这里建议网络图片全部使用&lt;code&gt;https&lt;/code&gt;,并且需要指定尺寸.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="react-native" scheme="http://codecheese.cn/categories/react-native/"/>
+    
+    
+      <category term="react-native" scheme="http://codecheese.cn/tags/react-native/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>react-native-swiper的一个坑</title>
+    <link href="http://codecheese.cn/2019/07/25/react-native-swiper%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/"/>
+    <id>http://codecheese.cn/2019/07/25/react-native-swiper的一个坑/</id>
+    <published>2019-07-25T08:34:28.000Z</published>
+    <updated>2019-08-12T06:44:44.133Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="react-native" scheme="http://codecheese.cn/categories/react-native/"/>
+    
+    
+      <category term="react-native" scheme="http://codecheese.cn/tags/react-native/"/>
+    
+  </entry>
+  
+</feed>

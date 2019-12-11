@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="codecheese" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="团队内部整理的一份Javascript开发规范,供参考  写在前面 JavaScript 作为最常用的前端编程语言，其编码规约是前端规范的重要组成部分。 ECMAScript 6.0（即 ES6/ES2015）作为 JavaScript 语言的下一代标准，于 2015 年 6 月正式发布。ES6 引入了诸多新的语言特性，与之前的 JS 版本有很大差异，因此业界通常会以 ES6、ES5 模糊地区别">
+<meta name="keywords" content="前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web开发规范之Javascript">
+<meta property="og:url" content="http://codecheese.cn/2019/10/31/web开发规范之Javascript/index.html">
+<meta property="og:site_name" content="codecheese">
+<meta property="og:description" content="团队内部整理的一份Javascript开发规范,供参考  写在前面 JavaScript 作为最常用的前端编程语言，其编码规约是前端规范的重要组成部分。 ECMAScript 6.0（即 ES6/ES2015）作为 JavaScript 语言的下一代标准，于 2015 年 6 月正式发布。ES6 引入了诸多新的语言特性，与之前的 JS 版本有很大差异，因此业界通常会以 ES6、ES5 模糊地区别">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-31T10:12:54.143Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="web开发规范之Javascript">
+<meta name="twitter:description" content="团队内部整理的一份Javascript开发规范,供参考  写在前面 JavaScript 作为最常用的前端编程语言，其编码规约是前端规范的重要组成部分。 ECMAScript 6.0（即 ES6/ES2015）作为 JavaScript 语言的下一代标准，于 2015 年 6 月正式发布。ES6 引入了诸多新的语言特性，与之前的 JS 版本有很大差异，因此业界通常会以 ES6、ES5 模糊地区别">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://codecheese.cn/2019/10/31/web开发规范之Javascript/">
+
+
+
+
+
+  <title>web开发规范之Javascript | codecheese</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">codecheese</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">do something funny!</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://codecheese.cn/2019/10/31/web开发规范之Javascript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Allenliu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/icon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="codecheese">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">web开发规范之Javascript</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-31T18:09:16+08:00">
+                2019-10-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>团队内部整理的一份Javascript开发规范,供参考</p>
+</blockquote>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><ul>
+<li><code>JavaScript</code> 作为最常用的前端编程语言，其编码规约是前端规范的重要组成部分。</li>
+<li><code>ECMAScript 6.0</code>（即 <code>ES6</code>/<code>ES2015</code>）作为 <code>JavaScript</code> 语言的下一代标准，于 2015 年 6 月正式发布。<code>ES6</code> 引入了诸多新的语言特性，与之前的 <code>JS</code> 版本有很大差异，因此业界通常会以 ES6、ES5 模糊地区别 ES6 之后（包括 ES2016/ES2017..）、之前的 JS 版本，本规约中也会使用这种模糊的叫法。</li>
+<li><code>ES6</code> 经过几年的普及，已经成为未来使用的大趋势，尤其是新代码库基本都会使用 <code>ES6</code> 编码。</li>
+<li>因此，本规范使用 <code>ES6</code> 编写。对于还在使用 <code>ES5</code> 及之前版本 <code>JS</code> 的同学，本规范的大部分内容也适用。<h2 id="编码风格"><a href="#编码风格" class="headerlink" title="编码风格"></a>编码风格</h2><h4 id="1-缩进"><a href="#1-缩进" class="headerlink" title="1.缩进"></a>1.缩进</h4></li>
+</ul>
+<p><code>【强制】</code>使用 4 个空格缩进。<code>eslint: indent</code>.统一使用 4个空格缩进，不要使用 2个空格或 tab 缩进：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">∙∙<span class="keyword">let</span> name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">∙∙∙∙<span class="keyword">let</span> name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h4 id="2-分号"><a href="#2-分号" class="headerlink" title="2.分号"></a>2.分号</h4><p><code>【强制】</code>用分号。<code>eslint: semi</code>.统一以分号结束语句，可以避免 JS 引擎自动分号插入机制的怪异行为，在语义上也更加明确。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad - 导致 Uncaught ReferenceError 报错</span></span><br><span class="line"><span class="keyword">const</span> luke = &#123;&#125;</span><br><span class="line"><span class="keyword">const</span> leia = &#123;&#125;</span><br><span class="line">[luke, leia].forEach(<span class="function">(<span class="params">jedi</span>) =&gt;</span> &#123;</span><br><span class="line">    jedi.father = <span class="string">'vader'</span></span><br><span class="line">&#125;)</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> luke = &#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> leia = &#123;&#125;;</span><br><span class="line">[luke, leia].forEach(<span class="function">(<span class="params">jedi</span>) =&gt;</span> &#123;</span><br><span class="line">    jedi.father = <span class="string">'vader'</span>;</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// bad - 导致 Uncaught ReferenceError 报错</span></span><br><span class="line"><span class="keyword">const</span> reaction = <span class="string">"No! That's impossible!"</span></span><br><span class="line">(<span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">meanwhileOnTheFalcon</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;())</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> reaction = <span class="string">"No! That's impossible!"</span>;</span><br><span class="line">(<span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">meanwhileOnTheFalcon</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;());</span><br><span class="line"> </span><br><span class="line"><span class="comment">// bad - 函数将返回 `undefined` 而不是换行后的值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">        <span class="string">'Result want to be returned'</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Result want to be returned'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-逗号"><a href="#3-逗号" class="headerlink" title="3.逗号"></a>3.逗号</h4><p>1.<code>【强制】</code>对于用逗号分隔的多行结构，不使用行首逗号。<code>eslint:comma-style</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> story = [</span><br><span class="line">    once</span><br><span class="line">  , upon</span><br><span class="line">  , aTime</span><br><span class="line">];</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> story = [</span><br><span class="line">    once,</span><br><span class="line">    upon,</span><br><span class="line">    aTime,</span><br><span class="line">];</span><br><span class="line"> </span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> hero = &#123;</span><br><span class="line">    firstName: <span class="string">'Ada'</span></span><br><span class="line">  , <span class="attr">lastName</span>: <span class="string">'Lovelace'</span></span><br><span class="line">  , <span class="attr">superPower</span>: <span class="string">'computers'</span></span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> hero = &#123;</span><br><span class="line">    firstName: <span class="string">'Ada'</span>,</span><br><span class="line">    lastName: <span class="string">'Loveplace'</span>,</span><br><span class="line">    superPower: <span class="string">'computers'</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>2.<code>【强制】</code>对于用逗号分隔的多行结构，始终加上最后一个逗号。<code>eslint:comma-dangle</code></p>
+<p>这样可以使增删行更加容易，也会使 <code>git diffs</code> 更清晰。<code>Babel</code> 等编译器会在编译后的代码里帮我们去掉最后额外的逗号，因此不必担心在旧浏览器中的问题。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad - 没有结尾逗号时，新增一行的 git diff 示例</span></span><br><span class="line"><span class="keyword">const</span> hero = &#123;</span><br><span class="line">     firstName: <span class="string">'Florence'</span>,</span><br><span class="line">-    lastName: <span class="string">'Nightingale'</span></span><br><span class="line">+    lastName: <span class="string">'Nightingale'</span>,</span><br><span class="line">+    inventorOf: [<span class="string">'coxcomb chart'</span>, <span class="string">'modern nursing'</span>]</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good - 有结尾逗号时，新增一行的 git diff 示例</span></span><br><span class="line"><span class="keyword">const</span> hero = &#123;</span><br><span class="line">     firstName: <span class="string">'Florence'</span>,</span><br><span class="line">     lastName: <span class="string">'Nightingale'</span>,</span><br><span class="line">+    inventorOf: [<span class="string">'coxcomb chart'</span>, <span class="string">'modern nursing'</span>],</span><br><span class="line">&#125;;</span><br><span class="line">  </span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> hero = &#123;</span><br><span class="line">    firstName: <span class="string">'Dana'</span>,</span><br><span class="line">    lastName: <span class="string">'Scully'</span></span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> heroes = [</span><br><span class="line">    <span class="string">'Batman'</span>,</span><br><span class="line">    <span class="string">'Superman'</span></span><br><span class="line">];</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createHero</span>(<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">    firstName,</span></span></span><br><span class="line"><span class="function"><span class="params">    lastName,</span></span></span><br><span class="line"><span class="function"><span class="params">    inventorOf</span></span></span><br><span class="line"><span class="function"><span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">createHero(</span><br><span class="line">    firstName,</span><br><span class="line">    lastName,</span><br><span class="line">    inventorOf</span><br><span class="line">);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> hero = &#123;</span><br><span class="line">    firstName: <span class="string">'Dana'</span>,</span><br><span class="line">    lastName: <span class="string">'Scully'</span>,</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> heroes = [</span><br><span class="line">    <span class="string">'Batman'</span>,</span><br><span class="line">    <span class="string">'Superman'</span>,</span><br><span class="line">];</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createHero</span>(<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">    firstName,</span></span></span><br><span class="line"><span class="function"><span class="params">    lastName,</span></span></span><br><span class="line"><span class="function"><span class="params">    inventorOf,</span></span></span><br><span class="line"><span class="function"><span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">createHero(</span><br><span class="line">    firstName,</span><br><span class="line">    lastName,</span><br><span class="line">    inventorOf,</span><br><span class="line">);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good - 需注意，使用扩展运算符的元素后面不能加逗号</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createHero</span>(<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">    firstName,</span></span></span><br><span class="line"><span class="function"><span class="params">    lastName,</span></span></span><br><span class="line"><span class="function"><span class="params">    inventorOf,</span></span></span><br><span class="line"><span class="function"><span class="params">    ...heroArgs</span></span></span><br><span class="line"><span class="function"><span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="块"><a href="#块" class="headerlink" title="块"></a>块</h2><p>1.【推荐】始终使用大括号包裹代码块。<code>eslint: curly,nonblock-statement-body-position</code><br>多行代码块必须用大括号包裹</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">if</span> (foo)</span><br><span class="line">    bar();</span><br><span class="line">    baz(); <span class="comment">// 这一行并不在 if 语句里</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">if</span> (foo) &#123;</span><br><span class="line">    bar();</span><br><span class="line">    baz();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>代码块只有一条语句时，可以省略大括号，并跟控制语句写在同一行。但出于一致性和可读性考虑，不推荐这样做：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">if</span> (foo)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// bad - 允许但不推荐</span></span><br><span class="line"><span class="keyword">if</span> (foo) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">if</span> (foo) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.【强制】对于非空代码块，大括号的换行方式采用 <code>Egyptian Brackets</code> 风格。<code>eslint: brace-style</code><br>具体规则如下：</p>
+<ul>
+<li>左大括号 <code>{</code> 前面不换行，后面换行</li>
+<li>右大括号 <code>}</code> 前面换行</li>
+<li>右大括号 <code>}</code> 后面是否换行有两种情况：<ul>
+<li>如果 <code>}</code> 终结了整个语句，如条件语句、函数或类的主体，则需要换行</li>
+<li>如果 <code>}</code> 后面存在 else、catch、while 等语句，或存在逗号、分号、右小括号<code>（)）</code>，则不需要换行</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad - else 应与 if 的 &#125; 放在同一行</span></span><br><span class="line"><span class="keyword">if</span> (foo) &#123;</span><br><span class="line">    thing1();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    thing2();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">if</span> (foo) &#123;</span><br><span class="line">    thing1();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    thing2();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3.【推荐】对于空代码块，且不在类似 <code>if...else...</code> 或<code>try..catch..finally..</code> 的多块结构中时，可以立即将大括号闭合。<code>eslint:brace-style</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doNothing</span>(<span class="params"></span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果空代码块在多块结构中，则仍需要按上一条非空块的规则换行：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">if</span> (condition) &#123;</span><br><span class="line">    <span class="comment">// …</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (otherCondition) &#123;&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// …</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">if</span> (condition) &#123;</span><br><span class="line">    <span class="comment">// …</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (otherCondition) &#123;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// …</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="comment">// …</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="comment">// …</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4.<code>【强制】</code>不要让代码中出现空代码块，这会使阅读者感到困惑。如果必须使用空块，需在块内写明注释。<code>eslint: no-empty</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">if</span> (condition) &#123;</span><br><span class="line">    thing1();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">if</span> (condition) &#123;</span><br><span class="line">    thing1();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// TODO I haven’t determined what to do.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><p>1.<code>【强制】</code>块的左大括号 <code>{</code> 前有一个空格。<code>eslint:space-before-blocks</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'test'</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'test'</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line">dog.set(<span class="string">'attr'</span>,&#123;</span><br><span class="line">    age: <span class="string">'1 year'</span>,</span><br><span class="line">    breed: <span class="string">'Bernese Mountain Dog'</span>,</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">dog.set(<span class="string">'attr'</span>, &#123;</span><br><span class="line">    age: <span class="string">'1 year'</span>,</span><br><span class="line">    breed: <span class="string">'Bernese Mountain Dog'</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>2.<code>【强制】</code>控制语句（if、while 等）的左小括号 ( 前有一个空格。声明函数时，函数名和参数列表之间无空格。<code>eslint:keyword-spacing</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">if</span>(isJedi) &#123;</span><br><span class="line">    fight ();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">if</span> (isJedi) &#123;</span><br><span class="line">    fight();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fight</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log (<span class="string">'Swooosh!'</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fight</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Swooosh!'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3.<code>【强制】</code>小括号内部两侧无空格。<code>eslint: space-in-parens</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"> foo </span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> foo;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">foo</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> foo;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">if</span> ( foo ) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log( foo );</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">if</span> (foo) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(foo);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4.<code>【强制】</code>方括号内部两侧无空格。<code>eslint: array-bracket-spacing</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> foo = [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> ];</span><br><span class="line"><span class="built_in">console</span>.log(foo[ <span class="number">0</span> ]);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> foo = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(foo[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
+
+<p>5.<code>【强制】</code>大括号内部两侧有空格。<code>eslint: object-curly-spacing</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> foo = &#123;<span class="attr">clark</span>: <span class="string">'kent'</span>&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> foo = &#123; <span class="attr">clark</span>: <span class="string">'kent'</span> &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>6.<code>【强制】</code>运算符两侧有空格，除了一元运算符。<code>eslint:space-infix-ops</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> x=y+<span class="number">5</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> x = y + <span class="number">5</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> isRight = result === <span class="number">0</span>? <span class="literal">false</span>: <span class="literal">true</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> isRight = result === <span class="number">0</span> ? <span class="literal">false</span> : <span class="literal">true</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// bad - 一元运算符与操作对象间不应有空格</span></span><br><span class="line"><span class="keyword">const</span> x = ! y;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> x = !y;</span><br></pre></td></tr></table></figure>
+
+<p>7.<code>【强制】</code>定义对象字面量时，不允许所谓的「水平对齐」，即 key、value 之间应该有且只有一个空格。<code>eslint: key-spacing</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">&#123;</span><br><span class="line">  a:            <span class="string">'short'</span>,</span><br><span class="line">  looooongname: <span class="string">'long'</span>,</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line">&#123;</span><br><span class="line">  a           : <span class="string">'short'</span>,</span><br><span class="line">  looooongname: <span class="string">'long'</span>,</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">&#123;</span><br><span class="line">  a: <span class="string">'short'</span>,</span><br><span class="line">  looooongname: <span class="string">'long'</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>8.<code>【强制】</code>在使用多个（大于两个）方法链式调用时进行换行缩进，把点. 放在前面以强调这是方法调用而不是新语句。<code>eslint:newline-per-chained-call no-whitespace-before-property</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">$(<span class="string">'#items'</span>).find(<span class="string">'.selected'</span>).highlight().end().find(<span class="string">'.open'</span>).updateCount();</span><br><span class="line"> </span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line">$(<span class="string">'#items'</span>).</span><br><span class="line">  find(<span class="string">'.selected'</span>).</span><br><span class="line">    highlight().</span><br><span class="line">    end().</span><br><span class="line">  find(<span class="string">'.open'</span>).</span><br><span class="line">    updateCount();</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">$(<span class="string">'#items'</span>)</span><br><span class="line">  .find(<span class="string">'.selected'</span>)</span><br><span class="line">    .highlight()</span><br><span class="line">    .end()</span><br><span class="line">  .find(<span class="string">'.open'</span>)</span><br><span class="line">    .updateCount();</span><br><span class="line"> </span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> leds = stage.selectAll(<span class="string">'.led'</span>).data(data).enter().append(<span class="string">'svg:svg'</span>).classed(<span class="string">'led'</span>, <span class="literal">true</span>)</span><br><span class="line">    .attr(<span class="string">'width'</span>, (radius + margin) * <span class="number">2</span>).append(<span class="string">'svg:g'</span>)</span><br><span class="line">    .attr(<span class="string">'transform'</span>, <span class="string">`translate(<span class="subst">$&#123;radius + margin&#125;</span>,<span class="subst">$&#123;radius + margin&#125;</span>)`</span>)</span><br><span class="line">    .call(tron.led);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> leds = stage.selectAll(<span class="string">'.led'</span>)</span><br><span class="line">    .data(data)</span><br><span class="line">  .enter().append(<span class="string">'svg:svg'</span>)</span><br><span class="line">    .classed(<span class="string">'led'</span>, <span class="literal">true</span>)</span><br><span class="line">    .attr(<span class="string">'width'</span>, (radius + margin) * <span class="number">2</span>)</span><br><span class="line">  .append(<span class="string">'svg:g'</span>)</span><br><span class="line">    .attr(<span class="string">'transform'</span>, <span class="string">`translate(<span class="subst">$&#123;radius + margin&#125;</span>,<span class="subst">$&#123;radius + margin&#125;</span>)`</span>)</span><br><span class="line">    .call(tron.led);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good - 大于 2 个方法的链式调用才需要进行换行</span></span><br><span class="line"><span class="keyword">const</span> leds = stage.selectAll(<span class="string">'.led'</span>).data(data);</span><br></pre></td></tr></table></figure>
+
+<h2 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h2><p>1.<code>【推荐】</code>在文件末尾保留一行空行。<code>eslint: eol-last</code>.统一在文件末尾保留一行空行，即用一个换行符结束文件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad - 文件末尾未保留换行符</span></span><br><span class="line"><span class="keyword">import</span> &#123; foo &#125; <span class="keyword">from</span> <span class="string">'./Foo'</span>;</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> foo;</span><br><span class="line"><span class="comment">// bad - 文件末尾保留了2个换行符</span></span><br><span class="line"><span class="keyword">import</span> &#123; foo &#125; <span class="keyword">from</span> <span class="string">'./Foo'</span>;</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> foo;↵</span><br><span class="line">↵</span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">import</span> &#123; foo &#125; <span class="keyword">from</span> <span class="string">'./Foo'</span>;</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> foo;↵</span><br></pre></td></tr></table></figure>
+
+<p>2.<code>【强制】</code>块的开始和结束不能是空行。<code>eslint: padded-blocks</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">console</span>.log(foo);</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(foo);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">if</span> (baz) &#123;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">console</span>.log(qux);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(foo);</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">if</span> (baz) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(qux);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(foo);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3.【参考】在块末和新语句间插入一个空行。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">if</span> (foo) &#123;</span><br><span class="line">    <span class="keyword">return</span> bar;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> baz;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">if</span> (foo) &#123;</span><br><span class="line">    <span class="keyword">return</span> bar;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">return</span> baz;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    foo() &#123;</span><br><span class="line">    &#125;,</span><br><span class="line">    bar() &#123;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">return</span> obj;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    foo() &#123;</span><br><span class="line">    &#125;,</span><br><span class="line"> </span><br><span class="line">    bar() &#123;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">return</span> obj;</span><br></pre></td></tr></table></figure>
+
+<h2 id="最大字符数和最大行数"><a href="#最大字符数和最大行数" class="headerlink" title="最大字符数和最大行数"></a>最大字符数和最大行数</h2><p>1.【推荐】单行最大字符数：<code>100</code>。<code>eslint: max-len</code>.过长的单行代码不易阅读和维护，需要进行合理换行。<br>单行代码最多不能超过 100 个字符，除了以下两种情况：<br>    - 字符串和模板字符串<br>    - 正则表达式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> foo = jsonData &amp;&amp; jsonData.foo &amp;&amp; jsonData.foo.bar &amp;&amp; jsonData.foo.bar.baz &amp;&amp; jsonData.foo.bar.baz.quux &amp;&amp; jsonData.foo.bar.baz.quux.xyzzy;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> foo = jsonData</span><br><span class="line">  &amp;&amp; jsonData.foo</span><br><span class="line">  &amp;&amp; jsonData.foo.bar</span><br><span class="line">  &amp;&amp; jsonData.foo.bar.baz</span><br><span class="line">  &amp;&amp; jsonData.foo.bar.baz.quux</span><br><span class="line">  &amp;&amp; jsonData.foo.bar.baz.quux.xyzzy;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line">$.ajax(&#123; <span class="attr">method</span>: <span class="string">'POST'</span>, <span class="attr">url</span>: <span class="string">'https://foo.com/'</span>, <span class="attr">data</span>: &#123; <span class="attr">name</span>: <span class="string">'John'</span> &#125; &#125;).done(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Congratulations!'</span>)).fail(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'You have failed this city.'</span>));</span><br><span class="line"> </span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    method: <span class="string">'POST'</span>,</span><br><span class="line">    url: <span class="string">'https://foo.com/'</span>,</span><br><span class="line">    data: &#123; <span class="attr">name</span>: <span class="string">'John'</span> &#125;,</span><br><span class="line">&#125;)</span><br><span class="line">  .done(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Congratulations!'</span>))</span><br><span class="line">  .fail(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'You have failed this city.'</span>));</span><br></pre></td></tr></table></figure>
+
+<p>2.【推荐】文件最大行数：<code>1000</code>。<code>eslint: max-lines</code><br>过长的文件不易阅读和维护，最好对其进行拆分。<br>4.【推荐】函数最大行数：<code>80</code>。<code>eslint: max-lines-per-function</code><br>过长的函数不易阅读和维护，最好对其进行拆分。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/31/web开发规范之CSS/" rel="next" title="web开发规范之CSS">
+                <i class="fa fa-chevron-left"></i> web开发规范之CSS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/02/npm-ERR-publish-Failed-PUT-403/" rel="prev" title="npm ERR! publish Failed PUT 403">
+                npm ERR! publish Failed PUT 403 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/icon.png" alt="Allenliu">
+            
+              <p class="site-author-name" itemprop="name">Allenliu</p>
+              <p class="site-description motion-element" itemprop="description">a Front-end programmer</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wawsc5354524" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="allenliu@188.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编码风格"><span class="nav-number">2.</span> <span class="nav-text">编码风格</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-缩进"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.缩进</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-分号"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.分号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-逗号"><span class="nav-number">2.0.3.</span> <span class="nav-text">3.逗号</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#块"><span class="nav-number">3.</span> <span class="nav-text">块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空格"><span class="nav-number">4.</span> <span class="nav-text">空格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空行"><span class="nav-number">5.</span> <span class="nav-text">空行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最大字符数和最大行数"><span class="nav-number">6.</span> <span class="nav-text">最大字符数和最大行数</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Allenliu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

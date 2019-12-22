@@ -103,5 +103,5 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:wawsc5354524/allenliu.github.io.git
+  repo: git@github.com:iplaycodex/my-blog.git
   branch: master

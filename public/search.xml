@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[wx2bat工具分享]]></title>
+    <url>%2F2019%2F12%2F22%2Fwx2bat%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB%2F</url>
+    <content type="text"><![CDATA[前言最近在公司接到了一个需求:把一个微信小程序快速变成字节跳动小程序,开发时间只有一个星期!显然从 0 开始开发字节跳动的小程序是不可能的.所以只能想办法看如何快速的把微信小程序转为字节跳动小程序~ 解决之道经过查询得知,其他家的小程序的api和微信几乎90%一样,只是可能文件后缀换了自己的后缀.还有一些语法也变了:例如: 12345678// wechatAppwx:if// 头条tt:if// 百度swan:if 这样的话就比较简单了,我们只需要写一个工具把哪些差异性的东西修改一下就可以了.经过半天的辛苦编码:wx2bat工具写完了,支持将微信小程序源码快速转为百度小程序,支付宝小程序以及头条小程序.并已经发布到了npm上面 如何使用?step 1: 1npm i -g wx2bat step 2: 1wx2bat &lt;wechatAppPath&gt; &lt;outputPath&gt; &lt;platform&gt; 通过上面一行命令即可将微信小程序的源码转为目标小程序的源码.然后需要修改一下特定平台的差异性代码即可.例如:授权登录,支付,分享… 相关链接wx2bat]]></content>
+      <categories>
+        <category>前端工程化</category>
+      </categories>
+      <tags>
+        <tag>前端工程化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[利用charles来拦截请求和响应]]></title>
     <url>%2F2019%2F11%2F12%2F%E5%88%A9%E7%94%A8charles%E6%9D%A5%E6%8B%A6%E6%88%AA%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94%2F</url>
     <content type="text"><![CDATA[今天简单分享一下如何使用charles来进行HTTP的拦截和修改. charles是一款非常好用的http调试工具,相信做开发的同学们应该都知道其实使用charles来做HTTP拦截很简单. 1.拦截请求打开charles,在输入框中输入要拦截的API地址:在API上鼠标右键选择breakPoint即可打个断点.然后重新请求的时候这个HTTP就会被拦截,如下所示: 切到Edit Requesttab即可修改request的入参,如下图所示: 2.拦截响应修改返回的数据:其实也是很简单的操作,这里写出来分享给不知道的同学. PS:修改请求或者响应的时候要快一点,否则容易失败!切记!]]></content>

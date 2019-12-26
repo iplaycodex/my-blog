@@ -1,25 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>codecheese</title>
+  <title>iplaycodex</title>
   
   <subtitle>do something funny!</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://codecheese.cn/"/>
-  <updated>2019-12-22T00:51:30.297Z</updated>
-  <id>http://codecheese.cn/</id>
+  <link href="http://iplaycodex.com/"/>
+  <updated>2019-12-26T07:07:16.369Z</updated>
+  <id>http://iplaycodex.com/</id>
   
   <author>
-    <name>Allenliu</name>
+    <name>allenliu</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>记一次微信小程序转字节跳动小程序的经验</title>
+    <link href="http://iplaycodex.com/2019/12/26/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%BD%AC%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%8F%E9%AA%8C/"/>
+    <id>http://iplaycodex.com/2019/12/26/记一次微信小程序转字节跳动小程序的经验/</id>
+    <published>2019-12-26T06:50:44.000Z</published>
+    <updated>2019-12-26T07:07:16.369Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1.前言&quot;&gt;&lt;/a&gt;1.前言&lt;/h3&gt;&lt;p&gt;公司最近有个需求是把已经存在的用微信原生开发的&lt;code&gt;微信小程序&lt;/code&gt;转为&lt;code&gt;字节跳动小程序(以下简称头条小程序)&lt;/code&gt;.因为给的开发时间太短,重写基本不可能.遂 &lt;code&gt;google&lt;/code&gt; 寻找可以方便快速将&lt;code&gt;微信小程序&lt;/code&gt;转为&lt;code&gt;头条小程序&lt;/code&gt;的方法.现将整个过程归纳总结如下,方便没有做过的同学可以快速上手,也方便自己记录.毕竟好记性不如烂笔头~Orz…&lt;/p&gt;
+&lt;h3 id=&quot;2-准备工作&quot;&gt;&lt;a href=&quot;#2-准备工作&quot; class=&quot;headerlink&quot; title=&quot;2.准备工作&quot;&gt;&lt;/a&gt;2.准备工作&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;1.申请字节跳动开发者账号&lt;/li&gt;
+&lt;li&gt;2.申请头条小程序,配置相关账号权限&lt;/li&gt;
+&lt;li&gt;3.小程序类别如果为特殊类别,确认是否需要相关资质&lt;/li&gt;
+&lt;li&gt;4.配置相关域名,注意:必须为&lt;code&gt;https&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;5.主体认证申请&lt;/li&gt;
+&lt;li&gt;6.申请开通支付&lt;/li&gt;
+&lt;li&gt;7.下载开发工具&lt;h3 id=&quot;3-技术选型&quot;&gt;&lt;a href=&quot;#3-技术选型&quot; class=&quot;headerlink&quot; title=&quot;3.技术选型&quot;&gt;&lt;/a&gt;3.技术选型&lt;/h3&gt;&lt;h4 id=&quot;3-1-如何做&quot;&gt;&lt;a href=&quot;#3-1-如何做&quot; class=&quot;headerlink&quot; title=&quot;3.1 如何做?&quot;&gt;&lt;/a&gt;3.1 如何做?&lt;/h4&gt;&lt;/li&gt;&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="小程序" scheme="http://iplaycodex.com/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="小程序" scheme="http://iplaycodex.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>wx2bat工具分享</title>
-    <link href="http://codecheese.cn/2019/12/22/wx2bat%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/"/>
-    <id>http://codecheese.cn/2019/12/22/wx2bat工具分享/</id>
+    <link href="http://iplaycodex.com/2019/12/22/wx2bat%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/"/>
+    <id>http://iplaycodex.com/2019/12/22/wx2bat工具分享/</id>
     <published>2019-12-22T00:31:04.000Z</published>
     <updated>2019-12-22T00:51:30.297Z</updated>
     
@@ -31,17 +61,17 @@
     
     </summary>
     
-      <category term="前端工程化" scheme="http://codecheese.cn/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+      <category term="前端工程化" scheme="http://iplaycodex.com/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
     
     
-      <category term="前端工程化" scheme="http://codecheese.cn/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+      <category term="前端工程化" scheme="http://iplaycodex.com/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>利用charles来拦截请求和响应</title>
-    <link href="http://codecheese.cn/2019/11/12/%E5%88%A9%E7%94%A8charles%E6%9D%A5%E6%8B%A6%E6%88%AA%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94/"/>
-    <id>http://codecheese.cn/2019/11/12/利用charles来拦截请求和响应/</id>
+    <link href="http://iplaycodex.com/2019/11/12/%E5%88%A9%E7%94%A8charles%E6%9D%A5%E6%8B%A6%E6%88%AA%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94/"/>
+    <id>http://iplaycodex.com/2019/11/12/利用charles来拦截请求和响应/</id>
     <published>2019-11-12T09:41:11.000Z</published>
     <updated>2019-11-12T10:03:02.267Z</updated>
     
@@ -55,17 +85,17 @@
     
     </summary>
     
-      <category term="调试" scheme="http://codecheese.cn/categories/%E8%B0%83%E8%AF%95/"/>
+      <category term="调试" scheme="http://iplaycodex.com/categories/%E8%B0%83%E8%AF%95/"/>
     
     
-      <category term="调试" scheme="http://codecheese.cn/tags/%E8%B0%83%E8%AF%95/"/>
+      <category term="调试" scheme="http://iplaycodex.com/tags/%E8%B0%83%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>node自动重启工具nodemon</title>
-    <link href="http://codecheese.cn/2019/11/07/node%E8%87%AA%E5%8A%A8%E9%87%8D%E5%90%AF%E5%B7%A5%E5%85%B7nodemon/"/>
-    <id>http://codecheese.cn/2019/11/07/node自动重启工具nodemon/</id>
+    <link href="http://iplaycodex.com/2019/11/07/node%E8%87%AA%E5%8A%A8%E9%87%8D%E5%90%AF%E5%B7%A5%E5%85%B7nodemon/"/>
+    <id>http://iplaycodex.com/2019/11/07/node自动重启工具nodemon/</id>
     <published>2019-11-07T07:50:48.000Z</published>
     <updated>2019-11-08T02:36:38.554Z</updated>
     
@@ -77,17 +107,17 @@
     
     </summary>
     
-      <category term="node" scheme="http://codecheese.cn/categories/node/"/>
+      <category term="node" scheme="http://iplaycodex.com/categories/node/"/>
     
     
-      <category term="node" scheme="http://codecheese.cn/tags/node/"/>
+      <category term="node" scheme="http://iplaycodex.com/tags/node/"/>
     
   </entry>
   
   <entry>
     <title>模仿vue-cli写一个简单脚手架</title>
-    <link href="http://codecheese.cn/2019/11/04/%E6%A8%A1%E4%BB%BFvue-cli%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
-    <id>http://codecheese.cn/2019/11/04/模仿vue-cli写一个简单脚手架/</id>
+    <link href="http://iplaycodex.com/2019/11/04/%E6%A8%A1%E4%BB%BFvue-cli%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
+    <id>http://iplaycodex.com/2019/11/04/模仿vue-cli写一个简单脚手架/</id>
     <published>2019-11-04T06:54:59.000Z</published>
     <updated>2019-11-04T08:02:59.758Z</updated>
     
@@ -105,17 +135,17 @@
     
     </summary>
     
-      <category term="前端工程化" scheme="http://codecheese.cn/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+      <category term="前端工程化" scheme="http://iplaycodex.com/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
     
     
-      <category term="前端工程化" scheme="http://codecheese.cn/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+      <category term="前端工程化" scheme="http://iplaycodex.com/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>npm ERR! publish Failed PUT 403</title>
-    <link href="http://codecheese.cn/2019/11/02/npm-ERR-publish-Failed-PUT-403/"/>
-    <id>http://codecheese.cn/2019/11/02/npm-ERR-publish-Failed-PUT-403/</id>
+    <link href="http://iplaycodex.com/2019/11/02/npm-ERR-publish-Failed-PUT-403/"/>
+    <id>http://iplaycodex.com/2019/11/02/npm-ERR-publish-Failed-PUT-403/</id>
     <published>2019-11-02T05:33:25.000Z</published>
     <updated>2019-11-02T06:14:02.339Z</updated>
     
@@ -132,17 +162,17 @@
     
     </summary>
     
-      <category term="前端" scheme="http://codecheese.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://iplaycodex.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="前端" scheme="http://codecheese.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://iplaycodex.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>web开发规范之Javascript</title>
-    <link href="http://codecheese.cn/2019/10/31/web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E4%B9%8BJavascript/"/>
-    <id>http://codecheese.cn/2019/10/31/web开发规范之Javascript/</id>
+    <link href="http://iplaycodex.com/2019/10/31/web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E4%B9%8BJavascript/"/>
+    <id>http://iplaycodex.com/2019/10/31/web开发规范之Javascript/</id>
     <published>2019-10-31T10:09:16.000Z</published>
     <updated>2019-10-31T10:12:54.143Z</updated>
     
@@ -162,17 +192,17 @@
     
     </summary>
     
-      <category term="前端" scheme="http://codecheese.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://iplaycodex.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="前端" scheme="http://codecheese.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://iplaycodex.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>web开发规范之CSS</title>
-    <link href="http://codecheese.cn/2019/10/31/web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E4%B9%8BCSS/"/>
-    <id>http://codecheese.cn/2019/10/31/web开发规范之CSS/</id>
+    <link href="http://iplaycodex.com/2019/10/31/web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E4%B9%8BCSS/"/>
+    <id>http://iplaycodex.com/2019/10/31/web开发规范之CSS/</id>
     <published>2019-10-31T10:08:10.000Z</published>
     <updated>2019-10-31T10:13:07.977Z</updated>
     
@@ -189,17 +219,17 @@
     
     </summary>
     
-      <category term="前端" scheme="http://codecheese.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://iplaycodex.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="前端" scheme="http://codecheese.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://iplaycodex.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>web开发规范之HTML</title>
-    <link href="http://codecheese.cn/2019/10/31/web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E4%B9%8BHTML/"/>
-    <id>http://codecheese.cn/2019/10/31/web开发规范之HTML/</id>
+    <link href="http://iplaycodex.com/2019/10/31/web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E4%B9%8BHTML/"/>
+    <id>http://iplaycodex.com/2019/10/31/web开发规范之HTML/</id>
     <published>2019-10-31T10:01:37.000Z</published>
     <updated>2019-10-31T10:05:05.013Z</updated>
     
@@ -213,17 +243,17 @@
     
     </summary>
     
-      <category term="前端" scheme="http://codecheese.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://iplaycodex.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="前端" scheme="http://codecheese.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://iplaycodex.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>web优化之离线化</title>
-    <link href="http://codecheese.cn/2019/10/28/web%E4%BC%98%E5%8C%96%E4%B9%8B%E7%A6%BB%E7%BA%BF%E5%8C%96/"/>
-    <id>http://codecheese.cn/2019/10/28/web优化之离线化/</id>
+    <link href="http://iplaycodex.com/2019/10/28/web%E4%BC%98%E5%8C%96%E4%B9%8B%E7%A6%BB%E7%BA%BF%E5%8C%96/"/>
+    <id>http://iplaycodex.com/2019/10/28/web优化之离线化/</id>
     <published>2019-10-28T10:20:08.000Z</published>
     <updated>2019-11-04T06:51:31.891Z</updated>
     
@@ -241,17 +271,17 @@
     
     </summary>
     
-      <category term="性能优化" scheme="http://codecheese.cn/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+      <category term="性能优化" scheme="http://iplaycodex.com/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
     
-      <category term="性能优化" scheme="http://codecheese.cn/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+      <category term="性能优化" scheme="http://iplaycodex.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>Smartgit使用30天过期解决办法</title>
-    <link href="http://codecheese.cn/2019/10/11/Smartgit%E4%BD%BF%E7%94%A830%E5%A4%A9%E8%BF%87%E6%9C%9F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
-    <id>http://codecheese.cn/2019/10/11/Smartgit使用30天过期解决办法/</id>
+    <link href="http://iplaycodex.com/2019/10/11/Smartgit%E4%BD%BF%E7%94%A830%E5%A4%A9%E8%BF%87%E6%9C%9F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>http://iplaycodex.com/2019/10/11/Smartgit使用30天过期解决办法/</id>
     <published>2019-10-11T06:36:45.000Z</published>
     <updated>2019-10-11T06:49:15.314Z</updated>
     
@@ -270,17 +300,17 @@
     
     </summary>
     
-      <category term="Git" scheme="http://codecheese.cn/categories/Git/"/>
+      <category term="Git" scheme="http://iplaycodex.com/categories/Git/"/>
     
     
-      <category term="Git" scheme="http://codecheese.cn/tags/Git/"/>
+      <category term="Git" scheme="http://iplaycodex.com/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>深入浅出react+redux之组件的生命周期</title>
-    <link href="http://codecheese.cn/2019/08/23/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact-redux%E4%B9%8B%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
-    <id>http://codecheese.cn/2019/08/23/深入浅出react-redux之组件的生命周期/</id>
+    <link href="http://iplaycodex.com/2019/08/23/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact-redux%E4%B9%8B%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <id>http://iplaycodex.com/2019/08/23/深入浅出react-redux之组件的生命周期/</id>
     <published>2019-08-23T03:24:11.000Z</published>
     <updated>2019-08-23T12:48:03.854Z</updated>
     
@@ -288,17 +318,17 @@
     
     </summary>
     
-      <category term="react.js" scheme="http://codecheese.cn/categories/react-js/"/>
+      <category term="react.js" scheme="http://iplaycodex.com/categories/react-js/"/>
     
     
-      <category term="react.js" scheme="http://codecheese.cn/tags/react-js/"/>
+      <category term="react.js" scheme="http://iplaycodex.com/tags/react-js/"/>
     
   </entry>
   
   <entry>
     <title>深入浅出react+redux之state和props</title>
-    <link href="http://codecheese.cn/2019/08/22/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact-redux%E4%B9%8Bstate%E5%92%8Cprops/"/>
-    <id>http://codecheese.cn/2019/08/22/深入浅出react-redux之state和props/</id>
+    <link href="http://iplaycodex.com/2019/08/22/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact-redux%E4%B9%8Bstate%E5%92%8Cprops/"/>
+    <id>http://iplaycodex.com/2019/08/22/深入浅出react-redux之state和props/</id>
     <published>2019-08-22T09:49:39.000Z</published>
     <updated>2019-08-23T03:25:15.890Z</updated>
     
@@ -323,17 +353,17 @@
     
     </summary>
     
-      <category term="react.js" scheme="http://codecheese.cn/categories/react-js/"/>
+      <category term="react.js" scheme="http://iplaycodex.com/categories/react-js/"/>
     
     
-      <category term="react.js" scheme="http://codecheese.cn/tags/react-js/"/>
+      <category term="react.js" scheme="http://iplaycodex.com/tags/react-js/"/>
     
   </entry>
   
   <entry>
     <title>深入浅出react+redux之jsx</title>
-    <link href="http://codecheese.cn/2019/08/22/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact+redux%E4%B9%8Bjsx/"/>
-    <id>http://codecheese.cn/2019/08/22/深入浅出react+redux之jsx/</id>
+    <link href="http://iplaycodex.com/2019/08/22/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact+redux%E4%B9%8Bjsx/"/>
+    <id>http://iplaycodex.com/2019/08/22/深入浅出react+redux之jsx/</id>
     <published>2019-08-22T07:03:46.000Z</published>
     <updated>2019-08-22T09:47:51.059Z</updated>
     
@@ -349,17 +379,17 @@
     
     </summary>
     
-      <category term="react.js" scheme="http://codecheese.cn/categories/react-js/"/>
+      <category term="react.js" scheme="http://iplaycodex.com/categories/react-js/"/>
     
     
-      <category term="react.js" scheme="http://codecheese.cn/tags/react-js/"/>
+      <category term="react.js" scheme="http://iplaycodex.com/tags/react-js/"/>
     
   </entry>
   
   <entry>
     <title>深入浅出react+redux第一篇:基础篇</title>
-    <link href="http://codecheese.cn/2019/08/22/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact+redux%E7%AC%AC%E4%B8%80%E7%AF%87:%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
-    <id>http://codecheese.cn/2019/08/22/深入浅出react+redux第一篇:基础篇/</id>
+    <link href="http://iplaycodex.com/2019/08/22/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact+redux%E7%AC%AC%E4%B8%80%E7%AF%87:%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    <id>http://iplaycodex.com/2019/08/22/深入浅出react+redux第一篇:基础篇/</id>
     <published>2019-08-22T06:34:19.000Z</published>
     <updated>2019-08-22T07:04:44.910Z</updated>
     
@@ -379,17 +409,17 @@
     
     </summary>
     
-      <category term="react.js" scheme="http://codecheese.cn/categories/react-js/"/>
+      <category term="react.js" scheme="http://iplaycodex.com/categories/react-js/"/>
     
     
-      <category term="react.js" scheme="http://codecheese.cn/tags/react-js/"/>
+      <category term="react.js" scheme="http://iplaycodex.com/tags/react-js/"/>
     
   </entry>
   
   <entry>
     <title>react-native屏幕适配</title>
-    <link href="http://codecheese.cn/2019/08/09/react-native%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/"/>
-    <id>http://codecheese.cn/2019/08/09/react-native屏幕适配/</id>
+    <link href="http://iplaycodex.com/2019/08/09/react-native%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/"/>
+    <id>http://iplaycodex.com/2019/08/09/react-native屏幕适配/</id>
     <published>2019-08-09T06:11:14.000Z</published>
     <updated>2019-08-12T06:46:09.494Z</updated>
     
@@ -405,40 +435,40 @@
     
     </summary>
     
-      <category term="react-native" scheme="http://codecheese.cn/categories/react-native/"/>
+      <category term="react-native" scheme="http://iplaycodex.com/categories/react-native/"/>
     
     
-      <category term="react-native" scheme="http://codecheese.cn/tags/react-native/"/>
+      <category term="react-native" scheme="http://iplaycodex.com/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>新建CustomStyleSheet废弃StyleSheet</title>
-    <link href="http://codecheese.cn/2019/08/08/%E6%96%B0%E5%BB%BACustomStyleSheet%E5%BA%9F%E5%BC%83StyleSheet/"/>
-    <id>http://codecheese.cn/2019/08/08/新建CustomStyleSheet废弃StyleSheet/</id>
+    <link href="http://iplaycodex.com/2019/08/08/%E6%96%B0%E5%BB%BACustomStyleSheet%E5%BA%9F%E5%BC%83StyleSheet/"/>
+    <id>http://iplaycodex.com/2019/08/08/新建CustomStyleSheet废弃StyleSheet/</id>
     <published>2019-08-08T10:38:00.000Z</published>
     <updated>2019-08-12T06:38:00.243Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;本来打算新开一篇文章写这个的,但是因为本人懒得写,算了.参见本人的另一个博客,写在了这里:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://codecheese.cn/2019/08/09/react-native%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/#more&quot;&gt;react-native屏幕适配,可能是比较好的解决方案&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://codecheese.cn/2019/08/09/react-native%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/#more&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;react-native屏幕适配,可能是比较好的解决方案&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;that’s all&lt;/p&gt;
     
     </summary>
     
-      <category term="react-native" scheme="http://codecheese.cn/categories/react-native/"/>
+      <category term="react-native" scheme="http://iplaycodex.com/categories/react-native/"/>
     
     
-      <category term="react-native" scheme="http://codecheese.cn/tags/react-native/"/>
+      <category term="react-native" scheme="http://iplaycodex.com/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>修改react-native组件的默认属性</title>
-    <link href="http://codecheese.cn/2019/08/08/%E4%BF%AE%E6%94%B9react-native%E7%BB%84%E4%BB%B6%E7%9A%84%E9%BB%98%E8%AE%A4%E5%B1%9E%E6%80%A7/"/>
-    <id>http://codecheese.cn/2019/08/08/修改react-native组件的默认属性/</id>
+    <link href="http://iplaycodex.com/2019/08/08/%E4%BF%AE%E6%94%B9react-native%E7%BB%84%E4%BB%B6%E7%9A%84%E9%BB%98%E8%AE%A4%E5%B1%9E%E6%80%A7/"/>
+    <id>http://iplaycodex.com/2019/08/08/修改react-native组件的默认属性/</id>
     <published>2019-08-08T09:08:17.000Z</published>
     <updated>2019-08-12T06:42:47.859Z</updated>
     
@@ -458,17 +488,17 @@
     
     </summary>
     
-      <category term="react-native" scheme="http://codecheese.cn/categories/react-native/"/>
+      <category term="react-native" scheme="http://iplaycodex.com/categories/react-native/"/>
     
     
-      <category term="react-native" scheme="http://codecheese.cn/tags/react-native/"/>
+      <category term="react-native" scheme="http://iplaycodex.com/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>react-native混合开发之热更新的实现</title>
-    <link href="http://codecheese.cn/2019/08/01/react-native%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E4%B9%8B%E7%83%AD%E6%9B%B4%E6%96%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://codecheese.cn/2019/08/01/react-native混合开发之热更新的实现/</id>
+    <link href="http://iplaycodex.com/2019/08/01/react-native%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E4%B9%8B%E7%83%AD%E6%9B%B4%E6%96%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://iplaycodex.com/2019/08/01/react-native混合开发之热更新的实现/</id>
     <published>2019-08-01T06:54:44.000Z</published>
     <updated>2019-08-12T06:45:38.610Z</updated>
     
@@ -486,17 +516,17 @@
     
     </summary>
     
-      <category term="react-native" scheme="http://codecheese.cn/categories/react-native/"/>
+      <category term="react-native" scheme="http://iplaycodex.com/categories/react-native/"/>
     
     
-      <category term="react-native" scheme="http://codecheese.cn/tags/react-native/"/>
+      <category term="react-native" scheme="http://iplaycodex.com/tags/react-native/"/>
     
   </entry>
   
   <entry>
     <title>xcode官方下载地址,可用迅雷下载</title>
-    <link href="http://codecheese.cn/2019/07/31/xcode%E5%AE%98%E6%96%B9%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80-%E5%8F%AF%E7%94%A8%E8%BF%85%E9%9B%B7%E4%B8%8B%E8%BD%BD/"/>
-    <id>http://codecheese.cn/2019/07/31/xcode官方下载地址-可用迅雷下载/</id>
+    <link href="http://iplaycodex.com/2019/07/31/xcode%E5%AE%98%E6%96%B9%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80-%E5%8F%AF%E7%94%A8%E8%BF%85%E9%9B%B7%E4%B8%8B%E8%BD%BD/"/>
+    <id>http://iplaycodex.com/2019/07/31/xcode官方下载地址-可用迅雷下载/</id>
     <published>2019-07-31T07:52:23.000Z</published>
     <updated>2019-08-22T03:35:06.011Z</updated>
     
@@ -508,46 +538,10 @@
     
     </summary>
     
-      <category term="iOS" scheme="http://codecheese.cn/categories/iOS/"/>
+      <category term="iOS" scheme="http://iplaycodex.com/categories/iOS/"/>
     
     
-      <category term="iOS" scheme="http://codecheese.cn/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>react-native打包安卓的一个坑</title>
-    <link href="http://codecheese.cn/2019/07/29/react-native%E6%89%93%E5%8C%85%E5%AE%89%E5%8D%93%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/"/>
-    <id>http://codecheese.cn/2019/07/29/react-native打包安卓的一个坑/</id>
-    <published>2019-07-29T08:34:10.000Z</published>
-    <updated>2019-08-12T06:45:14.574Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h3&gt;&lt;p&gt;如果你在做一个混合开发的APP,也就是说部分模块使用&lt;code&gt;native&lt;/code&gt;去开发,部分模块使用&lt;code&gt;react-native&lt;/code&gt;去开发.这个时候如何使用图片资源就有的玩了.如何合理的使用图片资源也是一个问题.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;引申:在&lt;code&gt;react-native&lt;/code&gt;中如何使用图片资源&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;根据官方文档所述:在&lt;code&gt;react-native&lt;/code&gt;中使用&lt;code&gt;image&lt;/code&gt;的话有几种方法:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;1.使用APP中的图片资源&lt;br&gt;也就是说在JS中直接访问&lt;code&gt;APP&lt;/code&gt;沙盒中存在的图片资源,&lt;code&gt;iOS&lt;/code&gt;加载&lt;code&gt;assets&lt;/code&gt;目录,安卓加载&lt;code&gt;drawable&lt;/code&gt;目录.代码如下所示:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;Image source=&amp;#123;&amp;#123;&lt;span class=&quot;attr&quot;&gt;uri&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&#39;test_img&#39;&lt;/span&gt;&amp;#125;&amp;#125; style=&amp;#123;&amp;#123;&lt;span class=&quot;attr&quot;&gt;width&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;,&lt;span class=&quot;attr&quot;&gt;height&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;&amp;#125;&amp;#125;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;使用这个方法加载图片资源的话不需要写后缀,但是!你必须要确保这个图片在APP的沙盒内部是一定存在的!&lt;code&gt;react-native&lt;/code&gt;不会检查这个文件是否存在如果不存在则出现一个空白.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;2.使用网络图片&lt;br&gt;这个就很简单了,看下面的代码:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;Image&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;source&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;#123;&amp;#123;uri:&lt;/span&gt; &#39;&lt;span class=&quot;attr&quot;&gt;https:&lt;/span&gt;//&lt;span class=&quot;attr&quot;&gt;facebook.github.io&lt;/span&gt;/&lt;span class=&quot;attr&quot;&gt;react&lt;/span&gt;/&lt;span class=&quot;attr&quot;&gt;logo-og.png&lt;/span&gt;&#39;&amp;#125;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;       &lt;span class=&quot;attr&quot;&gt;style&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;#123;&amp;#123;width:&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;400&lt;/span&gt;, &lt;span class=&quot;attr&quot;&gt;height:&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;400&lt;/span&gt;&amp;#125;&amp;#125; /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;注意:&lt;code&gt;iOS&lt;/code&gt;因为从&lt;code&gt;iOS8&lt;/code&gt;开始只能使用&lt;code&gt;https&lt;/code&gt;了,所以这里建议网络图片全部使用&lt;code&gt;https&lt;/code&gt;,并且需要指定尺寸.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="react-native" scheme="http://codecheese.cn/categories/react-native/"/>
-    
-    
-      <category term="react-native" scheme="http://codecheese.cn/tags/react-native/"/>
+      <category term="iOS" scheme="http://iplaycodex.com/tags/iOS/"/>
     
   </entry>
   

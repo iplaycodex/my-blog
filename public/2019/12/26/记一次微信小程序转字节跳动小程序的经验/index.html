@@ -91,7 +91,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gaa4mzqk50j30lk0nedgi.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1gaa4neixvuj30pc0i63z1.jpg">
-<meta property="og:updated_time" content="2019-12-26T07:12:58.547Z">
+<meta property="og:updated_time" content="2020-01-10T02:15:40.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一次微信小程序转字节跳动小程序的经验">
 <meta name="twitter:description" content="[TOC]  1.前言公司最近有个需求是把已经存在的用微信原生开发的微信小程序转为字节跳动小程序(以下简称头条小程序).因为给的开发时间太短,重写基本不可能.遂 google 寻找可以方便快速将微信小程序转为头条小程序的方法.现将整个过程归纳总结如下,方便没有做过的同学可以快速上手,也方便自己记录.毕竟好记性不如烂笔头~Orz… 2.准备工作 1.申请字节跳动开发者账号 2.申请头条小程序,配置相">
@@ -456,6 +456,8 @@
 <li>获取用户数据的按钮上的 <code>bindgetuserinfo</code> 方法不支持,需要改为普通的<code>bindtap</code></li>
 <li>授权登录这里和微信小程序差不多,不需要过多的修改~</li>
 <li>支付的话,<code>头条小程序</code>支持的比较多,例如<code>支付宝</code>.这里需要根据需求自行修改</li>
+<li>如果你的项目中有搜索框需要接入<code>敏感词</code>过滤!!!(我们的项目因为这个审核被拒)</li>
+<li>对于用户输入非法提醒的<code>toast</code>不能自己随意写,要写头条给的提醒文本,例:<code>因相关法律和要求，相关搜索结果不予展示</code></li>
 <li>等等…</li>
 </ul>
 <h3 id="6-结束"><a href="#6-结束" class="headerlink" title="6.结束"></a>6.结束</h3><h4 id="6-1-结束语"><a href="#6-1-结束语" class="headerlink" title="6.1 结束语"></a>6.1 结束语</h4><p>到这里项目应该已经可以差不多跑起来了,通过在转换后的<code>头条小程序</code>代码上修修改改进行二次开发,可以很快速的将<code>微信小程序</code>转为<code>头条小程序</code>.接下来就是需要对整个项目进行回归测试了<del>这里就不再赘述了</del></p>
@@ -675,7 +677,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

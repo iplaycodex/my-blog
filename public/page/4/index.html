@@ -297,6 +297,168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://iplaycodex.com/2019/07/09/从输入网址到渲染页面-中间发生了什么/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="allenliu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/icon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iplaycodex">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/09/从输入网址到渲染页面-中间发生了什么/" itemprop="url">从输入网址到渲染页面,中间发生了什么?</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-09T11:17:03+08:00">
+                2019-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>浏览器渲染大致的几个过程：</p>
+<ul>
+<li>DNS域名解析</li>
+<li>建立TCP连接</li>
+<li>发送HTTP请求</li>
+<li>服务器处理请求</li>
+<li>返回响应结果</li>
+<li>关闭TCP连接</li>
+<li>浏览器解析HTM</li>
+</ul>
+<p>一、DNS域名解析 (通过DNS查询域名所对的IP地址)</p>
+<ul>
+<li>我们在浏览器输入网址的时候，浏览器从历史记录和书签等地方搜寻自己的DNS缓存，找出已输入的字符串可以对应的url，然后根据智能提示，让你可以通过enter键，补全url地址。</li>
+<li>查找本地hosts文件，检查该文件是否有相应的域名，ip对应关系，有的话取出</li>
+<li>若上两步都没有，将域名发送给本地DNS服务器（中国电信，移动），查询本地DNS缓存，查找成功则返回结果。若不成功则通过迭代查询，多次访问不同的DNS服务器，取到域名对应的ip地址返回给本地DNS服务器</li>
+<li>本地DNS将这个域名和IP地址缓存起来，然后把ip地址以响应报文的形式发送给客户端</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/09/从输入网址到渲染页面-中间发生了什么/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://iplaycodex.com/2019/07/08/如何解决iOS模拟器卡顿/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -626,7 +788,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

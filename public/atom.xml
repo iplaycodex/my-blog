@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://iplaycodex.com/"/>
-  <updated>2020-01-10T02:15:40.433Z</updated>
+  <updated>2020-01-19T07:37:59.419Z</updated>
   <id>http://iplaycodex.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一行代码跳过sourceTree的注册步骤</title>
+    <link href="http://iplaycodex.com/2020/01/19/%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E8%B7%B3%E8%BF%87sourceTree%E7%9A%84%E6%B3%A8%E5%86%8C%E6%AD%A5%E9%AA%A4/"/>
+    <id>http://iplaycodex.com/2020/01/19/一行代码跳过sourceTree的注册步骤/</id>
+    <published>2020-01-19T07:34:22.000Z</published>
+    <updated>2020-01-19T07:37:59.419Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;RT&quot;&gt;&lt;a href=&quot;#RT&quot; class=&quot;headerlink&quot; title=&quot;RT&quot;&gt;&lt;/a&gt;RT&lt;/h2&gt;&lt;p&gt;最近帮朋友装电脑,发现&lt;code&gt;sourceTree&lt;/code&gt;得注册,很麻烦.遂找到如下解决方法:&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Git" scheme="http://iplaycodex.com/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="http://iplaycodex.com/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>记一次微信小程序转字节跳动小程序的经验</title>
@@ -522,28 +542,6 @@
     
     
       <category term="react-native" scheme="http://iplaycodex.com/tags/react-native/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>xcode官方下载地址,可用迅雷下载</title>
-    <link href="http://iplaycodex.com/2019/07/31/xcode%E5%AE%98%E6%96%B9%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80-%E5%8F%AF%E7%94%A8%E8%BF%85%E9%9B%B7%E4%B8%8B%E8%BD%BD/"/>
-    <id>http://iplaycodex.com/2019/07/31/xcode官方下载地址-可用迅雷下载/</id>
-    <published>2019-07-31T07:52:23.000Z</published>
-    <updated>2019-08-22T03:35:06.011Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在国内网络情况令人窒息,有需要更新&lt;code&gt;xcode&lt;/code&gt;的时候在&lt;code&gt;appStore&lt;/code&gt;上下载就非常的慢,下面是&lt;code&gt;xcode&lt;/code&gt;的官方下载地址:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/download/more/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;戳我使用迅雷下载xcode&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;mark一下,以备不时之需.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://iplaycodex.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="http://iplaycodex.com/tags/iOS/"/>
     
   </entry>
   

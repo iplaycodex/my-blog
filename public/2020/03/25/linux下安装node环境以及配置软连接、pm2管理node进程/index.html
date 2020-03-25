@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="1.安装在官方网站下载linux系统的安装包，然后上传到服务器进行解压安装: 执行解压命令：tar -xvf node-v6.10.0-linux-x64.tar.xz重命名： mv node-v6.10.0-linux-x64 nodejs确认一下nodejs下bin目录是否有node和npm文件，如果有执行软连接，如果没有重新下载执行上边步骤；通过源码编译，在官方网站下载Source code">
+<meta name="description" content="1.安装在官方网站下载linux系统的安装包，然后上传到服务器进行解压安装: 执行解压命令：tar -xvf node-v10.14.1-linux-x64.tar.xz重命名： mv node-v10.14.1-linux-x64 nodejs确认一下nodejs下bin目录是否有node和npm文件，如果有执行软连接，如果没有重新下载执行上边步骤；通过源码编译，在官方网站下载Source co">
 <meta name="keywords" content="node">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux下安装node环境以及配置软连接、pm2管理node进程">
 <meta property="og:url" content="http://iplaycodex.com/2020/03/25/linux下安装node环境以及配置软连接、pm2管理node进程/index.html">
 <meta property="og:site_name" content="iplaycodex">
-<meta property="og:description" content="1.安装在官方网站下载linux系统的安装包，然后上传到服务器进行解压安装: 执行解压命令：tar -xvf node-v6.10.0-linux-x64.tar.xz重命名： mv node-v6.10.0-linux-x64 nodejs确认一下nodejs下bin目录是否有node和npm文件，如果有执行软连接，如果没有重新下载执行上边步骤；通过源码编译，在官方网站下载Source code">
+<meta property="og:description" content="1.安装在官方网站下载linux系统的安装包，然后上传到服务器进行解压安装: 执行解压命令：tar -xvf node-v10.14.1-linux-x64.tar.xz重命名： mv node-v10.14.1-linux-x64 nodejs确认一下nodejs下bin目录是否有node和npm文件，如果有执行软连接，如果没有重新下载执行上边步骤；通过源码编译，在官方网站下载Source co">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-25T06:10:06.444Z">
+<meta property="og:updated_time" content="2020-03-25T06:35:38.574Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux下安装node环境以及配置软连接、pm2管理node进程">
-<meta name="twitter:description" content="1.安装在官方网站下载linux系统的安装包，然后上传到服务器进行解压安装: 执行解压命令：tar -xvf node-v6.10.0-linux-x64.tar.xz重命名： mv node-v6.10.0-linux-x64 nodejs确认一下nodejs下bin目录是否有node和npm文件，如果有执行软连接，如果没有重新下载执行上边步骤；通过源码编译，在官方网站下载Source code">
+<meta name="twitter:description" content="1.安装在官方网站下载linux系统的安装包，然后上传到服务器进行解压安装: 执行解压命令：tar -xvf node-v10.14.1-linux-x64.tar.xz重命名： mv node-v10.14.1-linux-x64 nodejs确认一下nodejs下bin目录是否有node和npm文件，如果有执行软连接，如果没有重新下载执行上边步骤；通过源码编译，在官方网站下载Source co">
 
 
 
@@ -387,8 +387,8 @@
 
       
         <h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><p>在官方网站下载linux系统的安装包，然后上传到服务器进行解压安装:</p>
-<p>执行解压命令：<code>tar -xvf node-v6.10.0-linux-x64.tar.xz</code><br>重命名： mv <code>node-v6.10.0-linux-x64 nodejs</code><br>确认一下<code>nodejs</code>下<code>bin</code>目录是否有<code>node</code>和<code>npm</code>文件，如果有执行软连接，如果没有重新下载执行上边步骤；<br>通过源码编译，在官方网站下载Source code文件，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tar xvf node-v0<span class="number">.10</span><span class="number">.28</span>.tar.gz</span><br><span class="line">cd node-v0<span class="number">.10</span><span class="number">.28</span></span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">cp /usr/local/bin/node /usr/sbin/ <span class="comment">//路径自己选择</span></span><br></pre></td></tr></table></figure>
+<p>执行解压命令：<code>tar -xvf node-v10.14.1-linux-x64.tar.xz</code><br>重命名： mv <code>node-v10.14.1-linux-x64 nodejs</code><br>确认一下<code>nodejs</code>下<code>bin</code>目录是否有<code>node</code>和<code>npm</code>文件，如果有执行软连接，如果没有重新下载执行上边步骤；<br>通过源码编译，在官方网站下载Source code文件，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tar xvf node-v10<span class="number">.14</span><span class="number">.1</span>.tar.gz</span><br><span class="line">cd node-v10<span class="number">.14</span><span class="number">.1</span></span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">cp /usr/local/bin/node /usr/sbin/ <span class="comment">//路径自己选择</span></span><br></pre></td></tr></table></figure>
 
 <p>查看当前安装的Node的版本 ： <code>node -v</code></p>
 <a id="more"></a>

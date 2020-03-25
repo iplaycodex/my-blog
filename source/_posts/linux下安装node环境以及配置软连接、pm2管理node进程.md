@@ -9,13 +9,13 @@ tags:
 ### 1.安装
 在官方网站下载linux系统的安装包，然后上传到服务器进行解压安装:
 
-执行解压命令：`tar -xvf node-v6.10.0-linux-x64.tar.xz`
-重命名： mv `node-v6.10.0-linux-x64 nodejs`
+执行解压命令：`tar -xvf node-v10.14.1-linux-x64.tar.xz`
+重命名： mv `node-v10.14.1-linux-x64 nodejs`
 确认一下`nodejs`下`bin`目录是否有`node`和`npm`文件，如果有执行软连接，如果没有重新下载执行上边步骤；
 通过源码编译，在官方网站下载Source code文件，
 ```javascript
-tar xvf node-v0.10.28.tar.gz
-cd node-v0.10.28
+tar xvf node-v10.14.1.tar.gz
+cd node-v10.14.1
 ./configure
 make
 make install

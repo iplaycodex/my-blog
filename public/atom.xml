@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://iplaycodex.com/"/>
-  <updated>2020-03-25T06:10:06.444Z</updated>
+  <updated>2020-03-25T06:35:38.574Z</updated>
   <id>http://iplaycodex.com/</id>
   
   <author>
@@ -21,13 +21,13 @@
     <link href="http://iplaycodex.com/2020/03/25/linux%E4%B8%8B%E5%AE%89%E8%A3%85node%E7%8E%AF%E5%A2%83%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE%E8%BD%AF%E8%BF%9E%E6%8E%A5%E3%80%81pm2%E7%AE%A1%E7%90%86node%E8%BF%9B%E7%A8%8B/"/>
     <id>http://iplaycodex.com/2020/03/25/linux下安装node环境以及配置软连接、pm2管理node进程/</id>
     <published>2020-03-25T06:04:44.000Z</published>
-    <updated>2020-03-25T06:10:06.444Z</updated>
+    <updated>2020-03-25T06:35:38.574Z</updated>
     
     <summary type="html">
     
       &lt;h3 id=&quot;1-安装&quot;&gt;&lt;a href=&quot;#1-安装&quot; class=&quot;headerlink&quot; title=&quot;1.安装&quot;&gt;&lt;/a&gt;1.安装&lt;/h3&gt;&lt;p&gt;在官方网站下载linux系统的安装包，然后上传到服务器进行解压安装:&lt;/p&gt;
-&lt;p&gt;执行解压命令：&lt;code&gt;tar -xvf node-v6.10.0-linux-x64.tar.xz&lt;/code&gt;&lt;br&gt;重命名： mv &lt;code&gt;node-v6.10.0-linux-x64 nodejs&lt;/code&gt;&lt;br&gt;确认一下&lt;code&gt;nodejs&lt;/code&gt;下&lt;code&gt;bin&lt;/code&gt;目录是否有&lt;code&gt;node&lt;/code&gt;和&lt;code&gt;npm&lt;/code&gt;文件，如果有执行软连接，如果没有重新下载执行上边步骤；&lt;br&gt;通过源码编译，在官方网站下载Source code文件，&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tar xvf node-v0&lt;span class=&quot;number&quot;&gt;.10&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.28&lt;/span&gt;.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd node-v0&lt;span class=&quot;number&quot;&gt;.10&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.28&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;./configure&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make install&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cp /usr/local/bin/node /usr/sbin/ &lt;span class=&quot;comment&quot;&gt;//路径自己选择&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;执行解压命令：&lt;code&gt;tar -xvf node-v10.14.1-linux-x64.tar.xz&lt;/code&gt;&lt;br&gt;重命名： mv &lt;code&gt;node-v10.14.1-linux-x64 nodejs&lt;/code&gt;&lt;br&gt;确认一下&lt;code&gt;nodejs&lt;/code&gt;下&lt;code&gt;bin&lt;/code&gt;目录是否有&lt;code&gt;node&lt;/code&gt;和&lt;code&gt;npm&lt;/code&gt;文件，如果有执行软连接，如果没有重新下载执行上边步骤；&lt;br&gt;通过源码编译，在官方网站下载Source code文件，&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tar xvf node-v10&lt;span class=&quot;number&quot;&gt;.14&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.1&lt;/span&gt;.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd node-v10&lt;span class=&quot;number&quot;&gt;.14&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;./configure&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make install&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cp /usr/local/bin/node /usr/sbin/ &lt;span class=&quot;comment&quot;&gt;//路径自己选择&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;查看当前安装的Node的版本 ： &lt;code&gt;node -v&lt;/code&gt;&lt;/p&gt;
     

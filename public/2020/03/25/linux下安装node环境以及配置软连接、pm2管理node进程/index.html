@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="node,">
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="a full-stack programmer">
-<meta name="keywords" content="web,ios,android,js,html,css,js,wechat">
-<meta property="og:type" content="website">
-<meta property="og:title" content="iplaycodex">
-<meta property="og:url" content="http://iplaycodex.com/categories/node/index.html">
+<meta name="description" content="1.安装在官方网站下载linux系统的安装包，然后上传到服务器进行解压安装: 执行解压命令：tar -xvf node-v6.10.0-linux-x64.tar.xz重命名： mv node-v6.10.0-linux-x64 nodejs确认一下nodejs下bin目录是否有node和npm文件，如果有执行软连接，如果没有重新下载执行上边步骤；通过源码编译，在官方网站下载Source code">
+<meta name="keywords" content="node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux下安装node环境以及配置软连接、pm2管理node进程">
+<meta property="og:url" content="http://iplaycodex.com/2020/03/25/linux下安装node环境以及配置软连接、pm2管理node进程/index.html">
 <meta property="og:site_name" content="iplaycodex">
-<meta property="og:description" content="a full-stack programmer">
+<meta property="og:description" content="1.安装在官方网站下载linux系统的安装包，然后上传到服务器进行解压安装: 执行解压命令：tar -xvf node-v6.10.0-linux-x64.tar.xz重命名： mv node-v6.10.0-linux-x64 nodejs确认一下nodejs下bin目录是否有node和npm文件，如果有执行软连接，如果没有重新下载执行上边步骤；通过源码编译，在官方网站下载Source code">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-03-25T06:10:06.444Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iplaycodex">
-<meta name="twitter:description" content="a full-stack programmer">
+<meta name="twitter:title" content="linux下安装node环境以及配置软连接、pm2管理node进程">
+<meta name="twitter:description" content="1.安装在官方网站下载linux系统的安装包，然后上传到服务器进行解压安装: 执行解压命令：tar -xvf node-v6.10.0-linux-x64.tar.xz重命名： mv node-v6.10.0-linux-x64 nodejs确认一下nodejs下bin目录是否有node和npm文件，如果有执行软连接，如果没有重新下载执行上边步骤；通过源码编译，在官方网站下载Source code">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://iplaycodex.com/categories/node/">
+  <link rel="canonical" href="http://iplaycodex.com/2020/03/25/linux下安装node环境以及配置软连接、pm2管理node进程/">
 
 
 
 
 
-  <title>分类: node | iplaycodex</title>
+  <title>linux下安装node环境以及配置软连接、pm2管理node进程 | iplaycodex</title>
   
 
 
@@ -146,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -282,105 +283,196 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>node<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://iplaycodex.com/2020/03/25/linux下安装node环境以及配置软连接、pm2管理node进程/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="allenliu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/icon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iplaycodex">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2020/03/25/linux下安装node环境以及配置软连接、pm2管理node进程/" itemprop="url">
-              
-                <span itemprop="name">linux下安装node环境以及配置软连接、pm2管理node进程</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">linux下安装node环境以及配置软连接、pm2管理node进程</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-03-25T14:04:44+08:00" content="2020-03-25">
-          03-25
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-25T14:04:44+08:00">
+                2020-03-25
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/07/node自动重启工具nodemon/" itemprop="url">
-              
-                <span itemprop="name">node自动重启工具nodemon</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-11-07T15:50:48+08:00" content="2019-11-07">
-          11-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
+        <h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><p>在官方网站下载linux系统的安装包，然后上传到服务器进行解压安装:</p>
+<p>执行解压命令：<code>tar -xvf node-v6.10.0-linux-x64.tar.xz</code><br>重命名： mv <code>node-v6.10.0-linux-x64 nodejs</code><br>确认一下<code>nodejs</code>下<code>bin</code>目录是否有<code>node</code>和<code>npm</code>文件，如果有执行软连接，如果没有重新下载执行上边步骤；<br>通过源码编译，在官方网站下载Source code文件，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tar xvf node-v0<span class="number">.10</span><span class="number">.28</span>.tar.gz</span><br><span class="line">cd node-v0<span class="number">.10</span><span class="number">.28</span></span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">cp /usr/local/bin/node /usr/sbin/ <span class="comment">//路径自己选择</span></span><br></pre></td></tr></table></figure>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<p>查看当前安装的Node的版本 ： <code>node -v</code></p>
+<a id="more"></a>
+<h3 id="2-建立软连接-配置全局环境变量"><a href="#2-建立软连接-配置全局环境变量" class="headerlink" title="2.建立软连接,配置全局环境变量"></a>2.建立软连接,配置全局环境变量</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/nodejs/bin/npm /usr/local/bin/</span><br><span class="line">ln -s /usr/local/nodejs/bin/node /usr/local/bin/</span><br><span class="line"></span><br><span class="line"><span class="comment">//检查一下,是否配置好了</span></span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/09/node在前端架构中是如何做中间层的一点学习/" itemprop="url">
-              
-                <span itemprop="name">node在前端架构中是如何做中间层的一点学习</span>
-              
-            </a>
-        
-      </h2>
+<h3 id="3-使用pm2进行node进程管理"><a href="#3-使用pm2进行node进程管理" class="headerlink" title="3.使用pm2进行node进程管理"></a>3.使用pm2进行node进程管理</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">安装：npm i pm2 -g</span><br><span class="line">运行：pm2 start app.js</span><br><span class="line">停止所有进程：pm2 stop all</span><br><span class="line">重启所有进程： pm2 restart all</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-09T11:43:34+08:00" content="2019-07-09">
-          07-09
-        </time>
-      </div>
+<h3 id="4-查看pm2的一些指令"><a href="#4-查看pm2的一些指令" class="headerlink" title="4.查看pm2的一些指令"></a>4.查看pm2的一些指令</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// user pm2 --help check more</span></span><br><span class="line">pm2 --help</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </article>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
 
+<div id="gitalk-container"></div>     
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+    // gitalk的主要参数
+      clientID: `e4890482436f9cd96039`,
+      clientSecret: `0425bf39d0c5cdedf4ae60a72fbd7a3d58d7d99e`,
+      repo: `codeCheeseIssues`,
+      owner: 'wawsc5354524',
+      admin: ['wawsc5354524'],
+      id: 'node-20200305-0210',
+        });
+      gitalk.render('gitalk-container');
+</script>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/node/" rel="tag"># node</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/19/一行代码跳过sourceTree的注册步骤/" rel="next" title="一行代码跳过sourceTree的注册步骤">
+                <i class="fa fa-chevron-left"></i> 一行代码跳过sourceTree的注册步骤
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -388,6 +480,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -408,8 +504,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -494,6 +599,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装"><span class="nav-number">1.</span> <span class="nav-text">1.安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-建立软连接-配置全局环境变量"><span class="nav-number">2.</span> <span class="nav-text">2.建立软连接,配置全局环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-使用pm2进行node进程管理"><span class="nav-number">3.</span> <span class="nav-text">3.使用pm2进行node进程管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-查看pm2的一些指令"><span class="nav-number">4.</span> <span class="nav-text">4.查看pm2的一些指令</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -634,6 +755,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

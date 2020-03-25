@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://iplaycodex.com/"/>
-  <updated>2020-01-19T07:37:59.419Z</updated>
+  <updated>2020-01-19T07:37:59.000Z</updated>
   <id>http://iplaycodex.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://iplaycodex.com/2020/01/19/%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E8%B7%B3%E8%BF%87sourceTree%E7%9A%84%E6%B3%A8%E5%86%8C%E6%AD%A5%E9%AA%A4/"/>
     <id>http://iplaycodex.com/2020/01/19/一行代码跳过sourceTree的注册步骤/</id>
     <published>2020-01-19T07:34:22.000Z</published>
-    <updated>2020-01-19T07:37:59.419Z</updated>
+    <updated>2020-01-19T07:37:59.000Z</updated>
     
     <summary type="html">
     
@@ -41,7 +41,7 @@
     <link href="http://iplaycodex.com/2019/12/26/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%BD%AC%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%8F%E9%AA%8C/"/>
     <id>http://iplaycodex.com/2019/12/26/记一次微信小程序转字节跳动小程序的经验/</id>
     <published>2019-12-26T06:50:44.000Z</published>
-    <updated>2020-01-10T02:15:40.433Z</updated>
+    <updated>2020-01-10T02:15:40.000Z</updated>
     
     <summary type="html">
     
@@ -73,7 +73,7 @@
     <link href="http://iplaycodex.com/2019/12/22/wx2bat%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/"/>
     <id>http://iplaycodex.com/2019/12/22/wx2bat工具分享/</id>
     <published>2019-12-22T00:31:04.000Z</published>
-    <updated>2019-12-22T00:51:30.297Z</updated>
+    <updated>2019-12-22T00:51:30.000Z</updated>
     
     <summary type="html">
     
@@ -95,7 +95,7 @@
     <link href="http://iplaycodex.com/2019/11/12/%E5%88%A9%E7%94%A8charles%E6%9D%A5%E6%8B%A6%E6%88%AA%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94/"/>
     <id>http://iplaycodex.com/2019/11/12/利用charles来拦截请求和响应/</id>
     <published>2019-11-12T09:41:11.000Z</published>
-    <updated>2019-11-12T10:03:02.267Z</updated>
+    <updated>2019-11-12T10:03:02.000Z</updated>
     
     <summary type="html">
     
@@ -119,7 +119,7 @@
     <link href="http://iplaycodex.com/2019/11/07/node%E8%87%AA%E5%8A%A8%E9%87%8D%E5%90%AF%E5%B7%A5%E5%85%B7nodemon/"/>
     <id>http://iplaycodex.com/2019/11/07/node自动重启工具nodemon/</id>
     <published>2019-11-07T07:50:48.000Z</published>
-    <updated>2019-11-08T02:36:38.554Z</updated>
+    <updated>2019-11-08T02:36:38.000Z</updated>
     
     <summary type="html">
     
@@ -141,7 +141,7 @@
     <link href="http://iplaycodex.com/2019/11/04/%E6%A8%A1%E4%BB%BFvue-cli%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
     <id>http://iplaycodex.com/2019/11/04/模仿vue-cli写一个简单脚手架/</id>
     <published>2019-11-04T06:54:59.000Z</published>
-    <updated>2019-11-04T08:02:59.758Z</updated>
+    <updated>2019-11-04T08:02:59.000Z</updated>
     
     <summary type="html">
     
@@ -169,7 +169,7 @@
     <link href="http://iplaycodex.com/2019/11/02/npm-ERR-publish-Failed-PUT-403/"/>
     <id>http://iplaycodex.com/2019/11/02/npm-ERR-publish-Failed-PUT-403/</id>
     <published>2019-11-02T05:33:25.000Z</published>
-    <updated>2019-11-02T06:14:02.339Z</updated>
+    <updated>2019-11-02T06:14:02.000Z</updated>
     
     <summary type="html">
     
@@ -196,7 +196,7 @@
     <link href="http://iplaycodex.com/2019/10/31/web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E4%B9%8BJavascript/"/>
     <id>http://iplaycodex.com/2019/10/31/web开发规范之Javascript/</id>
     <published>2019-10-31T10:09:16.000Z</published>
-    <updated>2019-10-31T10:12:54.143Z</updated>
+    <updated>2019-10-31T10:12:54.000Z</updated>
     
     <summary type="html">
     
@@ -226,7 +226,7 @@
     <link href="http://iplaycodex.com/2019/10/31/web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E4%B9%8BCSS/"/>
     <id>http://iplaycodex.com/2019/10/31/web开发规范之CSS/</id>
     <published>2019-10-31T10:08:10.000Z</published>
-    <updated>2019-10-31T10:13:07.977Z</updated>
+    <updated>2019-10-31T10:13:07.000Z</updated>
     
     <summary type="html">
     
@@ -253,7 +253,7 @@
     <link href="http://iplaycodex.com/2019/10/31/web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E4%B9%8BHTML/"/>
     <id>http://iplaycodex.com/2019/10/31/web开发规范之HTML/</id>
     <published>2019-10-31T10:01:37.000Z</published>
-    <updated>2019-10-31T10:05:05.013Z</updated>
+    <updated>2019-10-31T10:05:05.000Z</updated>
     
     <summary type="html">
     
@@ -277,7 +277,7 @@
     <link href="http://iplaycodex.com/2019/10/28/web%E4%BC%98%E5%8C%96%E4%B9%8B%E7%A6%BB%E7%BA%BF%E5%8C%96/"/>
     <id>http://iplaycodex.com/2019/10/28/web优化之离线化/</id>
     <published>2019-10-28T10:20:08.000Z</published>
-    <updated>2019-11-04T06:51:31.891Z</updated>
+    <updated>2019-11-04T06:51:31.000Z</updated>
     
     <summary type="html">
     
@@ -305,7 +305,7 @@
     <link href="http://iplaycodex.com/2019/10/11/Smartgit%E4%BD%BF%E7%94%A830%E5%A4%A9%E8%BF%87%E6%9C%9F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
     <id>http://iplaycodex.com/2019/10/11/Smartgit使用30天过期解决办法/</id>
     <published>2019-10-11T06:36:45.000Z</published>
-    <updated>2019-10-11T06:49:15.314Z</updated>
+    <updated>2019-10-11T06:49:15.000Z</updated>
     
     <summary type="html">
     
@@ -334,7 +334,7 @@
     <link href="http://iplaycodex.com/2019/08/23/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact-redux%E4%B9%8B%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
     <id>http://iplaycodex.com/2019/08/23/深入浅出react-redux之组件的生命周期/</id>
     <published>2019-08-23T03:24:11.000Z</published>
-    <updated>2019-08-23T12:48:03.854Z</updated>
+    <updated>2019-08-23T12:48:03.000Z</updated>
     
     <summary type="html">
     
@@ -352,7 +352,7 @@
     <link href="http://iplaycodex.com/2019/08/22/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact-redux%E4%B9%8Bstate%E5%92%8Cprops/"/>
     <id>http://iplaycodex.com/2019/08/22/深入浅出react-redux之state和props/</id>
     <published>2019-08-22T09:49:39.000Z</published>
-    <updated>2019-08-23T03:25:15.890Z</updated>
+    <updated>2019-08-23T03:25:15.000Z</updated>
     
     <summary type="html">
     
@@ -387,7 +387,7 @@
     <link href="http://iplaycodex.com/2019/08/22/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact+redux%E4%B9%8Bjsx/"/>
     <id>http://iplaycodex.com/2019/08/22/深入浅出react+redux之jsx/</id>
     <published>2019-08-22T07:03:46.000Z</published>
-    <updated>2019-08-22T09:47:51.059Z</updated>
+    <updated>2019-08-22T09:47:51.000Z</updated>
     
     <summary type="html">
     
@@ -413,7 +413,7 @@
     <link href="http://iplaycodex.com/2019/08/22/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact+redux%E7%AC%AC%E4%B8%80%E7%AF%87:%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
     <id>http://iplaycodex.com/2019/08/22/深入浅出react+redux第一篇:基础篇/</id>
     <published>2019-08-22T06:34:19.000Z</published>
-    <updated>2019-08-22T07:04:44.910Z</updated>
+    <updated>2019-08-22T07:04:44.000Z</updated>
     
     <summary type="html">
     
@@ -443,7 +443,7 @@
     <link href="http://iplaycodex.com/2019/08/09/react-native%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/"/>
     <id>http://iplaycodex.com/2019/08/09/react-native屏幕适配/</id>
     <published>2019-08-09T06:11:14.000Z</published>
-    <updated>2019-08-12T06:46:09.494Z</updated>
+    <updated>2019-08-12T06:46:09.000Z</updated>
     
     <summary type="html">
     
@@ -469,7 +469,7 @@
     <link href="http://iplaycodex.com/2019/08/08/%E6%96%B0%E5%BB%BACustomStyleSheet%E5%BA%9F%E5%BC%83StyleSheet/"/>
     <id>http://iplaycodex.com/2019/08/08/新建CustomStyleSheet废弃StyleSheet/</id>
     <published>2019-08-08T10:38:00.000Z</published>
-    <updated>2019-08-12T06:38:00.243Z</updated>
+    <updated>2019-08-12T06:38:00.000Z</updated>
     
     <summary type="html">
     
@@ -492,7 +492,7 @@
     <link href="http://iplaycodex.com/2019/08/08/%E4%BF%AE%E6%94%B9react-native%E7%BB%84%E4%BB%B6%E7%9A%84%E9%BB%98%E8%AE%A4%E5%B1%9E%E6%80%A7/"/>
     <id>http://iplaycodex.com/2019/08/08/修改react-native组件的默认属性/</id>
     <published>2019-08-08T09:08:17.000Z</published>
-    <updated>2019-08-12T06:42:47.859Z</updated>
+    <updated>2019-08-12T06:42:47.000Z</updated>
     
     <summary type="html">
     
@@ -522,7 +522,7 @@
     <link href="http://iplaycodex.com/2019/08/01/react-native%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E4%B9%8B%E7%83%AD%E6%9B%B4%E6%96%B0%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
     <id>http://iplaycodex.com/2019/08/01/react-native混合开发之热更新的实现/</id>
     <published>2019-08-01T06:54:44.000Z</published>
-    <updated>2019-08-12T06:45:38.610Z</updated>
+    <updated>2019-08-12T06:45:38.000Z</updated>
     
     <summary type="html">
     

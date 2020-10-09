@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://iplaycodex.com/"/>
-  <updated>2020-03-25T06:35:38.574Z</updated>
+  <updated>2020-10-09T08:17:39.228Z</updated>
   <id>http://iplaycodex.com/</id>
   
   <author>
@@ -17,11 +17,48 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>如何发布自己的第一个npm包</title>
+    <link href="http://iplaycodex.com/2020/08/03/%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAnpm%E5%8C%85/"/>
+    <id>http://iplaycodex.com/2020/08/03/如何发布自己的第一个npm包/</id>
+    <published>2020-08-03T06:49:25.000Z</published>
+    <updated>2020-10-09T08:17:39.228Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h1&gt;&lt;p&gt;&lt;code&gt;npm&lt;/code&gt;是什么这里不必再多说,我相信现在做前端的没有不知道的.这里就不在赘述了.&lt;br&gt;我们平时开发中肯定是有很多可复用的类库或者组件的,那么把他们抽离出来复用就很有必要了,可以大大减少我们的工作量.下面简单介绍一下如何把一个包发布到&lt;code&gt;npm&lt;/code&gt;上&lt;/p&gt;
+&lt;h1 id=&quot;2-工具&quot;&gt;&lt;a href=&quot;#2-工具&quot; class=&quot;headerlink&quot; title=&quot;2. 工具&quot;&gt;&lt;/a&gt;2. 工具&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;首先我们安装一下好用的工具&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;nvm&lt;ul&gt;
+&lt;li&gt;管理&lt;code&gt;node&lt;/code&gt;的版本的一个工具,如何安装和使用自行搜索&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;nrm&lt;ul&gt;
+&lt;li&gt;可以方便的切换&lt;code&gt;npm&lt;/code&gt;源的一个工具.因为在国内&lt;code&gt;npm&lt;/code&gt;的官方源经常网络连接不稳当,使用&lt;code&gt;cnpm&lt;/code&gt;又会出现一个莫名其妙的 bug.故这里强力建议使用该工具来管理&lt;code&gt;npm&lt;/code&gt;的源.且这个工具可以配置自定义源地址,方便我们搭建自己的私有 npm&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;上述两个工具的使用这里不再赘述,自己搜搜&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;3-初始化一个-npm-包&quot;&gt;&lt;a href=&quot;#3-初始化一个-npm-包&quot; class=&quot;headerlink&quot; title=&quot;3. 初始化一个 npm 包&quot;&gt;&lt;/a&gt;3. 初始化一个 npm 包&lt;/h1&gt;&lt;h2 id=&quot;3-1-创建一个示例包&quot;&gt;&lt;a href=&quot;#3-1-创建一个示例包&quot; class=&quot;headerlink&quot; title=&quot;3.1. 创建一个示例包&quot;&gt;&lt;/a&gt;3.1. 创建一个示例包&lt;/h2&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// step 1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd yourDic&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// step 2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mkdir myFirstNpmPackage&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// step 3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd myFristNpmPackage&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// step 4&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm init&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="前端工程化" scheme="http://iplaycodex.com/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+    
+    
+      <category term="前端工程化" scheme="http://iplaycodex.com/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
     <title>linux下安装node环境以及配置软连接、pm2管理node进程</title>
     <link href="http://iplaycodex.com/2020/03/25/linux%E4%B8%8B%E5%AE%89%E8%A3%85node%E7%8E%AF%E5%A2%83%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE%E8%BD%AF%E8%BF%9E%E6%8E%A5%E3%80%81pm2%E7%AE%A1%E7%90%86node%E8%BF%9B%E7%A8%8B/"/>
     <id>http://iplaycodex.com/2020/03/25/linux下安装node环境以及配置软连接、pm2管理node进程/</id>
     <published>2020-03-25T06:04:44.000Z</published>
-    <updated>2020-03-25T06:35:38.574Z</updated>
+    <updated>2020-03-25T06:35:38.000Z</updated>
     
     <summary type="html">
     
@@ -501,36 +538,6 @@
 &lt;p&gt;&lt;a href=&quot;https://codecheese.cn/2019/08/09/react-native%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/#more&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;react-native屏幕适配,可能是比较好的解决方案&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;that’s all&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="react-native" scheme="http://iplaycodex.com/categories/react-native/"/>
-    
-    
-      <category term="react-native" scheme="http://iplaycodex.com/tags/react-native/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>修改react-native组件的默认属性</title>
-    <link href="http://iplaycodex.com/2019/08/08/%E4%BF%AE%E6%94%B9react-native%E7%BB%84%E4%BB%B6%E7%9A%84%E9%BB%98%E8%AE%A4%E5%B1%9E%E6%80%A7/"/>
-    <id>http://iplaycodex.com/2019/08/08/修改react-native组件的默认属性/</id>
-    <published>2019-08-08T09:08:17.000Z</published>
-    <updated>2019-08-12T06:42:47.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;p&gt;我们在做网页开发的时候知道标签有自己的默认样式,例如&lt;code&gt;&amp;lt;ul/&amp;gt;&lt;/code&gt;,&lt;code&gt;&amp;lt;li/&amp;gt;&lt;/code&gt;等等.所以一般我们在开发项目的时候首先要做的就是先把标签的默认样式给清除掉.在开发RN的时候发现有些组件的默认属性很烦人.同样的需要重写这些默认属性.例如:&lt;/p&gt;
-&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;Text&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;TextInput&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;这两个组件的&lt;code&gt;allowFontScaling=true&lt;/code&gt;即:属性默认跟随系统字体大小,超级坑爹.&lt;/p&gt;
-&lt;p&gt;还有这个组件:&lt;/p&gt;
-&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;TouchableOpacity&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;这个组件默认点击的时候会有一个阴影效果,因为它的默认透明度是&lt;code&gt;0.2&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;这些默认属性有时候会给我们带来很大的困扰,有些组件的属性默认值并不是我们想要的.那么该怎么做呢?在每次使用这个组件的时候手动修改该组件的属性值?&lt;/p&gt;
-&lt;p&gt;这样做可以满足需求,但是太蠢了.每次使用上述组件的时候都要修改某些属性值.太蠢.这个方法舍弃.&lt;/p&gt;
-&lt;h2 id=&quot;解决之道&quot;&gt;&lt;a href=&quot;#解决之道&quot; class=&quot;headerlink&quot; title=&quot;解决之道:&quot;&gt;&lt;/a&gt;解决之道:&lt;/h2&gt;
     
     </summary>
     

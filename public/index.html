@@ -389,26 +389,20 @@
 
       
         
-          
-            <p>[TOC]</p>
+          <p>[TOC]</p>
 <h1 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h1><p>今天使用<code>homebrew</code>下载软件的时候发现特别的慢(官方源因为有一道墙,大家都知道特别的慢)但是我记得我已经修改为了<code>清华大学</code>的源了,然而今天还是特别的慢.最后发现原来是清华大学的源坑了,修改为了<code>中科大</code>的源后解决了这个问题,这里记录一下.共同样掉坑的同学参考</p>
 <h1 id="2-看一下那个源"><a href="#2-看一下那个源" class="headerlink" title="2. 看一下那个源"></a>2. 看一下那个源</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入 brew 的仓库根目录</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看仓库地址</span></span><br><span class="line">git remote -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如下所示,目前是清华大学源</span></span><br><span class="line">origin    https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git (fetch)</span><br><span class="line">origin    https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git (push)</span><br></pre></td></tr></table></figure>
 
-<p>打开清华大学的源的仓库,发现404,坑了.</p>
+<p>打开清华大学的源的仓库,发现 404,坑了.</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gjj6ab3tjuj31140jmaad.jpg" alt></p>
 <p><code>清华大学</code>的源不能用了,那就换一个源.这里我们换成<code>中科大</code>的源</p>
-<h1 id="3-修改源"><a href="#3-修改源" class="headerlink" title="3. 修改源"></a>3. 修改源</h1><p>执行以下命令:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入 brew 的仓库根目录</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改为中科大的源</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://mirrors.ustc.edu.cn/brew.git</span><br></pre></td></tr></table></figure>
-
-<p>同理，修改 <code>homebrew-cask</code>、<code>homebrew-core</code>、<code>homebrew-services</code> 的远程仓库地址:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-cask"</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core"</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://mirrors.ustc.edu.cn/homebrew-core.git</span><br></pre></td></tr></table></figure>
-
-<p>修改完仓库地址后，更新一下，加上 <code>-v</code>参数可以看到当前跑的进度：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update -v</span><br></pre></td></tr></table></figure>
-
-<h1 id="4-结尾"><a href="#4-结尾" class="headerlink" title="4. 结尾"></a>4. 结尾</h1><p>将源修改为<code>中科大</code>的源后再安装软件发现熟悉的速度又回来啦~</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/10/09/修改homebrew源解决下载速度慢的问题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

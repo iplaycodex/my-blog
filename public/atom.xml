@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://iplaycodex.com/"/>
-  <updated>2020-10-09T08:49:50.830Z</updated>
+  <updated>2020-10-09T08:52:00.683Z</updated>
   <id>http://iplaycodex.com/</id>
   
   <author>
@@ -21,18 +21,17 @@
     <link href="http://iplaycodex.com/2020/10/09/%E4%BF%AE%E6%94%B9homebrew%E6%BA%90%E8%A7%A3%E5%86%B3%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://iplaycodex.com/2020/10/09/修改homebrew源解决下载速度慢的问题/</id>
     <published>2020-10-09T08:26:17.000Z</published>
-    <updated>2020-10-09T08:49:50.830Z</updated>
+    <updated>2020-10-09T08:52:00.683Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h1 id=&quot;1-问题&quot;&gt;&lt;a href=&quot;#1-问题&quot; class=&quot;headerlink&quot; title=&quot;1. 问题&quot;&gt;&lt;/a&gt;1.
-        
-      
+      &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h1 id=&quot;1-问题&quot;&gt;&lt;a href=&quot;#1-问题&quot; class=&quot;headerlink&quot; title=&quot;1. 问题&quot;&gt;&lt;/a&gt;1. 问题&lt;/h1&gt;&lt;p&gt;今天使用&lt;code&gt;homebrew&lt;/code&gt;下载软件的时候发现特别的慢(官方源因为有一道墙,大家都知道特别的慢)但是我记得我已经修改为了&lt;code&gt;清华大学&lt;/code&gt;的源了,然而今天还是特别的慢.最后发现原来是清华大学的源坑了,修改为了&lt;code&gt;中科大&lt;/code&gt;的源后解决了这个问题,这里记录一下.共同样掉坑的同学参考&lt;/p&gt;
+&lt;h1 id=&quot;2-看一下那个源&quot;&gt;&lt;a href=&quot;#2-看一下那个源&quot; class=&quot;headerlink&quot; title=&quot;2. 看一下那个源&quot;&gt;&lt;/a&gt;2. 看一下那个源&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 进入 brew 的仓库根目录&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;variable&quot;&gt;$(brew --repo)&lt;/span&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 查看仓库地址&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git remote -v&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 如下所示,目前是清华大学源&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;origin    https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git (fetch)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;origin    https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git (push)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;打开清华大学的源的仓库,发现 404,坑了.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/007S8ZIlgy1gjj6ab3tjuj31140jmaad.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;清华大学&lt;/code&gt;的源不能用了,那就换一个源.这里我们换成&lt;code&gt;中科大&lt;/code&gt;的源&lt;/p&gt;
     
     </summary>
     

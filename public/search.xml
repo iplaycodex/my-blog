@@ -157,7 +157,7 @@
   <entry>
     <title><![CDATA[Smartgit使用30天过期解决办法]]></title>
     <url>%2F2019%2F10%2F11%2FSmartgit%E4%BD%BF%E7%94%A830%E5%A4%A9%E8%BF%87%E6%9C%9F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[smartGit是一款git比较好用的GUI工具.未注册版本提供30天的试用期,提供一个过期了以后还可以使用的方法: 1.打开Finder 2.使用快捷键 command + shift + G 3.复制 ~/Library/Preferences/SmartGit/ 到输入框 4.点击确定调转到指定的文件夹删除settings.xml文件 至此,即可在30天的试用期到了以后继续使用了.当然最后还是要说一句,如果有条件,请支持正版. 提醒:最近smartGit有更新,发现本方法仅对版本低于:18.2.9 #13269有效.高版本暂不支持 安装完毕后我们修改 smGit 检查更新的请求 host 到本地,避免不停的提醒更新,烦的要死.host 文件添加如下代码: 127.0.0.1 www.syntevo.com `` 就酱,很简单]]></content>
+    <content type="text"><![CDATA[smartGit是一款git比较好用的GUI工具.未注册版本提供30天的试用期,提供一个过期了以后还可以使用的方法: 1.打开Finder 2.使用快捷键 command + shift + G 3.复制 ~/Library/Preferences/SmartGit/ 到输入框 4.点击确定调转到指定的文件夹删除settings.xml文件 至此,即可在30天的试用期到了以后继续使用了.当然最后还是要说一句,如果有条件,请支持正版. 提醒:最近smartGit有更新,发现本方法仅对版本低于:18.2.9 #13269有效.高版本暂不支持 安装完毕后我们修改 smGit 检查更新的请求 host 到本地,避免不停的提醒更新,烦的要死.host 文件添加如下代码: 1127.0.0.1 www.syntevo.com 就酱,很简单]]></content>
       <categories>
         <category>Git</category>
       </categories>

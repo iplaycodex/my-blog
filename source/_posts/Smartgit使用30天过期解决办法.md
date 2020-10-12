@@ -21,6 +21,6 @@ categories:
 
 ```bash
 127.0.0.1 www.syntevo.com
-``
+```
 
 就酱,很简单

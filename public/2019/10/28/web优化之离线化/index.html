@@ -81,20 +81,20 @@
 
 
 
-<meta name="description" content="写在前面现在混合开发的应用场景越来越多了.业内的解决方案也有很多,例:native + react-native的,支付宝或者微信的native + 小程序的.当然应用更多的还是native + webView这种场景.使用native + webView的优点很多:  开发方便 方便快速迭代 …  但是使用这套方案也有一个很致命的缺点:那就是很慢!,在native上点击了一个按钮触发一个打开we">
+<meta name="description" content="作者：iplaycodex仓库：github、codePen博客：掘金、segmentfault、知乎、简书、博客园联系我：iplaycodex@163.com特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起  1. 写在前面现在混合开发的应用场景越来越多了.业内的解决方案也有很多,例:native + re">
 <meta name="keywords" content="性能优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="web优化之离线化">
 <meta property="og:url" content="http://iplaycodex.com/2019/10/28/web优化之离线化/index.html">
 <meta property="og:site_name" content="iplaycodex">
-<meta property="og:description" content="写在前面现在混合开发的应用场景越来越多了.业内的解决方案也有很多,例:native + react-native的,支付宝或者微信的native + 小程序的.当然应用更多的还是native + webView这种场景.使用native + webView的优点很多:  开发方便 方便快速迭代 …  但是使用这套方案也有一个很致命的缺点:那就是很慢!,在native上点击了一个按钮触发一个打开we">
+<meta property="og:description" content="作者：iplaycodex仓库：github、codePen博客：掘金、segmentfault、知乎、简书、博客园联系我：iplaycodex@163.com特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起  1. 写在前面现在混合开发的应用场景越来越多了.业内的解决方案也有很多,例:native + re">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g8m03mtq2jj30e10h2dgn.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g8m04hqehoj30do0iv75c.jpg">
-<meta property="og:updated_time" content="2019-11-04T06:51:31.000Z">
+<meta property="og:updated_time" content="2020-10-29T07:16:12.645Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web优化之离线化">
-<meta name="twitter:description" content="写在前面现在混合开发的应用场景越来越多了.业内的解决方案也有很多,例:native + react-native的,支付宝或者微信的native + 小程序的.当然应用更多的还是native + webView这种场景.使用native + webView的优点很多:  开发方便 方便快速迭代 …  但是使用这套方案也有一个很致命的缺点:那就是很慢!,在native上点击了一个按钮触发一个打开we">
+<meta name="twitter:description" content="作者：iplaycodex仓库：github、codePen博客：掘金、segmentfault、知乎、简书、博客园联系我：iplaycodex@163.com特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起  1. 写在前面现在混合开发的应用场景越来越多了.业内的解决方案也有很多,例:native + re">
 <meta name="twitter:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g8m03mtq2jj30e10h2dgn.jpg">
 
 
@@ -389,7 +389,10 @@
       
 
       
-        <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>现在混合开发的应用场景越来越多了.业内的解决方案也有很多,例:<code>native + react-native</code>的,支付宝或者微信的<code>native + 小程序</code>的.当然应用更多的还是<code>native + webView</code>这种场景.<br>使用<code>native + webView</code>的优点很多:</p>
+        <blockquote>
+<p>作者：<a href="http://iplaycodex.com">iplaycodex</a><br>仓库：<a href="https://github.com/iplaycodex" target="_blank" rel="noopener">github</a>、<a href="https://codepen.io/iplaycodex" target="_blank" rel="noopener">codePen</a><br>博客：<a href="https://juejin.im/user/3597257774478359" target="_blank" rel="noopener">掘金</a>、<a href="https://segmentfault.com/u/iplaycodex" target="_blank" rel="noopener">segmentfault</a>、<a href="https://www.zhihu.com/people/CallMeAllenLliu" target="_blank" rel="noopener">知乎</a>、<a href="https://www.jianshu.com/u/9cd27f169c7e" target="_blank" rel="noopener">简书</a>、<a href="https://www.cnblogs.com/" target="_blank" rel="noopener">博客园</a><br>联系我：<a href="iplaycodex@163.com">iplaycodex@163.com</a><br>特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起</p>
+</blockquote>
+<h1 id="1-写在前面"><a href="#1-写在前面" class="headerlink" title="1. 写在前面"></a>1. 写在前面</h1><p>现在混合开发的应用场景越来越多了.业内的解决方案也有很多,例:<code>native + react-native</code>的,支付宝或者微信的<code>native + 小程序</code>的.当然应用更多的还是<code>native + webView</code>这种场景.<br>使用<code>native + webView</code>的优点很多:</p>
 <ul>
 <li>开发方便</li>
 <li>方便快速迭代</li>
@@ -397,36 +400,38 @@
 </ul>
 <p>但是使用这套方案也有一个很致命的缺点:<code>那就是很慢!</code>,在<code>native</code>上点击了一个按钮触发一个打开<code>webView</code>的<code>action</code>操作,会经过以下几个过程:</p>
 <p><code>初始化webview</code> =&gt; <code>请求HTML,JS,CSS等静态资源</code> =&gt; <code>渲染模板</code> =&gt; <code>请求API</code></p>
-<p>这中间的时间很久.经过测试我们项目在安卓低端机上表现为平均加载完成时间为4 ~ 5秒.这是非常难以接受的!所以优化的需求就迫在眉睫了.</p>
+<p>这中间的时间很久.经过测试我们项目在安卓低端机上表现为平均加载完成时间为 4 ~ 5 秒.这是非常难以接受的!所以优化的需求就迫在眉睫了.</p>
 <a id="more"></a>
+
 <p>优化的地方很多,本篇先介绍一下<code>资源静态化</code>!</p>
 <ul>
-<li>使用静态化会将<code>HTML</code>和<code>CSS</code>以及<code>JS</code>保存在APP的沙盒中.当需要打开<code>h5</code>页面的时候直接从沙盒中通过<code>file:</code>读取,如此速度会大大提升!几乎可以做到近秒开.提升非常明显.</li>
+<li>使用静态化会将<code>HTML</code>和<code>CSS</code>以及<code>JS</code>保存在 APP 的沙盒中.当需要打开<code>h5</code>页面的时候直接从沙盒中通过<code>file:</code>读取,如此速度会大大提升!几乎可以做到近秒开.提升非常明显.</li>
 </ul>
-<h3 id="如何做"><a href="#如何做" class="headerlink" title="如何做?"></a>如何做?</h3><p>参见下面的2个流程图:</p>
+<h1 id="2-如何做"><a href="#2-如何做" class="headerlink" title="2. 如何做?"></a>2. 如何做?</h1><p>参见下面的 2 个流程图:</p>
 <ul>
-<li>APP启动流程图</li>
+<li>APP 启动流程图</li>
 </ul>
 <p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8m03mtq2jj30e10h2dgn.jpg" alt="APP启动流程图"></p>
 <ul>
-<li>APP中页面跳转流程图</li>
+<li>APP 中页面跳转流程图</li>
 </ul>
 <p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g8m04hqehoj30do0iv75c.jpg" alt></p>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项:"></a>注意事项:</h3><h5 id="1-登录态等数据存取使用cookie"><a href="#1-登录态等数据存取使用cookie" class="headerlink" title="1. 登录态等数据存取使用cookie"></a>1. 登录态等数据存取使用<code>cookie</code></h5><h5 id="2-外链必须注明请求协议-例-https"><a href="#2-外链必须注明请求协议-例-https" class="headerlink" title="2. 外链必须注明请求协议.例:https:"></a>2. 外链必须注明请求协议.例:<code>https:</code></h5><p>因为在内置包环境,打开<code>html</code>使用的是<code>file:</code>协议,故所有外链都必须写明资源协议,否则默认为<code>file:</code>.例:</p>
+<h1 id="3-注意事项"><a href="#3-注意事项" class="headerlink" title="3. 注意事项:"></a>3. 注意事项:</h1><h2 id="3-1-登录态等数据存取使用cookie"><a href="#3-1-登录态等数据存取使用cookie" class="headerlink" title="3.1. 登录态等数据存取使用cookie"></a>3.1. 登录态等数据存取使用<code>cookie</code></h2><h2 id="3-2-外链必须注明请求协议-例-https"><a href="#3-2-外链必须注明请求协议-例-https" class="headerlink" title="3.2. 外链必须注明请求协议.例:https:"></a>3.2. 外链必须注明请求协议.例:<code>https:</code></h2><p>因为在内置包环境,打开<code>html</code>使用的是<code>file:</code>协议,故所有外链都必须写明资源协议,否则默认为<code>file:</code>.例:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//bad</span></span><br><span class="line">&lt;script src=<span class="string">"//baidu.com/jquery.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//good</span></span><br><span class="line">&lt;script src=<span class="string">"https://baidu.com/jquery.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-<h5 id="3-页面跳转"><a href="#3-页面跳转" class="headerlink" title="3. 页面跳转"></a>3. 页面跳转</h5><p>模块内的页面跳转使用<code>vue-router</code>来实现,此处不再赘述.而模块间的页面跳转则需要使用<code>全路径</code>.例:</p>
+<h2 id="3-3-页面跳转"><a href="#3-3-页面跳转" class="headerlink" title="3.3. 页面跳转"></a>3.3. 页面跳转</h2><p>模块内的页面跳转使用<code>vue-router</code>来实现,此处不再赘述.而模块间的页面跳转则需要使用<code>全路径</code>.例:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"pushToOtherModule"</span>&gt;</span>跳转到其他模块<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">methods:&#123;</span><br><span class="line">    pushToOtherModule()&#123;</span><br><span class="line">        <span class="comment">// pushToOtherModule</span></span><br><span class="line">        <span class="built_in">window</span>.location.href = <span class="string">"http://baidu.com/web/h5/other/index.html#/goods/1"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h5 id="4-跨域"><a href="#4-跨域" class="headerlink" title="4. 跨域"></a>4. 跨域</h5><p>使用<code>file:</code>协议加载<code>html</code>会导致跨域问题.该问题通过运维配置<code>nginx</code>已解决</p>
-<h5 id="5-打包优化"><a href="#5-打包优化" class="headerlink" title="5. 打包优化"></a>5. 打包优化</h5><p><code>webpack</code>的图片处理,字体处理,以及<code>dllPlugin</code>,<code>treeshaking</code>等此处不在赘述.具体参见官方文档.</p>
-<h3 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h3><h5 id="1-内置包升级"><a href="#1-内置包升级" class="headerlink" title="1.内置包升级"></a>1.内置包升级</h5><p>通过<code>npm</code>打包成<code>zip</code>包上传后台即可</p>
-<h5 id="2-开关"><a href="#2-开关" class="headerlink" title="2.开关"></a>2.开关</h5><p>通过开关可以方便控制<code>APP</code>走内置包还是走服务器,方便一键切换</p>
-<h5 id="3-白名单"><a href="#3-白名单" class="headerlink" title="3.白名单"></a>3.白名单</h5><p>白名单的作用是用来<code>映射URL</code>,即当用户触发一个<code>URL全链接</code>跳转的请求时,<code>APP</code>会进行拦截.通过匹配白名单,即可知道目标页面是走<code>内置包</code>还是走<code>HTTP</code>请求.</p>
+<h2 id="3-4-跨域"><a href="#3-4-跨域" class="headerlink" title="3.4. 跨域"></a>3.4. 跨域</h2><p>使用<code>file:</code>协议加载<code>html</code>会导致跨域问题.该问题通过运维配置<code>nginx</code>已解决</p>
+<h2 id="3-5-打包优化"><a href="#3-5-打包优化" class="headerlink" title="3.5. 打包优化"></a>3.5. 打包优化</h2><p><code>webpack</code>的图片处理,字体处理,以及<code>dllPlugin</code>,<code>treeshaking</code>等此处不在赘述.具体参见官方文档.</p>
+<h1 id="4-名词解释"><a href="#4-名词解释" class="headerlink" title="4. 名词解释"></a>4. 名词解释</h1><h2 id="4-1-内置包升级"><a href="#4-1-内置包升级" class="headerlink" title="4.1. 内置包升级"></a>4.1. 内置包升级</h2><p>通过<code>npm</code>打包成<code>zip</code>包上传后台即可</p>
+<h2 id="4-2-开关"><a href="#4-2-开关" class="headerlink" title="4.2. 开关"></a>4.2. 开关</h2><p>通过开关可以方便控制<code>APP</code>走内置包还是走服务器,方便一键切换</p>
+<h2 id="4-3-白名单"><a href="#4-3-白名单" class="headerlink" title="4.3. 白名单"></a>4.3. 白名单</h2><p>白名单的作用是用来<code>映射URL</code>,即当用户触发一个<code>URL全链接</code>跳转的请求时,<code>APP</code>会进行拦截.通过匹配白名单,即可知道目标页面是走<code>内置包</code>还是走<code>HTTP</code>请求.</p>
 <hr>
 <p>大致的思路目前就是这样,实现起来也不是很难.对于性能提升却是质的飞跃,所以强烈推荐.此文档登录态维护在<code>APP</code>端,故登录态没有详述.这个也不难,读者自己思考即可.</p>
+<h1 id="5-结束语"><a href="#5-结束语" class="headerlink" title="5. 结束语"></a>5. 结束语</h1><p>❤️ 关注 + 点赞 + 收藏 + 评论 + 转发 ❤️ <br>原创不易，鼓励笔者创作更好的文章~</p>
 
       
     </div>
@@ -548,7 +553,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -626,7 +631,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何做"><span class="nav-number">2.</span> <span class="nav-text">如何做?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">3.</span> <span class="nav-text">注意事项:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-登录态等数据存取使用cookie"><span class="nav-number">3.0.1.</span> <span class="nav-text">1. 登录态等数据存取使用cookie</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-外链必须注明请求协议-例-https"><span class="nav-number">3.0.2.</span> <span class="nav-text">2. 外链必须注明请求协议.例:https:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-页面跳转"><span class="nav-number">3.0.3.</span> <span class="nav-text">3. 页面跳转</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-跨域"><span class="nav-number">3.0.4.</span> <span class="nav-text">4. 跨域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-打包优化"><span class="nav-number">3.0.5.</span> <span class="nav-text">5. 打包优化</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#名词解释"><span class="nav-number">4.</span> <span class="nav-text">名词解释</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-内置包升级"><span class="nav-number">4.0.1.</span> <span class="nav-text">1.内置包升级</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-开关"><span class="nav-number">4.0.2.</span> <span class="nav-text">2.开关</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-白名单"><span class="nav-number">4.0.3.</span> <span class="nav-text">3.白名单</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-写在前面"><span class="nav-number">1.</span> <span class="nav-text">1. 写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-如何做"><span class="nav-number">2.</span> <span class="nav-text">2. 如何做?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-注意事项"><span class="nav-number">3.</span> <span class="nav-text">3. 注意事项:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-登录态等数据存取使用cookie"><span class="nav-number">3.1.</span> <span class="nav-text">3.1. 登录态等数据存取使用cookie</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-外链必须注明请求协议-例-https"><span class="nav-number">3.2.</span> <span class="nav-text">3.2. 外链必须注明请求协议.例:https:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-页面跳转"><span class="nav-number">3.3.</span> <span class="nav-text">3.3. 页面跳转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-跨域"><span class="nav-number">3.4.</span> <span class="nav-text">3.4. 跨域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-打包优化"><span class="nav-number">3.5.</span> <span class="nav-text">3.5. 打包优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-名词解释"><span class="nav-number">4.</span> <span class="nav-text">4. 名词解释</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-内置包升级"><span class="nav-number">4.1.</span> <span class="nav-text">4.1. 内置包升级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-开关"><span class="nav-number">4.2.</span> <span class="nav-text">4.2. 开关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-白名单"><span class="nav-number">4.3.</span> <span class="nav-text">4.3. 白名单</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-结束语"><span class="nav-number">5.</span> <span class="nav-text">5. 结束语</span></a></li></ol></div>
             
 
           </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://iplaycodex.com/"/>
-  <updated>2020-10-09T08:52:00.683Z</updated>
+  <updated>2020-10-29T06:50:09.102Z</updated>
   <id>http://iplaycodex.com/</id>
   
   <author>
@@ -21,11 +21,13 @@
     <link href="http://iplaycodex.com/2020/10/09/%E4%BF%AE%E6%94%B9homebrew%E6%BA%90%E8%A7%A3%E5%86%B3%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://iplaycodex.com/2020/10/09/修改homebrew源解决下载速度慢的问题/</id>
     <published>2020-10-09T08:26:17.000Z</published>
-    <updated>2020-10-09T08:52:00.683Z</updated>
+    <updated>2020-10-29T06:50:09.102Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;[TOC]&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;、&lt;a href=&quot;https://codepen.io/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;codePen&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;https://juejin.im/user/3597257774478359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;掘金&lt;/a&gt;、&lt;a href=&quot;https://segmentfault.com/u/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;segmentfault&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/people/CallMeAllenLliu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://www.jianshu.com/u/9cd27f169c7e&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简书&lt;/a&gt;、&lt;a href=&quot;https://www.cnblogs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt;&lt;br&gt;联系我：&lt;a href=&quot;iplaycodex@163.com&quot;&gt;iplaycodex@163.com&lt;/a&gt;&lt;br&gt;特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h1 id=&quot;1-问题&quot;&gt;&lt;a href=&quot;#1-问题&quot; class=&quot;headerlink&quot; title=&quot;1. 问题&quot;&gt;&lt;/a&gt;1. 问题&lt;/h1&gt;&lt;p&gt;今天使用&lt;code&gt;homebrew&lt;/code&gt;下载软件的时候发现特别的慢(官方源因为有一道墙,大家都知道特别的慢)但是我记得我已经修改为了&lt;code&gt;清华大学&lt;/code&gt;的源了,然而今天还是特别的慢.最后发现原来是清华大学的源坑了,修改为了&lt;code&gt;中科大&lt;/code&gt;的源后解决了这个问题,这里记录一下.共同样掉坑的同学参考&lt;/p&gt;
 &lt;h1 id=&quot;2-看一下那个源&quot;&gt;&lt;a href=&quot;#2-看一下那个源&quot; class=&quot;headerlink&quot; title=&quot;2. 看一下那个源&quot;&gt;&lt;/a&gt;2. 看一下那个源&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 进入 brew 的仓库根目录&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;variable&quot;&gt;$(brew --repo)&lt;/span&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 查看仓库地址&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git remote -v&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 如下所示,目前是清华大学源&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;origin    https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git (fetch)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;origin    https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git (push)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -47,11 +49,14 @@
     <link href="http://iplaycodex.com/2020/08/03/%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAnpm%E5%8C%85/"/>
     <id>http://iplaycodex.com/2020/08/03/如何发布自己的第一个npm包/</id>
     <published>2020-08-03T06:49:25.000Z</published>
-    <updated>2020-10-09T08:17:39.228Z</updated>
+    <updated>2020-10-29T06:39:55.463Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h1&gt;&lt;p&gt;&lt;code&gt;npm&lt;/code&gt;是什么这里不必再多说,我相信现在做前端的没有不知道的.这里就不在赘述了.&lt;br&gt;我们平时开发中肯定是有很多可复用的类库或者组件的,那么把他们抽离出来复用就很有必要了,可以大大减少我们的工作量.下面简单介绍一下如何把一个包发布到&lt;code&gt;npm&lt;/code&gt;上&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;、&lt;a href=&quot;https://codepen.io/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;codePen&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;https://juejin.im/user/3597257774478359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;掘金&lt;/a&gt;、&lt;a href=&quot;https://segmentfault.com/u/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;segmentfault&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/people/CallMeAllenLliu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://www.jianshu.com/u/9cd27f169c7e&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简书&lt;/a&gt;、&lt;a href=&quot;https://www.cnblogs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt;&lt;br&gt;联系我：&lt;a href=&quot;iplaycodex@163.com&quot;&gt;iplaycodex@163.com&lt;/a&gt;&lt;br&gt;特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h1&gt;&lt;p&gt;&lt;code&gt;npm&lt;/code&gt;是什么这里不必再多说,我相信现在做前端的没有不知道的.这里就不在赘述了.&lt;br&gt;我们平时开发中肯定是有很多可复用的类库或者组件的,那么把他们抽离出来复用就很有必要了,可以大大减少我们的工作量.下面简单介绍一下如何把一个包发布到&lt;code&gt;npm&lt;/code&gt;上&lt;/p&gt;
 &lt;h1 id=&quot;2-工具&quot;&gt;&lt;a href=&quot;#2-工具&quot; class=&quot;headerlink&quot; title=&quot;2. 工具&quot;&gt;&lt;/a&gt;2. 工具&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;首先我们安装一下好用的工具&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -84,15 +89,18 @@
     <link href="http://iplaycodex.com/2020/03/25/linux%E4%B8%8B%E5%AE%89%E8%A3%85node%E7%8E%AF%E5%A2%83%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE%E8%BD%AF%E8%BF%9E%E6%8E%A5%E3%80%81pm2%E7%AE%A1%E7%90%86node%E8%BF%9B%E7%A8%8B/"/>
     <id>http://iplaycodex.com/2020/03/25/linux下安装node环境以及配置软连接、pm2管理node进程/</id>
     <published>2020-03-25T06:04:44.000Z</published>
-    <updated>2020-03-25T06:35:38.000Z</updated>
+    <updated>2020-10-29T06:54:08.899Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;1-安装&quot;&gt;&lt;a href=&quot;#1-安装&quot; class=&quot;headerlink&quot; title=&quot;1.安装&quot;&gt;&lt;/a&gt;1.安装&lt;/h3&gt;&lt;p&gt;在官方网站下载linux系统的安装包，然后上传到服务器进行解压安装:&lt;/p&gt;
-&lt;p&gt;执行解压命令：&lt;code&gt;tar -xvf node-v10.14.1-linux-x64.tar.xz&lt;/code&gt;&lt;br&gt;重命名： mv &lt;code&gt;node-v10.14.1-linux-x64 nodejs&lt;/code&gt;&lt;br&gt;确认一下&lt;code&gt;nodejs&lt;/code&gt;下&lt;code&gt;bin&lt;/code&gt;目录是否有&lt;code&gt;node&lt;/code&gt;和&lt;code&gt;npm&lt;/code&gt;文件，如果有执行软连接，如果没有重新下载执行上边步骤；&lt;br&gt;通过源码编译，在官方网站下载Source code文件，&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tar xvf node-v10&lt;span class=&quot;number&quot;&gt;.14&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.1&lt;/span&gt;.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd node-v10&lt;span class=&quot;number&quot;&gt;.14&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;./configure&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make install&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cp /usr/local/bin/node /usr/sbin/ &lt;span class=&quot;comment&quot;&gt;//路径自己选择&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;、&lt;a href=&quot;https://codepen.io/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;codePen&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;https://juejin.im/user/3597257774478359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;掘金&lt;/a&gt;、&lt;a href=&quot;https://segmentfault.com/u/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;segmentfault&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/people/CallMeAllenLliu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://www.jianshu.com/u/9cd27f169c7e&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简书&lt;/a&gt;、&lt;a href=&quot;https://www.cnblogs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt;&lt;br&gt;联系我：&lt;a href=&quot;iplaycodex@163.com&quot;&gt;iplaycodex@163.com&lt;/a&gt;&lt;br&gt;特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;1-安装&quot;&gt;&lt;a href=&quot;#1-安装&quot; class=&quot;headerlink&quot; title=&quot;1. 安装&quot;&gt;&lt;/a&gt;1. 安装&lt;/h1&gt;&lt;p&gt;在官方网站下载 linux 系统的安装包，然后上传到服务器进行解压安装:&lt;/p&gt;
+&lt;p&gt;执行解压命令：&lt;code&gt;tar -xvf node-v10.14.1-linux-x64.tar.xz&lt;/code&gt;&lt;br&gt;重命名： mv &lt;code&gt;node-v10.14.1-linux-x64 nodejs&lt;/code&gt;&lt;br&gt;确认一下&lt;code&gt;nodejs&lt;/code&gt;下&lt;code&gt;bin&lt;/code&gt;目录是否有&lt;code&gt;node&lt;/code&gt;和&lt;code&gt;npm&lt;/code&gt;文件，如果有执行软连接，如果没有重新下载执行上边步骤；&lt;br&gt;通过源码编译，在官方网站下载 Source code 文件，&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tar xvf node-v10.14.1.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; node-v10.14.1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;./configure&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make install&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cp /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/bin/node /usr/sbin/ &lt;span class=&quot;comment&quot;&gt;# 路径自己选择&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;查看当前安装的Node的版本 ： &lt;code&gt;node -v&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;查看当前安装的 Node 的版本 ： &lt;code&gt;node -v&lt;/code&gt;&lt;/p&gt;
     
     </summary>
     
@@ -108,11 +116,14 @@
     <link href="http://iplaycodex.com/2020/01/19/%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%E8%B7%B3%E8%BF%87sourceTree%E7%9A%84%E6%B3%A8%E5%86%8C%E6%AD%A5%E9%AA%A4/"/>
     <id>http://iplaycodex.com/2020/01/19/一行代码跳过sourceTree的注册步骤/</id>
     <published>2020-01-19T07:34:22.000Z</published>
-    <updated>2020-01-19T07:37:59.000Z</updated>
+    <updated>2020-10-29T06:51:57.960Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;RT&quot;&gt;&lt;a href=&quot;#RT&quot; class=&quot;headerlink&quot; title=&quot;RT&quot;&gt;&lt;/a&gt;RT&lt;/h2&gt;&lt;p&gt;最近帮朋友装电脑,发现&lt;code&gt;sourceTree&lt;/code&gt;得注册,很麻烦.遂找到如下解决方法:&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;、&lt;a href=&quot;https://codepen.io/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;codePen&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;https://juejin.im/user/3597257774478359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;掘金&lt;/a&gt;、&lt;a href=&quot;https://segmentfault.com/u/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;segmentfault&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/people/CallMeAllenLliu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://www.jianshu.com/u/9cd27f169c7e&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简书&lt;/a&gt;、&lt;a href=&quot;https://www.cnblogs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt;&lt;br&gt;联系我：&lt;a href=&quot;iplaycodex@163.com&quot;&gt;iplaycodex@163.com&lt;/a&gt;&lt;br&gt;特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h1&gt;&lt;p&gt;最近帮朋友装电脑,发现&lt;code&gt;sourceTree&lt;/code&gt;得注册,很麻烦.遂找到如下解决方法:&lt;/p&gt;
     
     </summary>
     
@@ -128,14 +139,15 @@
     <link href="http://iplaycodex.com/2019/12/26/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%BD%AC%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%8F%E9%AA%8C/"/>
     <id>http://iplaycodex.com/2019/12/26/记一次微信小程序转字节跳动小程序的经验/</id>
     <published>2019-12-26T06:50:44.000Z</published>
-    <updated>2020-01-10T02:15:40.000Z</updated>
+    <updated>2020-10-29T06:23:21.258Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;[TOC]&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1.前言&quot;&gt;&lt;/a&gt;1.前言&lt;/h3&gt;&lt;p&gt;公司最近有个需求是把已经存在的用微信原生开发的&lt;code&gt;微信小程序&lt;/code&gt;转为&lt;code&gt;字节跳动小程序(以下简称头条小程序)&lt;/code&gt;.因为给的开发时间太短,重写基本不可能.遂 &lt;code&gt;google&lt;/code&gt; 寻找可以方便快速将&lt;code&gt;微信小程序&lt;/code&gt;转为&lt;code&gt;头条小程序&lt;/code&gt;的方法.现将整个过程归纳总结如下,方便没有做过的同学可以快速上手,也方便自己记录.毕竟好记性不如烂笔头~Orz…&lt;/p&gt;
-&lt;h3 id=&quot;2-准备工作&quot;&gt;&lt;a href=&quot;#2-准备工作&quot; class=&quot;headerlink&quot; title=&quot;2.准备工作&quot;&gt;&lt;/a&gt;2.准备工作&lt;/h3&gt;&lt;ul&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;、&lt;a href=&quot;https://codepen.io/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;codePen&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;https://juejin.im/user/3597257774478359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;掘金&lt;/a&gt;、&lt;a href=&quot;https://segmentfault.com/u/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;segmentfault&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/people/CallMeAllenLliu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://www.jianshu.com/u/9cd27f169c7e&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简书&lt;/a&gt;、&lt;a href=&quot;https://www.cnblogs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt;&lt;br&gt;联系我：&lt;a href=&quot;iplaycodex@163.com&quot;&gt;iplaycodex@163.com&lt;/a&gt;&lt;br&gt;特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h1&gt;&lt;p&gt;公司最近有个需求是把已经存在的用微信原生开发的&lt;code&gt;微信小程序&lt;/code&gt;转为&lt;code&gt;字节跳动小程序(以下简称头条小程序)&lt;/code&gt;.因为给的开发时间太短,重写基本不可能.遂 &lt;code&gt;google&lt;/code&gt; 寻找可以方便快速将&lt;code&gt;微信小程序&lt;/code&gt;转为&lt;code&gt;头条小程序&lt;/code&gt;的方法.现将整个过程归纳总结如下,方便没有做过的同学可以快速上手,也方便自己记录.毕竟好记性不如烂笔头~Orz…&lt;/p&gt;
+&lt;h1 id=&quot;2-准备工作&quot;&gt;&lt;a href=&quot;#2-准备工作&quot; class=&quot;headerlink&quot; title=&quot;2. 准备工作&quot;&gt;&lt;/a&gt;2. 准备工作&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;1.申请字节跳动开发者账号&lt;/li&gt;
 &lt;li&gt;2.申请头条小程序,配置相关账号权限&lt;/li&gt;
 &lt;li&gt;3.小程序类别如果为特殊类别,确认是否需要相关资质&lt;/li&gt;
@@ -144,7 +156,7 @@
 &lt;li&gt;6.申请开通支付&lt;/li&gt;
 &lt;li&gt;7.下载开发工具&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;3-技术选型&quot;&gt;&lt;a href=&quot;#3-技术选型&quot; class=&quot;headerlink&quot; title=&quot;3.技术选型&quot;&gt;&lt;/a&gt;3.技术选型&lt;/h3&gt;&lt;h4 id=&quot;3-1-如何做&quot;&gt;&lt;a href=&quot;#3-1-如何做&quot; class=&quot;headerlink&quot; title=&quot;3.1 如何做?&quot;&gt;&lt;/a&gt;3.1 如何做?&lt;/h4&gt;
+&lt;h1 id=&quot;3-技术选型&quot;&gt;&lt;a href=&quot;#3-技术选型&quot; class=&quot;headerlink&quot; title=&quot;3. 技术选型&quot;&gt;&lt;/a&gt;3. 技术选型&lt;/h1&gt;&lt;h2 id=&quot;3-1-如何做&quot;&gt;&lt;a href=&quot;#3-1-如何做&quot; class=&quot;headerlink&quot; title=&quot;3.1. 如何做?&quot;&gt;&lt;/a&gt;3.1. 如何做?&lt;/h2&gt;
     
     </summary>
     
@@ -160,12 +172,15 @@
     <link href="http://iplaycodex.com/2019/12/22/wx2bat%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/"/>
     <id>http://iplaycodex.com/2019/12/22/wx2bat工具分享/</id>
     <published>2019-12-22T00:31:04.000Z</published>
-    <updated>2019-12-22T00:51:30.000Z</updated>
+    <updated>2020-10-29T07:16:58.360Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;最近在公司接到了一个需求:&lt;code&gt;把一个微信小程序快速变成字节跳动小程序&lt;/code&gt;,开发时间只有一个星期!显然从 0 开始开发字节跳动的小程序是不可能的.所以只能想办法看如何快速的把&lt;code&gt;微信小程序&lt;/code&gt;转为&lt;code&gt;字节跳动小程序&lt;/code&gt;~&lt;/p&gt;
-&lt;h3 id=&quot;解决之道&quot;&gt;&lt;a href=&quot;#解决之道&quot; class=&quot;headerlink&quot; title=&quot;解决之道&quot;&gt;&lt;/a&gt;解决之道&lt;/h3&gt;&lt;p&gt;经过查询得知,其他家的小程序的&lt;code&gt;api&lt;/code&gt;和微信几乎&lt;code&gt;90%&lt;/code&gt;一样,只是可能文件后缀换了自己的后缀.还有一些语法也变了:例如:&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;、&lt;a href=&quot;https://codepen.io/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;codePen&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;https://juejin.im/user/3597257774478359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;掘金&lt;/a&gt;、&lt;a href=&quot;https://segmentfault.com/u/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;segmentfault&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/people/CallMeAllenLliu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://www.jianshu.com/u/9cd27f169c7e&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简书&lt;/a&gt;、&lt;a href=&quot;https://www.cnblogs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt;&lt;br&gt;联系我：&lt;a href=&quot;iplaycodex@163.com&quot;&gt;iplaycodex@163.com&lt;/a&gt;&lt;br&gt;特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h1&gt;&lt;p&gt;最近在公司接到了一个需求:&lt;code&gt;把一个微信小程序快速变成字节跳动小程序&lt;/code&gt;,开发时间只有一个星期!显然从 0 开始开发字节跳动的小程序是不可能的.所以只能想办法看如何快速的把&lt;code&gt;微信小程序&lt;/code&gt;转为&lt;code&gt;字节跳动小程序&lt;/code&gt;~&lt;/p&gt;
+&lt;h1 id=&quot;2-解决之道&quot;&gt;&lt;a href=&quot;#2-解决之道&quot; class=&quot;headerlink&quot; title=&quot;2. 解决之道&quot;&gt;&lt;/a&gt;2. 解决之道&lt;/h1&gt;&lt;p&gt;经过查询得知,其他家的小程序的&lt;code&gt;api&lt;/code&gt;和微信几乎&lt;code&gt;90%&lt;/code&gt;一样,只是可能文件后缀换了自己的后缀.还有一些语法也变了:例如:&lt;/p&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// wechatApp&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;wx:&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 头条&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tt:&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 百度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;swan:&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
@@ -182,15 +197,16 @@
     <link href="http://iplaycodex.com/2019/11/12/%E5%88%A9%E7%94%A8charles%E6%9D%A5%E6%8B%A6%E6%88%AA%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94/"/>
     <id>http://iplaycodex.com/2019/11/12/利用charles来拦截请求和响应/</id>
     <published>2019-11-12T09:41:11.000Z</published>
-    <updated>2019-11-12T10:03:02.000Z</updated>
+    <updated>2020-10-29T06:26:08.822Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;今天简单分享一下如何使用&lt;code&gt;charles&lt;/code&gt;来进行&lt;code&gt;HTTP&lt;/code&gt;的拦截和修改.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;charles&lt;/code&gt;是一款非常好用的&lt;code&gt;http&lt;/code&gt;调试工具,相信做开发的同学们应该都知道&lt;br&gt;其实使用&lt;code&gt;charles&lt;/code&gt;来做&lt;code&gt;HTTP&lt;/code&gt;拦截很简单.&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;、&lt;a href=&quot;https://codepen.io/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;codePen&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;https://juejin.im/user/3597257774478359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;掘金&lt;/a&gt;、&lt;a href=&quot;https://segmentfault.com/u/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;segmentfault&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/people/CallMeAllenLliu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://www.jianshu.com/u/9cd27f169c7e&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简书&lt;/a&gt;、&lt;a href=&quot;https://www.cnblogs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt;&lt;br&gt;联系我：&lt;a href=&quot;iplaycodex@163.com&quot;&gt;iplaycodex@163.com&lt;/a&gt;&lt;br&gt;特别声明：原创不易，未经授权&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&quot;1-拦截请求&quot;&gt;&lt;a href=&quot;#1-拦截请求&quot; class=&quot;headerlink&quot; title=&quot;1.拦截请求&quot;&gt;&lt;/a&gt;1.拦截请求&lt;/h3&gt;&lt;p&gt;打开&lt;code&gt;charles&lt;/code&gt;,在输入框中输入要拦截的&lt;code&gt;API&lt;/code&gt;地址:&lt;br&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/006y8mN6gy1g8vef97dmqj30xt0azmym.jpg&quot; alt&gt;&lt;br&gt;在&lt;code&gt;API&lt;/code&gt;上鼠标右键选择&lt;code&gt;breakPoint&lt;/code&gt;即可打个断点.然后重新请求的时候这个&lt;code&gt;HTTP&lt;/code&gt;就会被拦截,如下所示:&lt;/p&gt;
+&lt;h1 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h1&gt;&lt;p&gt;今天简单分享一下如何使用&lt;code&gt;charles&lt;/code&gt;来进行&lt;code&gt;HTTP&lt;/code&gt;的拦截和修改.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;charles&lt;/code&gt;是一款非常好用的&lt;code&gt;http&lt;/code&gt;调试工具,相信做开发的同学们应该都知道&lt;br&gt;其实使用&lt;code&gt;charles&lt;/code&gt;来做&lt;code&gt;HTTP&lt;/code&gt;拦截很简单.&lt;/p&gt;
+&lt;h1 id=&quot;2-拦截请求&quot;&gt;&lt;a href=&quot;#2-拦截请求&quot; class=&quot;headerlink&quot; title=&quot;2. 拦截请求&quot;&gt;&lt;/a&gt;2. 拦截请求&lt;/h1&gt;&lt;p&gt;打开&lt;code&gt;charles&lt;/code&gt;,在输入框中输入要拦截的&lt;code&gt;API&lt;/code&gt;地址:&lt;br&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/006y8mN6gy1g8vef97dmqj30xt0azmym.jpg&quot; alt&gt;&lt;br&gt;在&lt;code&gt;API&lt;/code&gt;上鼠标右键选择&lt;code&gt;breakPoint&lt;/code&gt;即可打个断点.然后重新请求的时候这个&lt;code&gt;HTTP&lt;/code&gt;就会被拦截,如下所示:&lt;/p&gt;
     
     </summary>
     
@@ -206,12 +222,15 @@
     <link href="http://iplaycodex.com/2019/11/07/node%E8%87%AA%E5%8A%A8%E9%87%8D%E5%90%AF%E5%B7%A5%E5%85%B7nodemon/"/>
     <id>http://iplaycodex.com/2019/11/07/node自动重启工具nodemon/</id>
     <published>2019-11-07T07:50:48.000Z</published>
-    <updated>2019-11-08T02:36:38.000Z</updated>
+    <updated>2020-10-29T06:58:45.926Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;p&gt;在开发&lt;code&gt;Node.js&lt;/code&gt;的项目的时候,需要频繁的手动&lt;code&gt;close&lt;/code&gt;掉,然后再重启,非常麻烦.经过百度以后发现了一个好用的工具:&lt;code&gt;nodemon&lt;/code&gt;.它的作用是监听代码文件的变动,当代码改动了以后,自动重启.&lt;/p&gt;
-&lt;h2 id=&quot;如何使用&quot;&gt;&lt;a href=&quot;#如何使用&quot; class=&quot;headerlink&quot; title=&quot;如何使用&quot;&gt;&lt;/a&gt;如何使用&lt;/h2&gt;&lt;p&gt;打开终端,&lt;code&gt;win&lt;/code&gt;平台使用命令行,输入以下指令完成安装.&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;、&lt;a href=&quot;https://codepen.io/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;codePen&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;https://juejin.im/user/3597257774478359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;掘金&lt;/a&gt;、&lt;a href=&quot;https://segmentfault.com/u/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;segmentfault&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/people/CallMeAllenLliu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://www.jianshu.com/u/9cd27f169c7e&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简书&lt;/a&gt;、&lt;a href=&quot;https://www.cnblogs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt;&lt;br&gt;联系我：&lt;a href=&quot;iplaycodex@163.com&quot;&gt;iplaycodex@163.com&lt;/a&gt;&lt;br&gt;特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;1-问题&quot;&gt;&lt;a href=&quot;#1-问题&quot; class=&quot;headerlink&quot; title=&quot;1. 问题&quot;&gt;&lt;/a&gt;1. 问题&lt;/h1&gt;&lt;p&gt;在开发&lt;code&gt;Node.js&lt;/code&gt;的项目的时候,需要频繁的手动&lt;code&gt;close&lt;/code&gt;掉,然后再重启,非常麻烦.经过百度以后发现了一个好用的工具:&lt;code&gt;nodemon&lt;/code&gt;.它的作用是监听代码文件的变动,当代码改动了以后,自动重启.&lt;/p&gt;
+&lt;h1 id=&quot;2-如何使用&quot;&gt;&lt;a href=&quot;#2-如何使用&quot; class=&quot;headerlink&quot; title=&quot;2. 如何使用&quot;&gt;&lt;/a&gt;2. 如何使用&lt;/h1&gt;&lt;p&gt;打开终端,&lt;code&gt;win&lt;/code&gt;平台使用命令行,输入以下指令完成安装.&lt;/p&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install -g nodemon&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
@@ -228,19 +247,31 @@
     <link href="http://iplaycodex.com/2019/11/04/%E6%A8%A1%E4%BB%BFvue-cli%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
     <id>http://iplaycodex.com/2019/11/04/模仿vue-cli写一个简单脚手架/</id>
     <published>2019-11-04T06:54:59.000Z</published>
-    <updated>2019-11-04T08:02:59.000Z</updated>
+    <updated>2020-10-29T06:38:55.446Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;[TOC]&lt;/p&gt;
-&lt;hr&gt;
-&lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;blockquote&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;、&lt;a href=&quot;https://codepen.io/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;codePen&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;https://juejin.im/user/3597257774478359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;掘金&lt;/a&gt;、&lt;a href=&quot;https://segmentfault.com/u/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;segmentfault&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/people/CallMeAllenLliu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://www.jianshu.com/u/9cd27f169c7e&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简书&lt;/a&gt;、&lt;a href=&quot;https://www.cnblogs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt;&lt;br&gt;联系我：&lt;a href=&quot;iplaycodex@163.com&quot;&gt;iplaycodex@163.com&lt;/a&gt;&lt;br&gt;特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h1&gt;&lt;p&gt;我的朋友们,你是否遇到过下面的这种情况.每当要开始做新项目的时候(此文档仅针对&lt;code&gt;vue&lt;/code&gt;,后续会继续扩展),每次都需要使用&lt;code&gt;vue-cli&lt;/code&gt;去初始化一个项目:&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// init your project by vue-cli with webpack template&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;vue init webpack yourProject&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;一顿操作猛如虎生成了一个基于&lt;code&gt;webpack&lt;/code&gt;的项目.BUT 距离开箱即用还是有一点距离.如果你的项目是个移动端的项目,那么针对移动端又需要安装大量的插件,第三方库.包括不限于如下所示:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fastclick&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;babel-polyfill&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;reset.css&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;border.css&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rem.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;flexable.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;axios&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;qs&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一遍一遍,真的是烦的要死.而且现在是一个强调&lt;code&gt;工程化&lt;/code&gt;的时代,任何可以交给程序的东西都交给程序自动化的去做.而且每次这样做也不利于项目的一致性,规范性.如果你是一个团队&lt;code&gt;owner&lt;/code&gt;,如何统一化开发流程,如何解决这个问题.则迫在眉睫.&lt;/p&gt;
+&lt;p&gt;既然产生了问题,那么就要解决问题.&lt;/p&gt;
+&lt;h1 id=&quot;2-思路&quot;&gt;&lt;a href=&quot;#2-思路&quot; class=&quot;headerlink&quot; title=&quot;2. 思路&quot;&gt;&lt;/a&gt;2. 思路&lt;/h1&gt;
     
     </summary>
     
@@ -256,15 +287,18 @@
     <link href="http://iplaycodex.com/2019/11/02/npm-ERR-publish-Failed-PUT-403/"/>
     <id>http://iplaycodex.com/2019/11/02/npm-ERR-publish-Failed-PUT-403/</id>
     <published>2019-11-02T05:33:25.000Z</published>
-    <updated>2019-11-02T06:14:02.000Z</updated>
+    <updated>2020-10-29T06:59:32.707Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;p&gt;最近遇到的一个问题,最近在&lt;code&gt;npm&lt;/code&gt;发布了一个包.使用命令&lt;code&gt;npm publish&lt;/code&gt;之后发生了如下错误:&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;、&lt;a href=&quot;https://codepen.io/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;codePen&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;https://juejin.im/user/3597257774478359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;掘金&lt;/a&gt;、&lt;a href=&quot;https://segmentfault.com/u/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;segmentfault&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/people/CallMeAllenLliu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://www.jianshu.com/u/9cd27f169c7e&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简书&lt;/a&gt;、&lt;a href=&quot;https://www.cnblogs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt;&lt;br&gt;联系我：&lt;a href=&quot;iplaycodex@163.com&quot;&gt;iplaycodex@163.com&lt;/a&gt;&lt;br&gt;特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;1-问题&quot;&gt;&lt;a href=&quot;#1-问题&quot; class=&quot;headerlink&quot; title=&quot;1. 问题&quot;&gt;&lt;/a&gt;1. 问题&lt;/h1&gt;&lt;p&gt;最近遇到的一个问题,最近在&lt;code&gt;npm&lt;/code&gt;发布了一个包.使用命令&lt;code&gt;npm publish&lt;/code&gt;之后发生了如下错误:&lt;/p&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm ERR! code E403&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm ERR! &lt;span class=&quot;number&quot;&gt;403&lt;/span&gt; Forbidden - PUT https:&lt;span class=&quot;comment&quot;&gt;//registry.npm.taobao.org/kda-cli - [no_perms] Private mode enable, only admin can publish this module&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm ERR! A complete log &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt; run can be found &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm ERR! &lt;span class=&quot;regexp&quot;&gt;/Users/&lt;/span&gt;allenliu/.npm/_logs/&lt;span class=&quot;number&quot;&gt;2019&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;-11&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;-02&lt;/span&gt;T05_52_32_439Z-debug.log&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;出现这个问题呢,一般都是因为修改了&lt;code&gt;npm&lt;/code&gt;的&lt;code&gt;源&lt;/code&gt;.我们可以在很多文档上看到因为国内的网络问题,很多时候文档上都建议修改&lt;code&gt;npm&lt;/code&gt;的源为&lt;code&gt;taobao&lt;/code&gt;源.&lt;/p&gt;
-&lt;h2 id=&quot;解决方法如下所示&quot;&gt;&lt;a href=&quot;#解决方法如下所示&quot; class=&quot;headerlink&quot; title=&quot;解决方法如下所示:&quot;&gt;&lt;/a&gt;解决方法如下所示:&lt;/h2&gt;&lt;h5 id=&quot;1-查看npm是否被设置成了taobao源-打开终端-输入&quot;&gt;&lt;a href=&quot;#1-查看npm是否被设置成了taobao源-打开终端-输入&quot; class=&quot;headerlink&quot; title=&quot;1.查看npm是否被设置成了taobao源,打开终端,输入:&quot;&gt;&lt;/a&gt;1.查看npm是否被设置成了taobao源,打开终端,输入:&lt;/h5&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm config get registry&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;2-解决方法如下所示&quot;&gt;&lt;a href=&quot;#2-解决方法如下所示&quot; class=&quot;headerlink&quot; title=&quot;2. 解决方法如下所示:&quot;&gt;&lt;/a&gt;2. 解决方法如下所示:&lt;/h1&gt;&lt;h5 id=&quot;2-0-0-0-1-查看-npm-是否被设置成了-taobao-源-打开终端-输入&quot;&gt;&lt;a href=&quot;#2-0-0-0-1-查看-npm-是否被设置成了-taobao-源-打开终端-输入&quot; class=&quot;headerlink&quot; title=&quot;2.0.0.0.1. 查看 npm 是否被设置成了 taobao 源,打开终端,输入:&quot;&gt;&lt;/a&gt;2.0.0.0.1. 查看 npm 是否被设置成了 taobao 源,打开终端,输入:&lt;/h5&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm config get registry&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;这个时候会如下显示:(如果非淘宝源头也就不会出现上述问题了)&lt;/p&gt;
 &lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;https://registry.npm.taobao.org/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -283,20 +317,21 @@
     <link href="http://iplaycodex.com/2019/10/31/web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E4%B9%8BJavascript/"/>
     <id>http://iplaycodex.com/2019/10/31/web开发规范之Javascript/</id>
     <published>2019-10-31T10:09:16.000Z</published>
-    <updated>2019-10-31T10:12:54.000Z</updated>
+    <updated>2020-10-29T07:15:26.552Z</updated>
     
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;团队内部整理的一份Javascript开发规范,供参考&lt;/p&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;、&lt;a href=&quot;https://codepen.io/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;codePen&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;https://juejin.im/user/3597257774478359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;掘金&lt;/a&gt;、&lt;a href=&quot;https://segmentfault.com/u/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;segmentfault&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/people/CallMeAllenLliu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://www.jianshu.com/u/9cd27f169c7e&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简书&lt;/a&gt;、&lt;a href=&quot;https://www.cnblogs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt;&lt;br&gt;联系我：&lt;a href=&quot;iplaycodex@163.com&quot;&gt;iplaycodex@163.com&lt;/a&gt;&lt;br&gt;特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;ul&gt;
+&lt;h1 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h1&gt;&lt;p&gt;团队内部整理的一份 Javascript 开发规范,供参考&lt;/p&gt;
+&lt;h1 id=&quot;2-写在前面&quot;&gt;&lt;a href=&quot;#2-写在前面&quot; class=&quot;headerlink&quot; title=&quot;2. 写在前面&quot;&gt;&lt;/a&gt;2. 写在前面&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;JavaScript&lt;/code&gt; 作为最常用的前端编程语言，其编码规约是前端规范的重要组成部分。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;ECMAScript 6.0&lt;/code&gt;（即 &lt;code&gt;ES6&lt;/code&gt;/&lt;code&gt;ES2015&lt;/code&gt;）作为 &lt;code&gt;JavaScript&lt;/code&gt; 语言的下一代标准，于 2015 年 6 月正式发布。&lt;code&gt;ES6&lt;/code&gt; 引入了诸多新的语言特性，与之前的 &lt;code&gt;JS&lt;/code&gt; 版本有很大差异，因此业界通常会以 ES6、ES5 模糊地区别 ES6 之后（包括 ES2016/ES2017..）、之前的 JS 版本，本规约中也会使用这种模糊的叫法。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;ES6&lt;/code&gt; 经过几年的普及，已经成为未来使用的大趋势，尤其是新代码库基本都会使用 &lt;code&gt;ES6&lt;/code&gt; 编码。&lt;/li&gt;
-&lt;li&gt;因此，本规范使用 &lt;code&gt;ES6&lt;/code&gt; 编写。对于还在使用 &lt;code&gt;ES5&lt;/code&gt; 及之前版本 &lt;code&gt;JS&lt;/code&gt; 的同学，本规范的大部分内容也适用。&lt;h2 id=&quot;编码风格&quot;&gt;&lt;a href=&quot;#编码风格&quot; class=&quot;headerlink&quot; title=&quot;编码风格&quot;&gt;&lt;/a&gt;编码风格&lt;/h2&gt;&lt;h4 id=&quot;1-缩进&quot;&gt;&lt;a href=&quot;#1-缩进&quot; class=&quot;headerlink&quot; title=&quot;1.缩进&quot;&gt;&lt;/a&gt;1.缩进&lt;/h4&gt;&lt;/li&gt;
+&lt;li&gt;因此，本规范使用 &lt;code&gt;ES6&lt;/code&gt; 编写。对于还在使用 &lt;code&gt;ES5&lt;/code&gt; 及之前版本 &lt;code&gt;JS&lt;/code&gt; 的同学，本规范的大部分内容也适用。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;【强制】&lt;/code&gt;使用 4 个空格缩进。&lt;code&gt;eslint: indent&lt;/code&gt;.统一使用 4个空格缩进，不要使用 2个空格或 tab 缩进：&lt;/p&gt;
+&lt;h1 id=&quot;3-编码风格&quot;&gt;&lt;a href=&quot;#3-编码风格&quot; class=&quot;headerlink&quot; title=&quot;3. 编码风格&quot;&gt;&lt;/a&gt;3. 编码风格&lt;/h1&gt;&lt;h2 id=&quot;3-1-缩进&quot;&gt;&lt;a href=&quot;#3-1-缩进&quot; class=&quot;headerlink&quot; title=&quot;3.1. 缩进&quot;&gt;&lt;/a&gt;3.1. 缩进&lt;/h2&gt;&lt;p&gt;&lt;code&gt;【强制】&lt;/code&gt;使用 4 个空格缩进。&lt;code&gt;eslint: indent&lt;/code&gt;.统一使用 4 个空格缩进，不要使用 2 个空格或 tab 缩进：&lt;/p&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// bad&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;foo&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;∙∙&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; name;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// good&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;foo&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;∙∙∙∙&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; name;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
@@ -313,18 +348,19 @@
     <link href="http://iplaycodex.com/2019/10/31/web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E4%B9%8BCSS/"/>
     <id>http://iplaycodex.com/2019/10/31/web开发规范之CSS/</id>
     <published>2019-10-31T10:08:10.000Z</published>
-    <updated>2019-10-31T10:13:07.000Z</updated>
+    <updated>2020-10-29T07:12:11.744Z</updated>
     
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;团队内部整理的一份CSS开发规范,供参考&lt;/p&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;、&lt;a href=&quot;https://codepen.io/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;codePen&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;https://juejin.im/user/3597257774478359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;掘金&lt;/a&gt;、&lt;a href=&quot;https://segmentfault.com/u/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;segmentfault&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/people/CallMeAllenLliu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://www.jianshu.com/u/9cd27f169c7e&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简书&lt;/a&gt;、&lt;a href=&quot;https://www.cnblogs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt;&lt;br&gt;联系我：&lt;a href=&quot;iplaycodex@163.com&quot;&gt;iplaycodex@163.com&lt;/a&gt;&lt;br&gt;特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;基本规范&quot;&gt;&lt;a href=&quot;#基本规范&quot; class=&quot;headerlink&quot; title=&quot;基本规范&quot;&gt;&lt;/a&gt;基本规范&lt;/h2&gt;&lt;p&gt;1.【推荐】缩进使用四个空格&lt;/p&gt;
-&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* bad */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.mod-example&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;padding-left&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;15px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* good */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.mod-example&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;padding-left&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;15px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h1&gt;&lt;p&gt;团队内部整理的一份 CSS 开发规范,供参考&lt;/p&gt;
+&lt;h1 id=&quot;2-基本规范&quot;&gt;&lt;a href=&quot;#2-基本规范&quot; class=&quot;headerlink&quot; title=&quot;2. 基本规范&quot;&gt;&lt;/a&gt;2. 基本规范&lt;/h1&gt;&lt;p&gt;1.【推荐】缩进使用四个空格&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* bad */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.mod-example&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;padding-left&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;15px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* good */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.mod-example&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;padding-left&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;15px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;2.在每个&lt;code&gt;声明块&lt;/code&gt;的&lt;code&gt;左花括号&lt;/code&gt;前添加一个空格&lt;/p&gt;
-&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* bad */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.mod-example&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;padding-left&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;15px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* good */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.mod-example&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;padding-left&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;15px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* bad */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.mod-example&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;padding-left&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;15px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* good */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.mod-example&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;padding-left&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;15px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -340,15 +376,16 @@
     <link href="http://iplaycodex.com/2019/10/31/web%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E4%B9%8BHTML/"/>
     <id>http://iplaycodex.com/2019/10/31/web开发规范之HTML/</id>
     <published>2019-10-31T10:01:37.000Z</published>
-    <updated>2019-10-31T10:05:05.000Z</updated>
+    <updated>2020-10-29T07:17:43.838Z</updated>
     
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;团队内部整理的一份HTML开发规范,供参考&lt;/p&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;、&lt;a href=&quot;https://codepen.io/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;codePen&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;https://juejin.im/user/3597257774478359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;掘金&lt;/a&gt;、&lt;a href=&quot;https://segmentfault.com/u/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;segmentfault&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/people/CallMeAllenLliu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://www.jianshu.com/u/9cd27f169c7e&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简书&lt;/a&gt;、&lt;a href=&quot;https://www.cnblogs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt;&lt;br&gt;联系我：&lt;a href=&quot;iplaycodex@163.com&quot;&gt;iplaycodex@163.com&lt;/a&gt;&lt;br&gt;特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;基本规范&quot;&gt;&lt;a href=&quot;#基本规范&quot; class=&quot;headerlink&quot; title=&quot;基本规范&quot;&gt;&lt;/a&gt;基本规范&lt;/h2&gt;&lt;h3 id=&quot;1-HTML5-doctype&quot;&gt;&lt;a href=&quot;#1-HTML5-doctype&quot; class=&quot;headerlink&quot; title=&quot;1.HTML5 doctype&quot;&gt;&lt;/a&gt;1.HTML5 doctype&lt;/h3&gt;&lt;p&gt;在每个 &lt;code&gt;HTML&lt;/code&gt; 页面开头使用这个简单地 &lt;code&gt;doctype&lt;/code&gt; 来启用标准模式，使其每个浏览器中尽可能一致的展现。&lt;/p&gt;
-&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- bad --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- good --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h1&gt;&lt;p&gt;团队内部整理的一份 HTML 开发规范,供参考&lt;/p&gt;
+&lt;h1 id=&quot;2-基本规范&quot;&gt;&lt;a href=&quot;#2-基本规范&quot; class=&quot;headerlink&quot; title=&quot;2. 基本规范&quot;&gt;&lt;/a&gt;2. 基本规范&lt;/h1&gt;&lt;h2 id=&quot;2-1-HTML5-doctype&quot;&gt;&lt;a href=&quot;#2-1-HTML5-doctype&quot; class=&quot;headerlink&quot; title=&quot;2.1. HTML5 doctype&quot;&gt;&lt;/a&gt;2.1. HTML5 doctype&lt;/h2&gt;&lt;p&gt;在每个 &lt;code&gt;HTML&lt;/code&gt; 页面开头使用这个简单地 &lt;code&gt;doctype&lt;/code&gt; 来启用标准模式，使其每个浏览器中尽可能一致的展现。&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- bad --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- good --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -364,11 +401,14 @@
     <link href="http://iplaycodex.com/2019/10/28/web%E4%BC%98%E5%8C%96%E4%B9%8B%E7%A6%BB%E7%BA%BF%E5%8C%96/"/>
     <id>http://iplaycodex.com/2019/10/28/web优化之离线化/</id>
     <published>2019-10-28T10:20:08.000Z</published>
-    <updated>2019-11-04T06:51:31.000Z</updated>
+    <updated>2020-10-29T07:16:12.645Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h3&gt;&lt;p&gt;现在混合开发的应用场景越来越多了.业内的解决方案也有很多,例:&lt;code&gt;native + react-native&lt;/code&gt;的,支付宝或者微信的&lt;code&gt;native + 小程序&lt;/code&gt;的.当然应用更多的还是&lt;code&gt;native + webView&lt;/code&gt;这种场景.&lt;br&gt;使用&lt;code&gt;native + webView&lt;/code&gt;的优点很多:&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;、&lt;a href=&quot;https://codepen.io/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;codePen&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;https://juejin.im/user/3597257774478359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;掘金&lt;/a&gt;、&lt;a href=&quot;https://segmentfault.com/u/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;segmentfault&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/people/CallMeAllenLliu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://www.jianshu.com/u/9cd27f169c7e&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简书&lt;/a&gt;、&lt;a href=&quot;https://www.cnblogs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt;&lt;br&gt;联系我：&lt;a href=&quot;iplaycodex@163.com&quot;&gt;iplaycodex@163.com&lt;/a&gt;&lt;br&gt;特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;1-写在前面&quot;&gt;&lt;a href=&quot;#1-写在前面&quot; class=&quot;headerlink&quot; title=&quot;1. 写在前面&quot;&gt;&lt;/a&gt;1. 写在前面&lt;/h1&gt;&lt;p&gt;现在混合开发的应用场景越来越多了.业内的解决方案也有很多,例:&lt;code&gt;native + react-native&lt;/code&gt;的,支付宝或者微信的&lt;code&gt;native + 小程序&lt;/code&gt;的.当然应用更多的还是&lt;code&gt;native + webView&lt;/code&gt;这种场景.&lt;br&gt;使用&lt;code&gt;native + webView&lt;/code&gt;的优点很多:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;开发方便&lt;/li&gt;
 &lt;li&gt;方便快速迭代&lt;/li&gt;
@@ -376,7 +416,7 @@
 &lt;/ul&gt;
 &lt;p&gt;但是使用这套方案也有一个很致命的缺点:&lt;code&gt;那就是很慢!&lt;/code&gt;,在&lt;code&gt;native&lt;/code&gt;上点击了一个按钮触发一个打开&lt;code&gt;webView&lt;/code&gt;的&lt;code&gt;action&lt;/code&gt;操作,会经过以下几个过程:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;初始化webview&lt;/code&gt; =&amp;gt; &lt;code&gt;请求HTML,JS,CSS等静态资源&lt;/code&gt; =&amp;gt; &lt;code&gt;渲染模板&lt;/code&gt; =&amp;gt; &lt;code&gt;请求API&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;这中间的时间很久.经过测试我们项目在安卓低端机上表现为平均加载完成时间为4 ~ 5秒.这是非常难以接受的!所以优化的需求就迫在眉睫了.&lt;/p&gt;
+&lt;p&gt;这中间的时间很久.经过测试我们项目在安卓低端机上表现为平均加载完成时间为 4 ~ 5 秒.这是非常难以接受的!所以优化的需求就迫在眉睫了.&lt;/p&gt;
     
     </summary>
     
@@ -392,7 +432,7 @@
     <link href="http://iplaycodex.com/2019/10/11/Smartgit%E4%BD%BF%E7%94%A830%E5%A4%A9%E8%BF%87%E6%9C%9F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
     <id>http://iplaycodex.com/2019/10/11/Smartgit使用30天过期解决办法/</id>
     <published>2019-10-11T06:36:45.000Z</published>
-    <updated>2020-10-12T09:50:17.576Z</updated>
+    <updated>2020-10-29T07:10:42.363Z</updated>
     
     <summary type="html">
     
@@ -400,10 +440,8 @@
       
         
         
-          &lt;p&gt;&lt;code&gt;smartGit&lt;/code&gt;是一款&lt;code&gt;git&lt;/code&gt;比较好用的GUI工具.未注册版本提供30天的试用期,提供一个过期了以后还可以使用的方法:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;1.打开&lt;code&gt;Finder&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;2.使用快捷
+          &lt;blockquote&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot;
         
       
     
@@ -417,33 +455,18 @@
   </entry>
   
   <entry>
-    <title>深入浅出react+redux之组件的生命周期</title>
-    <link href="http://iplaycodex.com/2019/08/23/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact-redux%E4%B9%8B%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
-    <id>http://iplaycodex.com/2019/08/23/深入浅出react-redux之组件的生命周期/</id>
-    <published>2019-08-23T03:24:11.000Z</published>
-    <updated>2019-08-23T12:48:03.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="react.js" scheme="http://iplaycodex.com/categories/react-js/"/>
-    
-    
-      <category term="react.js" scheme="http://iplaycodex.com/tags/react-js/"/>
-    
-  </entry>
-  
-  <entry>
     <title>深入浅出react+redux之state和props</title>
     <link href="http://iplaycodex.com/2019/08/22/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact-redux%E4%B9%8Bstate%E5%92%8Cprops/"/>
     <id>http://iplaycodex.com/2019/08/22/深入浅出react-redux之state和props/</id>
     <published>2019-08-22T09:49:39.000Z</published>
-    <updated>2019-08-23T03:25:15.000Z</updated>
+    <updated>2020-10-29T06:46:01.816Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;state-和-prop&quot;&gt;&lt;a href=&quot;#state-和-prop&quot; class=&quot;headerlink&quot; title=&quot;state 和 prop&quot;&gt;&lt;/a&gt;state 和 prop&lt;/h2&gt;&lt;blockquote&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;、&lt;a href=&quot;https://codepen.io/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;codePen&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;https://juejin.im/user/3597257774478359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;掘金&lt;/a&gt;、&lt;a href=&quot;https://segmentfault.com/u/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;segmentfault&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/people/CallMeAllenLliu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://www.jianshu.com/u/9cd27f169c7e&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简书&lt;/a&gt;、&lt;a href=&quot;https://www.cnblogs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt;&lt;br&gt;联系我：&lt;a href=&quot;iplaycodex@163.com&quot;&gt;iplaycodex@163.com&lt;/a&gt;&lt;br&gt;特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;1-state-和-prop&quot;&gt;&lt;a href=&quot;#1-state-和-prop&quot; class=&quot;headerlink&quot; title=&quot;1. state 和 prop&quot;&gt;&lt;/a&gt;1. state 和 prop&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;差劲的程序员操心代码，优秀的程序员操心数据结构和它们之间的关系。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;毫无疑问,在&lt;code&gt;react&lt;/code&gt;中处理数据是需要我们多关心的事情.页面是由数据进行驱动的,那么如何科学,高效的处理数据则成为我们需要思考的问题.&lt;/p&gt;
@@ -474,11 +497,14 @@
     <link href="http://iplaycodex.com/2019/08/22/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact+redux%E4%B9%8Bjsx/"/>
     <id>http://iplaycodex.com/2019/08/22/深入浅出react+redux之jsx/</id>
     <published>2019-08-22T07:03:46.000Z</published>
-    <updated>2019-08-22T09:47:51.000Z</updated>
+    <updated>2020-10-29T06:48:15.881Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h3&gt;&lt;p&gt;单独把&lt;code&gt;JSX&lt;/code&gt;拿出来说一下,因为我觉得这个东西有必要深入研究一下.下面是我当时学习&lt;code&gt;react.js&lt;/code&gt;的时候想到的几个问题:&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;、&lt;a href=&quot;https://codepen.io/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;codePen&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;https://juejin.im/user/3597257774478359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;掘金&lt;/a&gt;、&lt;a href=&quot;https://segmentfault.com/u/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;segmentfault&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/people/CallMeAllenLliu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://www.jianshu.com/u/9cd27f169c7e&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简书&lt;/a&gt;、&lt;a href=&quot;https://www.cnblogs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt;&lt;br&gt;联系我：&lt;a href=&quot;iplaycodex@163.com&quot;&gt;iplaycodex@163.com&lt;/a&gt;&lt;br&gt;特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;1-需求&quot;&gt;&lt;a href=&quot;#1-需求&quot; class=&quot;headerlink&quot; title=&quot;1. 需求&quot;&gt;&lt;/a&gt;1. 需求&lt;/h1&gt;&lt;p&gt;单独把&lt;code&gt;JSX&lt;/code&gt;拿出来说一下,因为我觉得这个东西有必要深入研究一下.下面是我当时学习&lt;code&gt;react.js&lt;/code&gt;的时候想到的几个问题:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;为什么要在&lt;code&gt;react.js&lt;/code&gt;中使用&lt;code&gt;jsx&lt;/code&gt;?&lt;/li&gt;
 &lt;li&gt;将事件声明写在了&lt;code&gt;JSX&lt;/code&gt;中是一种进步还是一种倒退?&lt;/li&gt;
@@ -500,20 +526,22 @@
     <link href="http://iplaycodex.com/2019/08/22/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAreact+redux%E7%AC%AC%E4%B8%80%E7%AF%87:%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
     <id>http://iplaycodex.com/2019/08/22/深入浅出react+redux第一篇:基础篇/</id>
     <published>2019-08-22T06:34:19.000Z</published>
-    <updated>2019-08-22T07:04:44.000Z</updated>
+    <updated>2020-10-29T06:46:55.395Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;p&gt;本篇连载是我学习&lt;code&gt;react.js&lt;/code&gt;的一个笔记,之前一直保存在&lt;code&gt;有道云笔记&lt;/code&gt;中,最近打算发到博客上面来.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;1-环境配置&quot;&gt;&lt;a href=&quot;#1-环境配置&quot; class=&quot;headerlink&quot; title=&quot;1.环境配置&quot;&gt;&lt;/a&gt;1.环境配置&lt;/h3&gt;&lt;p&gt;首先我们需要下载&lt;code&gt;react.js&lt;/code&gt;的一个官方的脚手架工具:&lt;code&gt;create-react-app&lt;/code&gt;.终端执行下面的命令:&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;、&lt;a href=&quot;https://codepen.io/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;codePen&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;https://juejin.im/user/3597257774478359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;掘金&lt;/a&gt;、&lt;a href=&quot;https://segmentfault.com/u/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;segmentfault&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/people/CallMeAllenLliu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://www.jianshu.com/u/9cd27f169c7e&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简书&lt;/a&gt;、&lt;a href=&quot;https://www.cnblogs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt;&lt;br&gt;联系我：&lt;a href=&quot;iplaycodex@163.com&quot;&gt;iplaycodex@163.com&lt;/a&gt;&lt;br&gt;特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;1-写在前面&quot;&gt;&lt;a href=&quot;#1-写在前面&quot; class=&quot;headerlink&quot; title=&quot;1. 写在前面&quot;&gt;&lt;/a&gt;1. 写在前面&lt;/h1&gt;&lt;p&gt;本篇连载是我学习&lt;code&gt;react.js&lt;/code&gt;的一个笔记,之前一直保存在&lt;code&gt;有道云笔记&lt;/code&gt;中,最近打算发到博客上面来&lt;/p&gt;
+&lt;h1 id=&quot;2-环境配置&quot;&gt;&lt;a href=&quot;#2-环境配置&quot; class=&quot;headerlink&quot; title=&quot;2. 环境配置&quot;&gt;&lt;/a&gt;2. 环境配置&lt;/h1&gt;&lt;p&gt;首先我们需要下载&lt;code&gt;react.js&lt;/code&gt;的一个官方的脚手架工具:&lt;code&gt;create-react-app&lt;/code&gt;.终端执行下面的命令:&lt;/p&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install -g create-react-app&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;p&gt;即可安装,然后终端中输入&lt;code&gt;create-react-app -V&lt;/code&gt;,即可查看该脚手架的ban版本.目前最新版的是&lt;code&gt;3.0.1&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;即可安装,然后终端中输入&lt;code&gt;create-react-app -V&lt;/code&gt;,即可查看该脚手架的 ban 版本.目前最新版的是&lt;code&gt;3.0.1&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;脚手架已经安装完毕了,我们来创建一个&lt;code&gt;react.js&lt;/code&gt;的应用吧.&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 1.init project&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;create-react-app my-react-app&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 2.cd &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd my-react-app&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 3.run&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm run start&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 1.init project&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;create-react-app my-react-app&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 2.cd&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd my-react-app&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 3.run&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm run start&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-&lt;h3 id=&quot;2-浅尝组件&quot;&gt;&lt;a href=&quot;#2-浅尝组件&quot; class=&quot;headerlink&quot; title=&quot;2.浅尝组件&quot;&gt;&lt;/a&gt;2.浅尝组件&lt;/h3&gt;&lt;p&gt;现代前端开发开始流行一种开发思想叫做:&lt;code&gt;组件式开发&lt;/code&gt;.不论是&lt;code&gt;vue.js&lt;/code&gt;,&lt;code&gt;anglar.js&lt;/code&gt;亦或者是我们今天要学习的&lt;code&gt;react.js&lt;/code&gt;都是倡导组件式开发,所谓&lt;code&gt;组件式开发&lt;/code&gt;即是把一个项目认为是一棵&lt;code&gt;组件树&lt;/code&gt;,而每一个页面/模块都是该组件树的一个分支,该分支上的页面又可以拆分为不同的小组件,各个组件堆砌组合成为了一个功能完整的页面乃至应用.&lt;/p&gt;
+&lt;h1 id=&quot;3-浅尝组件&quot;&gt;&lt;a href=&quot;#3-浅尝组件&quot; class=&quot;headerlink&quot; title=&quot;3. 浅尝组件&quot;&gt;&lt;/a&gt;3. 浅尝组件&lt;/h1&gt;&lt;p&gt;现代前端开发开始流行一种开发思想叫做:&lt;code&gt;组件式开发&lt;/code&gt;.不论是&lt;code&gt;vue.js&lt;/code&gt;,&lt;code&gt;anglar.js&lt;/code&gt;亦或者是我们今天要学习的&lt;code&gt;react.js&lt;/code&gt;都是倡导组件式开发,所谓&lt;code&gt;组件式开发&lt;/code&gt;即是把一个项目认为是一棵&lt;code&gt;组件树&lt;/code&gt;,而每一个页面/模块都是该组件树的一个分支,该分支上的页面又可以拆分为不同的小组件,各个组件堆砌组合成为了一个功能完整的页面乃至应用.&lt;/p&gt;
 &lt;p&gt;一个最简单的&lt;code&gt;react.js&lt;/code&gt;的组件如下所示:&lt;/p&gt;
     
     </summary>
@@ -530,17 +558,47 @@
     <link href="http://iplaycodex.com/2019/08/09/react-native%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/"/>
     <id>http://iplaycodex.com/2019/08/09/react-native屏幕适配/</id>
     <published>2019-08-09T06:11:14.000Z</published>
-    <updated>2019-08-12T06:46:09.000Z</updated>
+    <updated>2020-10-29T07:03:09.281Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;1-写在前面&quot;&gt;&lt;a href=&quot;#1-写在前面&quot; class=&quot;headerlink&quot; title=&quot;1.写在前面&quot;&gt;&lt;/a&gt;1.写在前面&lt;/h2&gt;&lt;p&gt;在使用&lt;code&gt;react-native&lt;/code&gt;进行开发的时候我们参见官方文知道做屏幕适配是使用&lt;code&gt;flexBox&lt;/code&gt;来进行布局.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://reactnative.cn/docs/flexbox/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;戳我查看flexBox布局&lt;/a&gt;&lt;/p&gt;
+      &lt;blockquote&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github&lt;/a&gt;、&lt;a href=&quot;https://codepen.io/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;codePen&lt;/a&gt;&lt;br&gt;博客：&lt;a href=&quot;https://juejin.im/user/3597257774478359&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;掘金&lt;/a&gt;、&lt;a href=&quot;https://segmentfault.com/u/iplaycodex&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;segmentfault&lt;/a&gt;、&lt;a href=&quot;https://www.zhihu.com/people/CallMeAllenLliu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://www.jianshu.com/u/9cd27f169c7e&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;简书&lt;/a&gt;、&lt;a href=&quot;https://www.cnblogs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt;&lt;br&gt;联系我：&lt;a href=&quot;iplaycodex@163.com&quot;&gt;iplaycodex@163.com&lt;/a&gt;&lt;br&gt;特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h1&gt;&lt;p&gt;在使用&lt;code&gt;react-native&lt;/code&gt;进行开发的时候我们参见官方文知道做屏幕适配是使用&lt;code&gt;flexBox&lt;/code&gt;来进行布局.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://reactnative.cn/docs/flexbox/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;戳我查看 flexBox 布局&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;有关&lt;code&gt;flexBox&lt;/code&gt;的属性这里不做太多介绍,不会的请参考官方文档.这里只是说一下,因为在做屏幕适配的时候的解决之道.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;在react-native中我们使用StyleSheet这个对象来进行样式的开发.例如:&lt;/p&gt;
+&lt;p&gt;在 react-native 中我们使用 StyleSheet 这个对象来进行样式的开发.例如:&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; &amp;#123; StyleSheet &amp;#125; &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;react-native&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 声明了一个style的变量,使用它来给组件添加样式&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; style = StyleSheet.crate(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    title:&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fontSize:&lt;span class=&quot;number&quot;&gt;14&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        color:&lt;span class=&quot;string&quot;&gt;&quot;#BBB&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    subTitle:&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        marginTop:&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        marginBottom:&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        paddingLeft:&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        paddingRight:&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; &amp;#123; StyleSheet &amp;#125; &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;react-native&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 声明了一个style的变量,使用它来给组件添加样式&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; style = StyleSheet.crate(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    title: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fontSize: &lt;span class=&quot;number&quot;&gt;14&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        color: &lt;span class=&quot;string&quot;&gt;&quot;#BBB&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    subTitle: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        marginTop: &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        marginBottom: &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        paddingLeft: &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        paddingRight: &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="react-native" scheme="http://iplaycodex.com/categories/react-native/"/>
+    
+    
+      <category term="react-native" scheme="http://iplaycodex.com/tags/react-native/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>新建CustomStyleSheet废弃StyleSheet</title>
+    <link href="http://iplaycodex.com/2019/08/08/%E6%96%B0%E5%BB%BACustomStyleSheet%E5%BA%9F%E5%BC%83StyleSheet/"/>
+    <id>http://iplaycodex.com/2019/08/08/新建CustomStyleSheet废弃StyleSheet/</id>
+    <published>2019-08-08T10:38:00.000Z</published>
+    <updated>2020-10-29T06:49:25.092Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;作者：&lt;a href=&quot;http://iplaycodex.com&quot;&gt;iplaycodex&lt;/a&gt;&lt;br&gt;仓库：&lt;a href=&quot;https://github.com/iplaycodex&quot; target=&quot;_blank&quot;
+        
+      
     
     </summary>
     

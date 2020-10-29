@@ -81,19 +81,19 @@
 
 
 
-<meta name="description" content="需求单独把JSX拿出来说一下,因为我觉得这个东西有必要深入研究一下.下面是我当时学习react.js的时候想到的几个问题:  为什么要在react.js中使用jsx? 将事件声明写在了JSX中是一种进步还是一种倒退? react.js是如何根据diff算法底层实现模板高性能重新渲染的?(因为我们知道每执行一次setState(),都会执行一次render()函数,react.js底层做了什么?它是">
+<meta name="description" content="作者：iplaycodex仓库：github、codePen博客：掘金、segmentfault、知乎、简书、博客园联系我：iplaycodex@163.com特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起  1. 需求单独把JSX拿出来说一下,因为我觉得这个东西有必要深入研究一下.下面是我当时学习reac">
 <meta name="keywords" content="react.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入浅出react+redux之jsx">
 <meta property="og:url" content="http://iplaycodex.com/2019/08/22/深入浅出react+redux之jsx/index.html">
 <meta property="og:site_name" content="iplaycodex">
-<meta property="og:description" content="需求单独把JSX拿出来说一下,因为我觉得这个东西有必要深入研究一下.下面是我当时学习react.js的时候想到的几个问题:  为什么要在react.js中使用jsx? 将事件声明写在了JSX中是一种进步还是一种倒退? react.js是如何根据diff算法底层实现模板高性能重新渲染的?(因为我们知道每执行一次setState(),都会执行一次render()函数,react.js底层做了什么?它是">
+<meta property="og:description" content="作者：iplaycodex仓库：github、codePen博客：掘金、segmentfault、知乎、简书、博客园联系我：iplaycodex@163.com特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起  1. 需求单独把JSX拿出来说一下,因为我觉得这个东西有必要深入研究一下.下面是我当时学习reac">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/006y8mN6gy1g68j7f8khdj30g806k0t0.jpg">
-<meta property="og:updated_time" content="2019-08-22T09:47:51.000Z">
+<meta property="og:updated_time" content="2020-10-29T06:48:15.881Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入浅出react+redux之jsx">
-<meta name="twitter:description" content="需求单独把JSX拿出来说一下,因为我觉得这个东西有必要深入研究一下.下面是我当时学习react.js的时候想到的几个问题:  为什么要在react.js中使用jsx? 将事件声明写在了JSX中是一种进步还是一种倒退? react.js是如何根据diff算法底层实现模板高性能重新渲染的?(因为我们知道每执行一次setState(),都会执行一次render()函数,react.js底层做了什么?它是">
+<meta name="twitter:description" content="作者：iplaycodex仓库：github、codePen博客：掘金、segmentfault、知乎、简书、博客园联系我：iplaycodex@163.com特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起  1. 需求单独把JSX拿出来说一下,因为我觉得这个东西有必要深入研究一下.下面是我当时学习reac">
 <meta name="twitter:image" content="http://ww2.sinaimg.cn/large/006y8mN6gy1g68j7f8khdj30g806k0t0.jpg">
 
 
@@ -388,7 +388,10 @@
       
 
       
-        <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>单独把<code>JSX</code>拿出来说一下,因为我觉得这个东西有必要深入研究一下.下面是我当时学习<code>react.js</code>的时候想到的几个问题:</p>
+        <blockquote>
+<p>作者：<a href="http://iplaycodex.com">iplaycodex</a><br>仓库：<a href="https://github.com/iplaycodex" target="_blank" rel="noopener">github</a>、<a href="https://codepen.io/iplaycodex" target="_blank" rel="noopener">codePen</a><br>博客：<a href="https://juejin.im/user/3597257774478359" target="_blank" rel="noopener">掘金</a>、<a href="https://segmentfault.com/u/iplaycodex" target="_blank" rel="noopener">segmentfault</a>、<a href="https://www.zhihu.com/people/CallMeAllenLliu" target="_blank" rel="noopener">知乎</a>、<a href="https://www.jianshu.com/u/9cd27f169c7e" target="_blank" rel="noopener">简书</a>、<a href="https://www.cnblogs.com/" target="_blank" rel="noopener">博客园</a><br>联系我：<a href="iplaycodex@163.com">iplaycodex@163.com</a><br>特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起</p>
+</blockquote>
+<h1 id="1-需求"><a href="#1-需求" class="headerlink" title="1. 需求"></a>1. 需求</h1><p>单独把<code>JSX</code>拿出来说一下,因为我觉得这个东西有必要深入研究一下.下面是我当时学习<code>react.js</code>的时候想到的几个问题:</p>
 <ul>
 <li>为什么要在<code>react.js</code>中使用<code>jsx</code>?</li>
 <li>将事件声明写在了<code>JSX</code>中是一种进步还是一种倒退?</li>
@@ -397,14 +400,14 @@
 <p>下面我们带着这几个问题,来深入研究一下什么是<code>JSX</code>.</p>
 <a id="more"></a>
 
-<h3 id="1-JSX"><a href="#1-JSX" class="headerlink" title="1.JSX"></a>1.JSX</h3><p><code>JSX</code>是<code>facebook</code>推荐在开发<code>react</code>项目的时候替代<code>HTML</code>的写法,当然你也可以使用<code>HTML</code>,但是极度不推荐使用.下面我们看一个最简单的例子:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React,&#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> CustomComp <span class="keyword">from</span> <span class="string">'./CustomComp'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">T</span> <span class="keyword">extends</span> <span class="title">Components</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">        <span class="keyword">super</span>(props)</span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &#123;<span class="comment">/*原生标签*/</span>&#125;</span><br><span class="line">                &lt;p&gt;我是原生组件&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">                &#123;/</span>*react.js自定义组件*<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp">                &lt;CustomComp/</span>&gt;</span><br><span class="line">                &#123;<span class="comment">/*定义一个事件*/</span>&#125;</span><br><span class="line">                &lt;button onClick=&#123;<span class="keyword">this</span>.click&#125;&gt;BUTTON&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">    click()&#123;</span><br><span class="line">        alert(<span class="string">'btn did clicked!'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="2-JSX"><a href="#2-JSX" class="headerlink" title="2. JSX"></a>2. JSX</h1><p><code>JSX</code>是<code>facebook</code>推荐在开发<code>react</code>项目的时候替代<code>HTML</code>的写法,当然你也可以使用<code>HTML</code>,但是极度不推荐使用.下面我们看一个最简单的例子:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> CustomComp <span class="keyword">from</span> <span class="string">"./CustomComp"</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">T</span> <span class="keyword">extends</span> <span class="title">Components</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">    &#125;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &#123;<span class="comment">/*原生标签*/</span>&#125;</span><br><span class="line">                &lt;p&gt;我是原生组件&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">                &#123;/</span>*react.js自定义组件*<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp">                &lt;CustomComp /</span>&gt;</span><br><span class="line">                &#123;<span class="comment">/*定义一个事件*/</span>&#125;</span><br><span class="line">                &lt;button onClick=&#123;<span class="keyword">this</span>.click&#125;&gt;BUTTON&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">    click() &#123;</span><br><span class="line">        alert(<span class="string">"btn did clicked!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>可以看到和我们之前写<code>HTML</code>大不同的地方就是<code>react.js</code>把<code>HTML</code>直接写在了<code>js</code>中.上面那个<code>render()</code>函数中包裹的就是<code>JSX</code>.</p>
-<p><strong>注意:在使用JSX的代码中必须导入React,也就是说第一行代码的<code>import React,{ Component } from &#39;react&#39;</code>虽然看起来在代码中我们没有使用<code>React</code>,但是它是很有用的.因为<code>JSX</code>会被转译成依赖<code>react.js</code>的<code>表达式</code></strong></p>
-<h3 id="2-分析为什么要在react中使用jsx"><a href="#2-分析为什么要在react中使用jsx" class="headerlink" title="2.分析为什么要在react中使用jsx?"></a>2.分析为什么要在<code>react</code>中使用<code>jsx</code>?</h3><p>第一节我们已经知道了<code>JSX</code>是个什么东西,这一节我们分析一下为什么要在<code>react.js</code>中使用<code>jsx</code>.因为在<code>react</code>的设计思想中是<code>all in js</code>.所以我们如果在要在<code>JS</code>中写<code>DOM</code>的话,则需要创造一个一个的<code>DOM</code>对象.用<code>JS</code>来写，会非常的冗余并且不能一目了然的看清楚<code>DOM</code>的结构。所以这个时候<code>JSX</code>就诞生了!</p>
+<p><strong>注意:在使用 JSX 的代码中必须导入 React,也就是说第一行代码的<code>import React,{ Component } from &#39;react&#39;</code>虽然看起来在代码中我们没有使用<code>React</code>,但是它是很有用的.因为<code>JSX</code>会被转译成依赖<code>react.js</code>的<code>表达式</code></strong></p>
+<h1 id="3-分析为什么要在react中使用jsx"><a href="#3-分析为什么要在react中使用jsx" class="headerlink" title="3. 分析为什么要在react中使用jsx?"></a>3. 分析为什么要在<code>react</code>中使用<code>jsx</code>?</h1><p>第一节我们已经知道了<code>JSX</code>是个什么东西,这一节我们分析一下为什么要在<code>react.js</code>中使用<code>jsx</code>.因为在<code>react</code>的设计思想中是<code>all in js</code>.所以我们如果在要在<code>JS</code>中写<code>DOM</code>的话,则需要创造一个一个的<code>DOM</code>对象.用<code>JS</code>来写，会非常的冗余并且不能一目了然的看清楚<code>DOM</code>的结构。所以这个时候<code>JSX</code>就诞生了!</p>
 <p>思考一个问题：如何用<code>JavaScript</code>对象来表现一个<code>DOM</code>元素的结构，举个例子：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'box'</span> <span class="attr">id</span>=<span class="string">'content'</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'title'</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span>&gt;</span>Click<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span> <span class="attr">id</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>Click<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>每个 <code>DOM</code> 元素的结构都可以用 <code>JavaScript</code> 的对象来表示。你会发现一个 <code>DOM</code> 元素包含的信息其实只有三个：<code>标签名</code>，<code>属性</code>，<code>子元素</code>。</p>
 <p>其实这个 <code>DOM</code> 结构我们是可以使用一个<code>js</code>对象来描述的,如下所示:</p>
@@ -413,15 +416,15 @@
 <p>你会发现，<code>HTML</code> 的信息和 <code>JavaScript</code> 所包含的结构和信息其实是一样的，我们可以用 <code>JavaScript</code> 对象来描述所有能用 <code>HTML</code> 表示的 <code>UI</code> 信息。但是用 <code>JavaScript</code> 写起来太长了，结构看起来又不清晰，用 <code>HTML</code> 的方式写起来就方便很多了。</p>
 <p>于是 <code>React.js</code> 就把 <code>JavaScript</code> 的语法扩展了一下，让 <code>JavaScript</code> 语言能够支持这种直接在 <code>JavaScript</code> 代码里面编写类似 <code>HTML</code> 标签结构的语法，这样写起来就方便很多了。编译的过程会把类似 <code>HTML</code> 的 <code>JSX</code> 结构转换成 <code>JavaScript</code> 的对象结构.</p>
 <p>那么下面的这个代码:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Header</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render () &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h1 className=<span class="string">'title'</span>&gt;React 小书&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Header</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;h1 className=<span class="string">"title"</span>&gt;React 小书&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>经过编译会变成:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Header</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render () &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">     React.createElement(</span><br><span class="line">        <span class="string">"div"</span>,</span><br><span class="line">        <span class="literal">null</span>,</span><br><span class="line">        React.createElement(</span><br><span class="line">          <span class="string">"h1"</span>,</span><br><span class="line">          &#123; <span class="attr">className</span>: <span class="string">'title'</span> &#125;,</span><br><span class="line">          <span class="string">"React 小书"</span></span><br><span class="line">        )</span><br><span class="line">      )</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Header</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> React.createElement(</span><br><span class="line">            <span class="string">"div"</span>,</span><br><span class="line">            <span class="literal">null</span>,</span><br><span class="line">            React.createElement(<span class="string">"h1"</span>, &#123; <span class="attr">className</span>: <span class="string">"title"</span> &#125;, <span class="string">"React 小书"</span>)</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><code>React.createElement</code> 会构建一个 <code>JavaScript</code> 对象来描述你 <code>HTML</code> 结构的信息，包括标签名、属性、还有子元素等。这样的代码就是合法的 <code>JavaScript</code>代码了。所以使用 <code>React</code> 和 <code>JSX</code> 的时候一定要经过编译的过程。</p>
 <p>这里再重复一遍：<strong>所谓的 JSX 其实就是 JavaScript 对象</strong>。每当在 <code>JavaScript</code> 代码中看到这种 <code>JSX</code> 结构的时候，脑子里面就可以自动做转化，这样对你理解 <code>React.js</code> 的组件写法很有好处。</p>
 <p>有了这个表示 <code>HTML</code> 结构和信息的对象以后，就可以拿去构造真正的 <code>DOM</code> 元素，然后把这个 <code>DOM</code> 元素塞到页面上。这也是我们最后一段代码中 <code>ReactDOM.render</code> 所干的事情：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;Header /&gt;,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">Header</span> /&gt;</span>, document.getElementById("root"));</span></span><br></pre></td></tr></table></figure>
 
 <p><code>ReactDOM.render</code> 功能就是把组件渲染并且构造 <code>DOM</code> 树，然后插入到页面上某个特定的元素上（在这里是 id 为 root 的 div 元素）。</p>
 <p>总结一下从<code>JSX</code>到页面都发生了什么?</p>
@@ -439,9 +442,9 @@
 <li><code>react-dom</code> 负责把这个用来描述 <code>UI</code> 信息的 <code>JavaScript</code> 对象变成 <code>DOM</code> 元素，并且渲染到页面上。</li>
 </ul>
 <blockquote>
-<p>这里借鉴了<a href="http://huziketang.mangojuice.top/books/react/lesson6" target="_blank" rel="noopener">react.js小书</a>的部分内容,感谢作者的分享</p>
+<p>这里借鉴了<a href="http://huziketang.mangojuice.top/books/react/lesson6" target="_blank" rel="noopener">react.js 小书</a>的部分内容,感谢作者的分享</p>
 </blockquote>
-<h3 id="3-在JSX中声明事件是进步还是倒退"><a href="#3-在JSX中声明事件是进步还是倒退" class="headerlink" title="3.在JSX中声明事件是进步还是倒退?"></a>3.在JSX中声明事件是进步还是倒退?</h3><p>讨论完了<code>JSX</code>底层如何进行处理的,现在我们讨论一下:使用<code>JSX</code>是进步还是倒退?尤其是当在<code>JSX</code>中需要给某个组件定义一个事件的时候.</p>
+<h1 id="4-在-JSX-中声明事件是进步还是倒退"><a href="#4-在-JSX-中声明事件是进步还是倒退" class="headerlink" title="4. 在 JSX 中声明事件是进步还是倒退?"></a>4. 在 JSX 中声明事件是进步还是倒退?</h1><p>讨论完了<code>JSX</code>底层如何进行处理的,现在我们讨论一下:使用<code>JSX</code>是进步还是倒退?尤其是当在<code>JSX</code>中需要给某个组件定义一个事件的时候.</p>
 <p><strong>html</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"click"</span>&gt;</span>BUTTON<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -452,7 +455,7 @@
 <ul>
 <li>在<code>html</code>中添加的<code>onclick</code>的事件处理函数是全局的,这样容易污染全局环境,导致一些不可预知的错误</li>
 <li>给很多标签绑定事件,会导致性能问题.网页需要处理的事件函数越多,性能就越低</li>
-<li>对于使用了<code>onclick</code>的DOM元素,如果要把它动态的从页面中删除掉,那么它的事件处理器也要被注销掉.否则会有导致内存泄露的BUG,而且这种BUG一般很难排查.</li>
+<li>对于使用了<code>onclick</code>的 DOM 元素,如果要把它动态的从页面中删除掉,那么它的事件处理器也要被注销掉.否则会有导致内存泄露的 BUG,而且这种 BUG 一般很难排查.</li>
 </ul>
 <p><strong>上述说的问题,在<code>JSX</code>中不存在!</strong></p>
 <ul>
@@ -460,9 +463,10 @@
 <li>在<code>JSX</code>中所有的事件都委托给了顶层的<code>DOM</code>,当接收到用户的<code>action</code>的时候<code>react.js</code>会被顶层<code>DOM</code>的事件处理函数捕获,然后根据组件分发给不同的方法/函数.方法委托自然比一个一个事件绑定效率高</li>
 <li>在<code>react.js</code>中组件存在声明周期,当组件被<code>unmount</code>的时候(也就是卸载/销毁)的时候,<code>react.js</code>会自动帮我们注销挂载在<code>JSX</code>上对应的事件处理方法.那么就不存在内存泄露的问题了.</li>
 </ul>
-<h3 id="3-虚拟DOM和diff算法"><a href="#3-虚拟DOM和diff算法" class="headerlink" title="3.虚拟DOM和diff算法"></a>3.虚拟DOM和diff算法</h3><p>这个稍微有些复杂,后面会再开一节进行详细说明</p>
+<h1 id="5-虚拟-DOM-和-diff-算法"><a href="#5-虚拟-DOM-和-diff-算法" class="headerlink" title="5. 虚拟 DOM 和 diff 算法"></a>5. 虚拟 DOM 和 diff 算法</h1><p>这个稍微有些复杂,后面会再开一节进行详细说明</p>
+<h1 id="6-结束语"><a href="#6-结束语" class="headerlink" title="6. 结束语"></a>6. 结束语</h1><p>❤️ 关注 + 点赞 + 收藏 + 评论 + 转发 ❤️ <br>原创不易，鼓励笔者创作更好的文章~</p>
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
 
 <div id="gitalk-container"></div>     
 <script type="text/javascript">
@@ -477,6 +481,7 @@
         });
       gitalk.render('gitalk-container');
 </script>
+
       
     </div>
     
@@ -597,7 +602,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -675,7 +680,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-JSX"><span class="nav-number">2.</span> <span class="nav-text">1.JSX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-分析为什么要在react中使用jsx"><span class="nav-number">3.</span> <span class="nav-text">2.分析为什么要在react中使用jsx?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-在JSX中声明事件是进步还是倒退"><span class="nav-number">4.</span> <span class="nav-text">3.在JSX中声明事件是进步还是倒退?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-虚拟DOM和diff算法"><span class="nav-number">5.</span> <span class="nav-text">3.虚拟DOM和diff算法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-需求"><span class="nav-number">1.</span> <span class="nav-text">1. 需求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-JSX"><span class="nav-number">2.</span> <span class="nav-text">2. JSX</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-分析为什么要在react中使用jsx"><span class="nav-number">3.</span> <span class="nav-text">3. 分析为什么要在react中使用jsx?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-在-JSX-中声明事件是进步还是倒退"><span class="nav-number">4.</span> <span class="nav-text">4. 在 JSX 中声明事件是进步还是倒退?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-虚拟-DOM-和-diff-算法"><span class="nav-number">5.</span> <span class="nav-text">5. 虚拟 DOM 和 diff 算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-结束语"><span class="nav-number">6.</span> <span class="nav-text">6. 结束语</span></a></li></ol></div>
             
 
           </div>

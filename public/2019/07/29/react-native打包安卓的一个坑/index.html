@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="写在前面如果你在做一个混合开发的APP,也就是说部分模块使用native去开发,部分模块使用react-native去开发.这个时候如何使用图片资源就有的玩了.如何合理的使用图片资源也是一个问题.  引申:在react-native中如何使用图片资源  根据官方文档所述:在react-native中使用image的话有几种方法:  1.使用APP中的图片资源也就是说在JS中直接访问APP沙盒中存在">
+<meta name="description" content="作者：iplaycodex仓库：github、codePen博客：掘金、segmentfault、知乎、简书、博客园联系我：iplaycodex@163.com特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起  1. 写在前面如果你在做一个混合开发的 APP,也就是说部分模块使用native去开发,部分模块使">
 <meta name="keywords" content="react-native">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react-native打包安卓的一个坑">
 <meta property="og:url" content="http://iplaycodex.com/2019/07/29/react-native打包安卓的一个坑/index.html">
 <meta property="og:site_name" content="iplaycodex">
-<meta property="og:description" content="写在前面如果你在做一个混合开发的APP,也就是说部分模块使用native去开发,部分模块使用react-native去开发.这个时候如何使用图片资源就有的玩了.如何合理的使用图片资源也是一个问题.  引申:在react-native中如何使用图片资源  根据官方文档所述:在react-native中使用image的话有几种方法:  1.使用APP中的图片资源也就是说在JS中直接访问APP沙盒中存在">
+<meta property="og:description" content="作者：iplaycodex仓库：github、codePen博客：掘金、segmentfault、知乎、简书、博客园联系我：iplaycodex@163.com特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起  1. 写在前面如果你在做一个混合开发的 APP,也就是说部分模块使用native去开发,部分模块使">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-12T06:45:14.000Z">
+<meta property="og:updated_time" content="2020-10-29T07:01:09.754Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-native打包安卓的一个坑">
-<meta name="twitter:description" content="写在前面如果你在做一个混合开发的APP,也就是说部分模块使用native去开发,部分模块使用react-native去开发.这个时候如何使用图片资源就有的玩了.如何合理的使用图片资源也是一个问题.  引申:在react-native中如何使用图片资源  根据官方文档所述:在react-native中使用image的话有几种方法:  1.使用APP中的图片资源也就是说在JS中直接访问APP沙盒中存在">
+<meta name="twitter:description" content="作者：iplaycodex仓库：github、codePen博客：掘金、segmentfault、知乎、简书、博客园联系我：iplaycodex@163.com特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起  1. 写在前面如果你在做一个混合开发的 APP,也就是说部分模块使用native去开发,部分模块使">
 
 
 
@@ -386,49 +386,53 @@
       
 
       
-        <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>如果你在做一个混合开发的APP,也就是说部分模块使用<code>native</code>去开发,部分模块使用<code>react-native</code>去开发.这个时候如何使用图片资源就有的玩了.如何合理的使用图片资源也是一个问题.</p>
+        <blockquote>
+<p>作者：<a href="http://iplaycodex.com">iplaycodex</a><br>仓库：<a href="https://github.com/iplaycodex" target="_blank" rel="noopener">github</a>、<a href="https://codepen.io/iplaycodex" target="_blank" rel="noopener">codePen</a><br>博客：<a href="https://juejin.im/user/3597257774478359" target="_blank" rel="noopener">掘金</a>、<a href="https://segmentfault.com/u/iplaycodex" target="_blank" rel="noopener">segmentfault</a>、<a href="https://www.zhihu.com/people/CallMeAllenLliu" target="_blank" rel="noopener">知乎</a>、<a href="https://www.jianshu.com/u/9cd27f169c7e" target="_blank" rel="noopener">简书</a>、<a href="https://www.cnblogs.com/" target="_blank" rel="noopener">博客园</a><br>联系我：<a href="iplaycodex@163.com">iplaycodex@163.com</a><br>特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起</p>
+</blockquote>
+<h1 id="1-写在前面"><a href="#1-写在前面" class="headerlink" title="1. 写在前面"></a>1. 写在前面</h1><p>如果你在做一个混合开发的 APP,也就是说部分模块使用<code>native</code>去开发,部分模块使用<code>react-native</code>去开发.这个时候如何使用图片资源就有的玩了.如何合理的使用图片资源也是一个问题.</p>
 <blockquote>
 <p>引申:在<code>react-native</code>中如何使用图片资源</p>
 </blockquote>
 <p>根据官方文档所述:在<code>react-native</code>中使用<code>image</code>的话有几种方法:</p>
 <ul>
-<li>1.使用APP中的图片资源<br>也就是说在JS中直接访问<code>APP</code>沙盒中存在的图片资源,<code>iOS</code>加载<code>assets</code>目录,安卓加载<code>drawable</code>目录.代码如下所示:</li>
+<li>1.使用 APP 中的图片资源<br>也就是说在 JS 中直接访问<code>APP</code>沙盒中存在的图片资源,<code>iOS</code>加载<code>assets</code>目录,安卓加载<code>drawable</code>目录.代码如下所示:</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Image source=&#123;&#123;<span class="attr">uri</span>:<span class="string">'test_img'</span>&#125;&#125; style=&#123;&#123;<span class="attr">width</span>:<span class="number">100</span>,<span class="attr">height</span>:<span class="number">100</span>&#125;&#125;&gt;</span><br></pre></td></tr></table></figure>
 
-<p>使用这个方法加载图片资源的话不需要写后缀,但是!你必须要确保这个图片在APP的沙盒内部是一定存在的!<code>react-native</code>不会检查这个文件是否存在如果不存在则出现一个空白.</p>
+<p>使用这个方法加载图片资源的话不需要写后缀,但是!你必须要确保这个图片在 APP 的沙盒内部是一定存在的!<code>react-native</code>不会检查这个文件是否存在如果不存在则出现一个空白.</p>
 <ul>
 <li>2.使用网络图片<br>这个就很简单了,看下面的代码:</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Image</span> <span class="attr">source</span>=<span class="string">&#123;&#123;uri:</span> '<span class="attr">https:</span>//<span class="attr">facebook.github.io</span>/<span class="attr">react</span>/<span class="attr">logo-og.png</span>'&#125;&#125;</span></span><br><span class="line"><span class="tag">       <span class="attr">style</span>=<span class="string">&#123;&#123;width:</span> <span class="attr">400</span>, <span class="attr">height:</span> <span class="attr">400</span>&#125;&#125; /&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Image</span> <span class="attr">source</span>=<span class="string">&#123;&#123;uri:</span> '<span class="attr">https:</span>//<span class="attr">facebook.github.io</span>/<span class="attr">react</span>/<span class="attr">logo-og.png</span>'&#125;&#125;</span></span><br><span class="line"><span class="tag"><span class="attr">style</span>=<span class="string">&#123;&#123;width:</span> <span class="attr">400</span>, <span class="attr">height:</span> <span class="attr">400</span>&#125;&#125; /&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>注意:<code>iOS</code>因为从<code>iOS8</code>开始只能使用<code>https</code>了,所以这里建议网络图片全部使用<code>https</code>,并且需要指定尺寸.</p>
 <a id="more"></a>
 
 <ul>
-<li>3.使用base64</li>
+<li>3.使用 base64</li>
 </ul>
 <p>在<code>react-native</code>中是可以使用<code>base64</code>的图片的,在想目中一些<code>icon</code>你可以选择使用<code>iconFont</code>也可以选择使用<code>base64</code>.使用<code>base64</code>也很简单,找个在线转码的网站,把你需要转的图片转成<code>base64</code>就可以了.在代码中这样使用:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Image</span> <span class="attr">source</span>=<span class="string">&#123;&#123;uri:</span>"<span class="attr">data:image</span>/<span class="attr">png</span>;<span class="attr">base64</span>,<span class="attr">iVBORw0KGgoAAAANSUhEUgAAAD8AAAA</span>/<span class="attr">CAYAAABXXxDfAAAD0ElEQVR4Ae2aA5A8VxDGO7Ztv57D65mLbZvd7xjbRunv2LZt2045KsS27aSDvT7PZg87e</span>+<span class="attr">9X1aVbfY</span>/<span class="attr">f13MwWohEIpFIJBKJJL7VO</span>+<span class="attr">KJ6OU65</span>/<span class="attr">mOohWS3ILEZ9elYas</span>//<span class="attr">vhjMshDw3ZjpnYUJjniX53nP2qh0PMjSO2LwUCg58vtG2toAD5Ilu</span>+<span class="attr">YA</span>/<span class="attr">rCZbxllzcRX5IQb5Y0Na80JJWFlYeqMOW1XCpHOC9fdeqRq</span>/<span class="attr">uZdXmyNFJpGA81QB3J0kjy83</span>+<span class="attr">6GpcLC0F39FAwL</span>/<span class="attr">o9y3aYFWoEJLnnP</span>/<span class="attr">FJKltDd3CVnWYy</span>++<span class="attr">NTUGpH</span>/<span class="attr">FklbRR27l88ySc1Jv5Ms</span>+<span class="attr">93ieKj</span>+<span class="attr">Cg</span>+<span class="attr">94FX</span>++<span class="attr">K10MvDLpPloOCoLvX5ucWb</span>+<span class="attr">h1JrlxzzR2mhYKhXh5JLnOef1Qt</span>/<span class="attr">Ypfc80xUyLJ</span>/<span class="attr">ioWib</span>/<span class="attr">rNgh3LLPMblNBThrW3GvGhMJRSHJKxZXKsXUkjWUJ97KF8</span>/<span class="attr">KD1dCveIsGACS</span>+<span class="attr">1b4Jia</span>+<span class="attr">HnGgqHNxgIq9CTtTEdE</span>+<span class="attr">kSPJC4uVo58OBSG0IeUhSPrjbj9go5wFz6OAmMnku1</span>++<span class="attr">l5u27</span>/<span class="attr">d6X60hWhP</span>+<span class="attr">LJiGzZJ6BHGhO0DSos1BpuTS09xlFDdgU5jcJTuuOlVY6cDqoBKL2udHzZ6VgkIU1q7PzJCfaGV9hhdaZB</span>+<span class="attr">uePKVz9sMkqDL0sHbEX5jktikMFhoDzcF3axVm9hXNrL82ZsyYyWGw0K6LEf84VBmYhp1M9</span>+<span class="attr">mqwR3ZrHk9c23cU3XiPR9mxE</span>+<span class="attr">EwUTvR7OszoUqw</span>/<span class="attr">mwd</span>+<span class="attr">d</span>+<span class="attr">5zNgMNErriQ</span>+<span class="attr">De1QZaijM1fcfTBY6F1rltRHf9nc6aHKUB</span>+<span class="attr">gOeTfbfmz3vlQKdrpRC</span>+<span class="attr">fl5YUhUMgJy5tXhU9H4PEx1dSiQ</span>+<span class="attr">75Tm9kfhBY8ZOqHDGmzd0xB</span>+<span class="attr">bjP</span>/<span class="attr">WgLNuEyLx94NlbxNqboYBUOvdNY2GzaEcNLpixqug5wv1A</span>+<span class="attr">zTjrqsZamyPsfzp4Mlvi4Lm</span>+<span class="attr">Q0YzeYW</span>+<span class="attr">lb9fq5Y6hNQ3af16fNDVAm3rcsrvExSWX3Sgqpee0yvnM2ffDSLY3erSbN9iRyNDPkByQ5Tj8QCoRuTQ01vTVmNPjoFhqoh</span>/<span class="attr">dNwzIdC0PxsF5</span>/<span class="attr">oj13Rl33tm6Ztvm0J4HEr4</span>/<span class="attr">a1rW6vig</span>+<span class="attr">io</span>/<span class="attr">ie</span>/<span class="attr">4vjjkVf7St6qJj</span>+<span class="attr">5CYSWtfFvHtTkvJm0Hx0Xt</span>/<span class="attr">Fuflw</span>/<span class="attr">909dnN1UBgnV1dxhvbUFE01GXawIMkb</span>/<span class="attr">SpRy2uvqBbw</span>/<span class="attr">9bR</span>/<span class="attr">xOAevj7g5vQKvckLYsb5Z</span>/<span class="attr">TZRmfDU7ufeJPtbVLF9s0fyL83J</span>/<span class="attr">Q9aSgSXvk5emph3nUp9ftNJujr2xIpFIJBKJREYNfwIbCE1RyoFBpwAAAABJRU5ErkJggg</span>==<span class="string">"&#125;&#125; style=&#123;&#123;width:100,height:100&#125;&#125;&gt;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Image</span></span></span><br><span class="line"><span class="tag"><span class="attr">source</span>=<span class="string">&#123;&#123;uri:</span>"<span class="attr">data:image</span>/<span class="attr">png</span>;<span class="attr">base64</span>,<span class="attr">iVBORw0KGgoAAAANSUhEUgAAAD8AAAA</span>/<span class="attr">CAYAAABXXxDfAAAD0ElEQVR4Ae2aA5A8VxDGO7Ztv57D65mLbZvd7xjbRunv2LZt2045KsS27aSDvT7PZg87e</span>+<span class="attr">9X1aVbfY</span>/<span class="attr">f13MwWohEIpFIJBKJJL7VO</span>+<span class="attr">KJ6OU65</span>/<span class="attr">mOohWS3ILEZ9elYas</span>//<span class="attr">vhjMshDw3ZjpnYUJjniX53nP2qh0PMjSO2LwUCg58vtG2toAD5Ilu</span>+<span class="attr">YA</span>/<span class="attr">rCZbxllzcRX5IQb5Y0Na80JJWFlYeqMOW1XCpHOC9fdeqRq</span>/<span class="attr">uZdXmyNFJpGA81QB3J0kjy83</span>+<span class="attr">6GpcLC0F39FAwL</span>/<span class="attr">o9y3aYFWoEJLnnP</span>/<span class="attr">FJKltDd3CVnWYy</span>++<span class="attr">NTUGpH</span>/<span class="attr">FklbRR27l88ySc1Jv5Ms</span>+<span class="attr">93ieKj</span>+<span class="attr">Cg</span>+<span class="attr">94FX</span>++<span class="attr">K10MvDLpPloOCoLvX5ucWb</span>+<span class="attr">h1JrlxzzR2mhYKhXh5JLnOef1Qt</span>/<span class="attr">Ypfc80xUyLJ</span>/<span class="attr">ioWib</span>/<span class="attr">rNgh3LLPMblNBThrW3GvGhMJRSHJKxZXKsXUkjWUJ97KF8</span>/<span class="attr">KD1dCveIsGACS</span>+<span class="attr">1b4Jia</span>+<span class="attr">HnGgqHNxgIq9CTtTEdE</span>+<span class="attr">kSPJC4uVo58OBSG0IeUhSPrjbj9go5wFz6OAmMnku1</span>++<span class="attr">l5u27</span>/<span class="attr">d6X60hWhP</span>+<span class="attr">LJiGzZJ6BHGhO0DSos1BpuTS09xlFDdgU5jcJTuuOlVY6cDqoBKL2udHzZ6VgkIU1q7PzJCfaGV9hhdaZB</span>+<span class="attr">uePKVz9sMkqDL0sHbEX5jktikMFhoDzcF3axVm9hXNrL82ZsyYyWGw0K6LEf84VBmYhp1M9</span>+<span class="attr">mqwR3ZrHk9c23cU3XiPR9mxE</span>+<span class="attr">EwUTvR7OszoUqw</span>/<span class="attr">mwd</span>+<span class="attr">d</span>+<span class="attr">5zNgMNErriQ</span>+<span class="attr">De1QZaijM1fcfTBY6F1rltRHf9nc6aHKUB</span>+<span class="attr">gOeTfbfmz3vlQKdrpRC</span>+<span class="attr">fl5YUhUMgJy5tXhU9H4PEx1dSiQ</span>+<span class="attr">75Tm9kfhBY8ZOqHDGmzd0xB</span>+<span class="attr">bjP</span>/<span class="attr">WgLNuEyLx94NlbxNqboYBUOvdNY2GzaEcNLpixqug5wv1A</span>+<span class="attr">zTjrqsZamyPsfzp4Mlvi4Lm</span>+<span class="attr">Q0YzeYW</span>+<span class="attr">lb9fq5Y6hNQ3af16fNDVAm3rcsrvExSWX3Sgqpee0yvnM2ffDSLY3erSbN9iRyNDPkByQ5Tj8QCoRuTQ01vTVmNPjoFhqoh</span>/<span class="attr">dNwzIdC0PxsF5</span>/<span class="attr">oj13Rl33tm6Ztvm0J4HEr4</span>/<span class="attr">a1rW6vig</span>+<span class="attr">io</span>/<span class="attr">ie</span>/<span class="attr">4vjjkVf7St6qJj</span>+<span class="attr">5CYSWtfFvHtTkvJm0Hx0Xt</span>/<span class="attr">Fuflw</span>/<span class="attr">909dnN1UBgnV1dxhvbUFE01GXawIMkb</span>/<span class="attr">SpRy2uvqBbw</span>/<span class="attr">9bR</span>/<span class="attr">xOAevj7g5vQKvckLYsb5Z</span>/<span class="attr">TZRmfDU7ufeJPtbVLF9s0fyL83J</span>/<span class="attr">Q9aSgSXvk5emph3nUp9ftNJujr2xIpFIJBKJREYNfwIbCE1RyoFBpwAAAABJRU5ErkJggg</span>==<span class="string">"&#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="string">style=&#123;&#123;width:100,height:100&#125;&#125;&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 <p>这种方式仅适合一些小图,例如一些<code>icon</code>之类的.同样需要指定图片的尺寸</p>
 <ul>
-<li>4.使用js自己的图片资源<br>把图片放在某处,使用<code>require</code>关键字来引用,如下所示:</li>
+<li>4.使用 js 自己的图片资源<br>把图片放在某处,使用<code>require</code>关键字来引用,如下所示:</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Image</span> <span class="attr">source</span>=<span class="string">&#123;require(</span>'<span class="attr">.</span>/<span class="attr">my-icon.png</span>')&#125; /&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>说了这么多,其实在项目中我们使用的方法是:<code>小图使用base64+大图使用网络图片或者本地图片资源</code>.这样做的有什么好处呢?<br>因为项目是<code>混合开发</code>的一个项目,所以如果要做新模块的话,那么图片一般不会已经存在于<code>APP</code>的沙盒中,这就需要我们自己提供图片资源了.而且这样也比较好解耦,APP只需要下载我们的<code>zip</code>包.并且解压缩出来<code>bundle</code>包和图片资源即可完成静默升级.</p>
-<h2 id="继续"><a href="#继续" class="headerlink" title="继续:"></a>继续:</h2><p>之前有写过一个<code>react-native</code>拆包的文章,上次打包的时候在使用了命令:</p>
+<p>说了这么多,其实在项目中我们使用的方法是:<code>小图使用base64+大图使用网络图片或者本地图片资源</code>.这样做的有什么好处呢?<br>因为项目是<code>混合开发</code>的一个项目,所以如果要做新模块的话,那么图片一般不会已经存在于<code>APP</code>的沙盒中,这就需要我们自己提供图片资源了.而且这样也比较好解耦,APP 只需要下载我们的<code>zip</code>包.并且解压缩出来<code>bundle</code>包和图片资源即可完成静默升级.<br>继续:</p>
+<p>之前有写过一个<code>react-native</code>拆包的文章,上次打包的时候在使用了命令:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node ./node_modules/react-native/local-cli/cli.js bundle --platform ios --dev false --entry-file index.js --bundle-output ./release-ios/myCenter.bundle --assets-dest ./release-ios/ --config bus.config.js</span><br></pre></td></tr></table></figure>
 
 <p>打出来的业务包的<code>bundle</code>和业务中的图片资源都在<code>realease-ios</code>目录下面,然后在<code>iOS</code>中直接把这个目标文件夹放在任何一个路径下面都是可以直接加载到的.</p>
-<p><strong>BUT:问题来了!执行了打包方法之后打包出来的安卓bundle以及图片资源.图片在安卓上面无法展示!!!</strong></p>
+<p><strong>BUT:问题来了!执行了打包方法之后打包出来的安卓 bundle 以及图片资源.图片在安卓上面无法展示!!!</strong></p>
 <p>经过查看<code>react-native</code>的文档以及各种<code>google</code>和<code>stack-overflow</code>终于找到了问题,原来打包出来的图片资源只能放在安卓的特定的目录下面:这个目录如下所示:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">andorid -&gt; app -&gt; src -&gt; main -&gt; res -&gt; drawable-xhdpi/drawable-xxhdpi(对应的尺寸解压缩到同名的文件夹里)</span><br></pre></td></tr></table></figure>
 
-<p>这样就解决了混合APP中安卓无法加载<code>bundle</code>包中的图片资源.</p>
+<p>这样就解决了混合 APP 中安卓无法加载<code>bundle</code>包中的图片资源.</p>
+<h1 id="2-结束语"><a href="#2-结束语" class="headerlink" title="2. 结束语"></a>2. 结束语</h1><p>❤️ 关注 + 点赞 + 收藏 + 评论 + 转发 ❤️ <br>原创不易，鼓励笔者创作更好的文章~</p>
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
 
 <div id="gitalk-container"></div>     
 <script type="text/javascript">
@@ -443,6 +447,7 @@
         });
       gitalk.render('gitalk-container');
 </script>
+
       
     </div>
     
@@ -563,7 +568,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -641,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#继续"><span class="nav-number"></span> <span class="nav-text">继续:</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-写在前面"><span class="nav-number">1.</span> <span class="nav-text">1. 写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-结束语"><span class="nav-number">2.</span> <span class="nav-text">2. 结束语</span></a></li></ol></div>
             
 
           </div>

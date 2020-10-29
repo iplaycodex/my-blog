@@ -297,161 +297,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iplaycodex.com/2019/07/18/react-native字体大小不随系统字体大小同步改变/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="allenliu">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/icon.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="iplaycodex">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/18/react-native字体大小不随系统字体大小同步改变/" itemprop="url">react-native字体大小不随系统字体大小同步改变</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-18T13:51:46+08:00">
-                2019-07-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react-native/" itemprop="url" rel="index">
-                    <span itemprop="name">react-native</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>最近在做<code>react-native</code>的开发,昨天项目提测了以后没想到在测试人员的测试手机上直接炸了!好几台手机都显示异常,<code>iPhone7</code>,<code>iPhoneX</code>,<code>iPhoneX Max</code>均出现字体变大,样式乱套的问题.</p>
-<p>惊了!但是很纳闷在我的手机和模拟器都是没有问题的,遂查看测试的手机发现该测试人员均修改了几台测试手机的系统字体(修改步骤:<code>设置 -&gt; 显示与亮度 -&gt; 字体大小</code>),几台测试机的字体均被不同程度放大!这个就是问题的根源!</p>
-<blockquote>
-<p>原来在<code>react-native</code>中<code>Text</code>和<code>TextInput</code>组件的字体大小会默认跟随系统的字体大小!</p>
-</blockquote>
-<h3 id="解决之道"><a href="#解决之道" class="headerlink" title="解决之道"></a>解决之道</h3><p>既然我们知道了导致这个问题的所在原因,那么就着手解决掉就可以了.经过查<code>react-native</code>的官方文档得知:在<code>react-native</code>中用来显示文字的，一般会用到两个组件：<code>Text</code>和<code>TextInput</code>。所以，我们只要针对这两个组件做好工作，那就基本上解决了字体大小适配的问题</p>
-<p>而他们两个有个共同的属性<code>allowFontScaling</code>,这个属性的值模式是<code>true</code>,这个属性是什么意思呢?</p>
-<blockquote>
-<p>是否随系统指定的文字大小变化而变化。默认值为true</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/18/react-native字体大小不随系统字体大小同步改变/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://iplaycodex.com/2019/07/09/react官方文档学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -544,17 +389,20 @@
 
       
         
-          <h2 id="函数组件和class组件"><a href="#函数组件和class组件" class="headerlink" title="函数组件和class组件"></a>函数组件和class组件</h2><p>在<code>react</code>中组件分为<code>函数组件</code>和<code>class组件</code>,他们是有区别的,并不是说任何时候都可以用<code>class组件</code>.</p>
+          <blockquote>
+<p>作者：<a href="http://iplaycodex.com">iplaycodex</a><br>仓库：<a href="https://github.com/iplaycodex" target="_blank" rel="noopener">github</a>、<a href="https://codepen.io/iplaycodex" target="_blank" rel="noopener">codePen</a><br>博客：<a href="https://juejin.im/user/3597257774478359" target="_blank" rel="noopener">掘金</a>、<a href="https://segmentfault.com/u/iplaycodex" target="_blank" rel="noopener">segmentfault</a>、<a href="https://www.zhihu.com/people/CallMeAllenLliu" target="_blank" rel="noopener">知乎</a>、<a href="https://www.jianshu.com/u/9cd27f169c7e" target="_blank" rel="noopener">简书</a>、<a href="https://www.cnblogs.com/" target="_blank" rel="noopener">博客园</a><br>联系我：<a href="iplaycodex@163.com">iplaycodex@163.com</a><br>特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起</p>
+</blockquote>
+<h1 id="1-函数组件和-class-组件"><a href="#1-函数组件和-class-组件" class="headerlink" title="1. 函数组件和 class 组件"></a>1. 函数组件和 class 组件</h1><p>在<code>react</code>中组件分为<code>函数组件</code>和<code>class组件</code>,他们是有区别的,并不是说任何时候都可以用<code>class组件</code>.</p>
 <ul>
 <li>函数组件</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个函数组件</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">welcome</span>(<span class="params">props</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;props.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个函数组件</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">welcome</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;props.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>该函数是一个有效的<code>React组件</code>，因为它接收唯一带有数据的<code>props</code>（代表属性）对象与并返回一个<code>React</code>元素。这类组件被称为<code>函数组件</code>，因为它本质上就是<code>JavaScript 函数</code>。</p>
 <ul>
 <li>class 组件</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个class组件</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Welcome</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;this.props.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个class组件</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Welcome</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;this.props.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>上述两个组件在<code>react</code>中其实是等价的,但是不是相同的.<code>class</code>组件会有一些额外的特性.这个在后面会仔细分析.</p>
           <!--noindex-->
@@ -564,163 +412,6 @@
             </a>
           </div>
           <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://iplaycodex.com/2019/07/09/node在前端架构中是如何做中间层的一点学习/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="allenliu">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/icon.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="iplaycodex">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/09/node在前端架构中是如何做中间层的一点学习/" itemprop="url">node在前端架构中是如何做中间层的一点学习</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-09T11:43:34+08:00">
-                2019-07-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>今天上午看了几篇文章,写的是在前端架构中<code>node</code>是如何扮演一个中间层的角色,以及使用<code>node</code>来扮演一个中间层这样的架构设计有什么好处.下面作一个简单的介绍:<br>首先我我们知道在广义的前后端分离中我们都是前端直接处理页面,通过<code>Ajax</code>,<code>jsonp</code>,<code>fetch</code>等从服务器端进行数据请求,然后在前端进行数据处理,从而渲染页面.</p>
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
-
-<div id="gitalk-container"></div>     
-<script type="text/javascript">
-    var gitalk = new Gitalk({
-    // gitalk的主要参数
-      clientID: `e4890482436f9cd96039`,
-      clientSecret: `0425bf39d0c5cdedf4ae60a72fbd7a3d58d7d99e`,
-      repo: `codeCheeseIssues`,
-      owner: 'wawsc5354524',
-      admin: ['wawsc5354524'],
-      id: 'node-n20e',
-        });
-      gitalk.render('gitalk-container');
-</script>
-          
         
       
     </div>
@@ -1021,9 +712,12 @@
 
       
         
-          <p>自从升级到macSierra 10.12之后，在模拟器上面滑动视图很卡。后面就一直用的真机调试。但是有的时候跑一些小demo还是模拟器比较方便。所以就百度了一下怎么解决模拟器卡顿的问题.</p>
-<p>1、看到网上有一个解决方法 在终端里面输入sudo sysctl -w kern.timer.coalescing_enabled=0 然后就不卡了,这是一个解决方法，第一次是很好用的，但是后面过了一段时间，模拟器又重新变得很缓慢卡顿。</p>
-<p>2、第二种解决方法就是查看模拟器菜单栏的Debug选项卡，查看Slow Animations选项是否被选中，去掉勾，在运行模拟器以后就OK了，模拟器操作变得很顺畅.搞不明白苹果为什么要这样设计,建议直接使用第二种就可以了</p>
+          <blockquote>
+<p>作者：<a href="http://iplaycodex.com">iplaycodex</a><br>仓库：<a href="https://github.com/iplaycodex" target="_blank" rel="noopener">github</a>、<a href="https://codepen.io/iplaycodex" target="_blank" rel="noopener">codePen</a><br>博客：<a href="https://juejin.im/user/3597257774478359" target="_blank" rel="noopener">掘金</a>、<a href="https://segmentfault.com/u/iplaycodex" target="_blank" rel="noopener">segmentfault</a>、<a href="https://www.zhihu.com/people/CallMeAllenLliu" target="_blank" rel="noopener">知乎</a>、<a href="https://www.jianshu.com/u/9cd27f169c7e" target="_blank" rel="noopener">简书</a>、<a href="https://www.cnblogs.com/" target="_blank" rel="noopener">博客园</a><br>联系我：<a href="iplaycodex@163.com">iplaycodex@163.com</a><br>特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起</p>
+</blockquote>
+<h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h1><p>自从升级到 macSierra 10.12 之后，在模拟器上面滑动视图很卡。后面就一直用的真机调试。但是有的时候跑一些小 demo 还是模拟器比较方便。所以就百度了一下怎么解决模拟器卡顿的问题.</p>
+<p>1、看到网上有一个解决方法 在终端里面输入 sudo sysctl -w kern.timer.coalescing_enabled=0 然后就不卡了,这是一个解决方法，第一次是很好用的，但是后面过了一段时间，模拟器又重新变得很缓慢卡顿。</p>
+<p>2、第二种解决方法就是查看模拟器菜单栏的 Debug 选项卡，查看 Slow Animations 选项是否被选中，去掉勾，在运行模拟器以后就 OK 了，模拟器操作变得很顺畅.搞不明白苹果为什么要这样设计,建议直接使用第二种就可以了</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/07/08/如何解决iOS模拟器卡顿/#more" rel="contents">
@@ -1258,7 +952,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="写在前面本篇连载是我学习react.js的一个笔记,之前一直保存在有道云笔记中,最近打算发到博客上面来.  1.环境配置首先我们需要下载react.js的一个官方的脚手架工具:create-react-app.终端执行下面的命令: 1npm install -g create-react-app  即可安装,然后终端中输入create-react-app -V,即可查看该脚手架的ban版本.目前最">
+<meta name="description" content="作者：iplaycodex仓库：github、codePen博客：掘金、segmentfault、知乎、简书、博客园联系我：iplaycodex@163.com特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起  1. 写在前面本篇连载是我学习react.js的一个笔记,之前一直保存在有道云笔记中,最近打算发到">
 <meta name="keywords" content="react.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入浅出react+redux第一篇:基础篇">
 <meta property="og:url" content="http://iplaycodex.com/2019/08/22/深入浅出react+redux第一篇:基础篇/index.html">
 <meta property="og:site_name" content="iplaycodex">
-<meta property="og:description" content="写在前面本篇连载是我学习react.js的一个笔记,之前一直保存在有道云笔记中,最近打算发到博客上面来.  1.环境配置首先我们需要下载react.js的一个官方的脚手架工具:create-react-app.终端执行下面的命令: 1npm install -g create-react-app  即可安装,然后终端中输入create-react-app -V,即可查看该脚手架的ban版本.目前最">
+<meta property="og:description" content="作者：iplaycodex仓库：github、codePen博客：掘金、segmentfault、知乎、简书、博客园联系我：iplaycodex@163.com特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起  1. 写在前面本篇连载是我学习react.js的一个笔记,之前一直保存在有道云笔记中,最近打算发到">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-22T07:04:44.000Z">
+<meta property="og:updated_time" content="2020-10-29T06:46:55.395Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入浅出react+redux第一篇:基础篇">
-<meta name="twitter:description" content="写在前面本篇连载是我学习react.js的一个笔记,之前一直保存在有道云笔记中,最近打算发到博客上面来.  1.环境配置首先我们需要下载react.js的一个官方的脚手架工具:create-react-app.终端执行下面的命令: 1npm install -g create-react-app  即可安装,然后终端中输入create-react-app -V,即可查看该脚手架的ban版本.目前最">
+<meta name="twitter:description" content="作者：iplaycodex仓库：github、codePen博客：掘金、segmentfault、知乎、简书、博客园联系我：iplaycodex@163.com特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起  1. 写在前面本篇连载是我学习react.js的一个笔记,之前一直保存在有道云笔记中,最近打算发到">
 
 
 
@@ -386,28 +386,31 @@
       
 
       
-        <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本篇连载是我学习<code>react.js</code>的一个笔记,之前一直保存在<code>有道云笔记</code>中,最近打算发到博客上面来.</p>
-<hr>
-<h3 id="1-环境配置"><a href="#1-环境配置" class="headerlink" title="1.环境配置"></a>1.环境配置</h3><p>首先我们需要下载<code>react.js</code>的一个官方的脚手架工具:<code>create-react-app</code>.终端执行下面的命令:</p>
+        <blockquote>
+<p>作者：<a href="http://iplaycodex.com">iplaycodex</a><br>仓库：<a href="https://github.com/iplaycodex" target="_blank" rel="noopener">github</a>、<a href="https://codepen.io/iplaycodex" target="_blank" rel="noopener">codePen</a><br>博客：<a href="https://juejin.im/user/3597257774478359" target="_blank" rel="noopener">掘金</a>、<a href="https://segmentfault.com/u/iplaycodex" target="_blank" rel="noopener">segmentfault</a>、<a href="https://www.zhihu.com/people/CallMeAllenLliu" target="_blank" rel="noopener">知乎</a>、<a href="https://www.jianshu.com/u/9cd27f169c7e" target="_blank" rel="noopener">简书</a>、<a href="https://www.cnblogs.com/" target="_blank" rel="noopener">博客园</a><br>联系我：<a href="iplaycodex@163.com">iplaycodex@163.com</a><br>特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起</p>
+</blockquote>
+<h1 id="1-写在前面"><a href="#1-写在前面" class="headerlink" title="1. 写在前面"></a>1. 写在前面</h1><p>本篇连载是我学习<code>react.js</code>的一个笔记,之前一直保存在<code>有道云笔记</code>中,最近打算发到博客上面来</p>
+<h1 id="2-环境配置"><a href="#2-环境配置" class="headerlink" title="2. 环境配置"></a>2. 环境配置</h1><p>首先我们需要下载<code>react.js</code>的一个官方的脚手架工具:<code>create-react-app</code>.终端执行下面的命令:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g create-react-app</span><br></pre></td></tr></table></figure>
 
-<p>即可安装,然后终端中输入<code>create-react-app -V</code>,即可查看该脚手架的ban版本.目前最新版的是<code>3.0.1</code>.</p>
+<p>即可安装,然后终端中输入<code>create-react-app -V</code>,即可查看该脚手架的 ban 版本.目前最新版的是<code>3.0.1</code>.</p>
 <p>脚手架已经安装完毕了,我们来创建一个<code>react.js</code>的应用吧.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.init project</span></span><br><span class="line">create-react-app my-react-app</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.cd </span></span><br><span class="line">cd my-react-app</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.run</span></span><br><span class="line">npm run start</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.init project</span></span><br><span class="line">create-react-app my-react-app</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.cd</span></span><br><span class="line">cd my-react-app</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.run</span></span><br><span class="line">npm run start</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-浅尝组件"><a href="#2-浅尝组件" class="headerlink" title="2.浅尝组件"></a>2.浅尝组件</h3><p>现代前端开发开始流行一种开发思想叫做:<code>组件式开发</code>.不论是<code>vue.js</code>,<code>anglar.js</code>亦或者是我们今天要学习的<code>react.js</code>都是倡导组件式开发,所谓<code>组件式开发</code>即是把一个项目认为是一棵<code>组件树</code>,而每一个页面/模块都是该组件树的一个分支,该分支上的页面又可以拆分为不同的小组件,各个组件堆砌组合成为了一个功能完整的页面乃至应用.</p>
+<h1 id="3-浅尝组件"><a href="#3-浅尝组件" class="headerlink" title="3. 浅尝组件"></a>3. 浅尝组件</h1><p>现代前端开发开始流行一种开发思想叫做:<code>组件式开发</code>.不论是<code>vue.js</code>,<code>anglar.js</code>亦或者是我们今天要学习的<code>react.js</code>都是倡导组件式开发,所谓<code>组件式开发</code>即是把一个项目认为是一棵<code>组件树</code>,而每一个页面/模块都是该组件树的一个分支,该分支上的页面又可以拆分为不同的小组件,各个组件堆砌组合成为了一个功能完整的页面乃至应用.</p>
 <p>一个最简单的<code>react.js</code>的组件如下所示:</p>
 <a id="more"></a>
 
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React,&#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">        <span class="keyword">super</span>(props)</span><br><span class="line">        <span class="keyword">this</span>.state = &#123;</span><br><span class="line">            name:<span class="string">'hello,world'</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.btnDidClick = <span class="keyword">this</span>.btnDidClick.bind(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;p&gt;我是一个最基础的react.js组件&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">                &lt;div&gt;</span></span><br><span class="line"><span class="regexp">                    &lt;p&gt;&#123;this.state.name&#125;&lt;/</span>p&gt;</span><br><span class="line">                    &lt;button onClick=&#123;<span class="keyword">this</span>.btnDidClick&#125;&gt;点我&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">                &lt;/</span>div&gt;</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">    btnDidClick()&#123;</span></span><br><span class="line"><span class="regexp">        this.setState(&#123;</span></span><br><span class="line"><span class="regexp">            name:'hello,react.js'</span></span><br><span class="line"><span class="regexp">        &#125;)</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">        <span class="keyword">this</span>.state = &#123;</span><br><span class="line">            name: <span class="string">"hello,world"</span>,</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">this</span>.btnDidClick = <span class="keyword">this</span>.btnDidClick.bind(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;p&gt;我是一个最基础的react.js组件&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">                &lt;div&gt;</span></span><br><span class="line"><span class="regexp">                    &lt;p&gt;&#123;this.state.name&#125;&lt;/</span>p&gt;</span><br><span class="line">                    &lt;button onClick=&#123;<span class="keyword">this</span>.btnDidClick&#125;&gt;点我&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">                &lt;/</span>div&gt;</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        );</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">    btnDidClick() &#123;</span></span><br><span class="line"><span class="regexp">        this.setState(&#123;</span></span><br><span class="line"><span class="regexp">            name: "hello,react.js",</span></span><br><span class="line"><span class="regexp">        &#125;);</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
 
 <p>可以看到定义一个组件是一件很简单的事情,这里细心的朋友应该发现了一个问题:我们导入了<code>import React,{ Component } from &#39;react&#39;;</code>,在代码中我们定义的类继承自<code>Component</code>这个基类.但是<code>React</code>好像并没有用?那是不是可以不用导入?</p>
 <p>尝试删除<code>React</code>,发现报错了!</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;React&apos; must be in scope when using JSX  react/react-in-jsx-scope</span><br></pre></td></tr></table></figure>
 
 <p>报错信息是指在使用<code>JSX</code>的范围内,必须要有<code>React</code>!所以,记住:<br><br><strong>当我们使用<code>JSX</code>的时候必须导入<code>React</code>!</strong></p>
+<h1 id="4-结束语"><a href="#4-结束语" class="headerlink" title="4. 结束语"></a>4. 结束语</h1><p>❤️ 关注 + 点赞 + 收藏 + 评论 + 转发 ❤️ <br>原创不易，鼓励笔者创作更好的文章~</p>
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
 
 <div id="gitalk-container"></div>     
 <script type="text/javascript">
@@ -422,6 +425,7 @@
         });
       gitalk.render('gitalk-container');
 </script>
+
       
     </div>
     
@@ -542,7 +546,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -620,7 +624,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-环境配置"><span class="nav-number">1.1.</span> <span class="nav-text">1.环境配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-浅尝组件"><span class="nav-number">1.2.</span> <span class="nav-text">2.浅尝组件</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-写在前面"><span class="nav-number">1.</span> <span class="nav-text">1. 写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-环境配置"><span class="nav-number">2.</span> <span class="nav-text">2. 环境配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-浅尝组件"><span class="nav-number">3.</span> <span class="nav-text">3. 浅尝组件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-结束语"><span class="nav-number">4.</span> <span class="nav-text">4. 结束语</span></a></li></ol></div>
             
 
           </div>

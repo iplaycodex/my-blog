@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="1.安装在官方网站下载linux系统的安装包，然后上传到服务器进行解压安装: 执行解压命令：tar -xvf node-v10.14.1-linux-x64.tar.xz重命名： mv node-v10.14.1-linux-x64 nodejs确认一下nodejs下bin目录是否有node和npm文件，如果有执行软连接，如果没有重新下载执行上边步骤；通过源码编译，在官方网站下载Source co">
+<meta name="description" content="作者：iplaycodex仓库：github、codePen博客：掘金、segmentfault、知乎、简书、博客园联系我：iplaycodex@163.com特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起  1. 安装在官方网站下载 linux 系统的安装包，然后上传到服务器进行解压安装: 执行解压命令：">
 <meta name="keywords" content="node">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux下安装node环境以及配置软连接、pm2管理node进程">
 <meta property="og:url" content="http://iplaycodex.com/2020/03/25/linux下安装node环境以及配置软连接、pm2管理node进程/index.html">
 <meta property="og:site_name" content="iplaycodex">
-<meta property="og:description" content="1.安装在官方网站下载linux系统的安装包，然后上传到服务器进行解压安装: 执行解压命令：tar -xvf node-v10.14.1-linux-x64.tar.xz重命名： mv node-v10.14.1-linux-x64 nodejs确认一下nodejs下bin目录是否有node和npm文件，如果有执行软连接，如果没有重新下载执行上边步骤；通过源码编译，在官方网站下载Source co">
+<meta property="og:description" content="作者：iplaycodex仓库：github、codePen博客：掘金、segmentfault、知乎、简书、博客园联系我：iplaycodex@163.com特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起  1. 安装在官方网站下载 linux 系统的安装包，然后上传到服务器进行解压安装: 执行解压命令：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-25T06:35:38.000Z">
+<meta property="og:updated_time" content="2020-10-29T06:54:08.899Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux下安装node环境以及配置软连接、pm2管理node进程">
-<meta name="twitter:description" content="1.安装在官方网站下载linux系统的安装包，然后上传到服务器进行解压安装: 执行解压命令：tar -xvf node-v10.14.1-linux-x64.tar.xz重命名： mv node-v10.14.1-linux-x64 nodejs确认一下nodejs下bin目录是否有node和npm文件，如果有执行软连接，如果没有重新下载执行上边步骤；通过源码编译，在官方网站下载Source co">
+<meta name="twitter:description" content="作者：iplaycodex仓库：github、codePen博客：掘金、segmentfault、知乎、简书、博客园联系我：iplaycodex@163.com特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起  1. 安装在官方网站下载 linux 系统的安装包，然后上传到服务器进行解压安装: 执行解压命令：">
 
 
 
@@ -386,20 +386,25 @@
       
 
       
-        <h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><p>在官方网站下载linux系统的安装包，然后上传到服务器进行解压安装:</p>
-<p>执行解压命令：<code>tar -xvf node-v10.14.1-linux-x64.tar.xz</code><br>重命名： mv <code>node-v10.14.1-linux-x64 nodejs</code><br>确认一下<code>nodejs</code>下<code>bin</code>目录是否有<code>node</code>和<code>npm</code>文件，如果有执行软连接，如果没有重新下载执行上边步骤；<br>通过源码编译，在官方网站下载Source code文件，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tar xvf node-v10<span class="number">.14</span><span class="number">.1</span>.tar.gz</span><br><span class="line">cd node-v10<span class="number">.14</span><span class="number">.1</span></span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">cp /usr/local/bin/node /usr/sbin/ <span class="comment">//路径自己选择</span></span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p>作者：<a href="http://iplaycodex.com">iplaycodex</a><br>仓库：<a href="https://github.com/iplaycodex" target="_blank" rel="noopener">github</a>、<a href="https://codepen.io/iplaycodex" target="_blank" rel="noopener">codePen</a><br>博客：<a href="https://juejin.im/user/3597257774478359" target="_blank" rel="noopener">掘金</a>、<a href="https://segmentfault.com/u/iplaycodex" target="_blank" rel="noopener">segmentfault</a>、<a href="https://www.zhihu.com/people/CallMeAllenLliu" target="_blank" rel="noopener">知乎</a>、<a href="https://www.jianshu.com/u/9cd27f169c7e" target="_blank" rel="noopener">简书</a>、<a href="https://www.cnblogs.com/" target="_blank" rel="noopener">博客园</a><br>联系我：<a href="iplaycodex@163.com">iplaycodex@163.com</a><br>特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起</p>
+</blockquote>
+<h1 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h1><p>在官方网站下载 linux 系统的安装包，然后上传到服务器进行解压安装:</p>
+<p>执行解压命令：<code>tar -xvf node-v10.14.1-linux-x64.tar.xz</code><br>重命名： mv <code>node-v10.14.1-linux-x64 nodejs</code><br>确认一下<code>nodejs</code>下<code>bin</code>目录是否有<code>node</code>和<code>npm</code>文件，如果有执行软连接，如果没有重新下载执行上边步骤；<br>通过源码编译，在官方网站下载 Source code 文件，</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tar xvf node-v10.14.1.tar.gz</span><br><span class="line"><span class="built_in">cd</span> node-v10.14.1</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">cp /usr/<span class="built_in">local</span>/bin/node /usr/sbin/ <span class="comment"># 路径自己选择</span></span><br></pre></td></tr></table></figure>
 
-<p>查看当前安装的Node的版本 ： <code>node -v</code></p>
+<p>查看当前安装的 Node 的版本 ： <code>node -v</code></p>
 <a id="more"></a>
-<h3 id="2-建立软连接-配置全局环境变量"><a href="#2-建立软连接-配置全局环境变量" class="headerlink" title="2.建立软连接,配置全局环境变量"></a>2.建立软连接,配置全局环境变量</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/nodejs/bin/npm /usr/local/bin/</span><br><span class="line">ln -s /usr/local/nodejs/bin/node /usr/local/bin/</span><br><span class="line"></span><br><span class="line"><span class="comment">//检查一下,是否配置好了</span></span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-使用pm2进行node进程管理"><a href="#3-使用pm2进行node进程管理" class="headerlink" title="3.使用pm2进行node进程管理"></a>3.使用pm2进行node进程管理</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">安装：npm i pm2 -g</span><br><span class="line">运行：pm2 start app.js</span><br><span class="line">停止所有进程：pm2 stop all</span><br><span class="line">重启所有进程： pm2 restart all</span><br></pre></td></tr></table></figure>
+<h1 id="2-建立软连接-配置全局环境变量"><a href="#2-建立软连接-配置全局环境变量" class="headerlink" title="2. 建立软连接,配置全局环境变量"></a>2. 建立软连接,配置全局环境变量</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/<span class="built_in">local</span>/nodejs/bin/npm /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/nodejs/bin/node /usr/<span class="built_in">local</span>/bin/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查一下,是否配置好了</span></span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
 
-<h3 id="4-查看pm2的一些指令"><a href="#4-查看pm2的一些指令" class="headerlink" title="4.查看pm2的一些指令"></a>4.查看pm2的一些指令</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// user pm2 --help check more</span></span><br><span class="line">pm2 --help</span><br></pre></td></tr></table></figure>
+<h1 id="3-使用-pm2-进行-node-进程管理"><a href="#3-使用-pm2-进行-node-进程管理" class="headerlink" title="3. 使用 pm2 进行 node 进程管理"></a>3. 使用 pm2 进行 node 进程管理</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">安装：npm i pm2 -g</span><br><span class="line">运行：pm2 start app.js</span><br><span class="line">停止所有进程：pm2 stop all</span><br><span class="line">重启所有进程： pm2 restart all</span><br></pre></td></tr></table></figure>
 
+<h1 id="4-查看-pm2-的一些指令"><a href="#4-查看-pm2-的一些指令" class="headerlink" title="4. 查看 pm2 的一些指令"></a>4. 查看 pm2 的一些指令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># user pm2 --help check more</span></span><br><span class="line">pm2 --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="5-结束语"><a href="#5-结束语" class="headerlink" title="5. 结束语"></a>5. 结束语</h1><p>❤️ 关注 + 点赞 + 收藏 + 评论 + 转发 ❤️ <br>原创不易，鼓励笔者创作更好的文章~</p>
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
 
 <div id="gitalk-container"></div>     
 <script type="text/javascript">
@@ -535,7 +540,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -613,7 +618,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装"><span class="nav-number">1.</span> <span class="nav-text">1.安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-建立软连接-配置全局环境变量"><span class="nav-number">2.</span> <span class="nav-text">2.建立软连接,配置全局环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-使用pm2进行node进程管理"><span class="nav-number">3.</span> <span class="nav-text">3.使用pm2进行node进程管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-查看pm2的一些指令"><span class="nav-number">4.</span> <span class="nav-text">4.查看pm2的一些指令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-安装"><span class="nav-number">1.</span> <span class="nav-text">1. 安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-建立软连接-配置全局环境变量"><span class="nav-number">2.</span> <span class="nav-text">2. 建立软连接,配置全局环境变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-使用-pm2-进行-node-进程管理"><span class="nav-number">3.</span> <span class="nav-text">3. 使用 pm2 进行 node 进程管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-查看-pm2-的一些指令"><span class="nav-number">4.</span> <span class="nav-text">4. 查看 pm2 的一些指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-结束语"><span class="nav-number">5.</span> <span class="nav-text">5. 结束语</span></a></li></ol></div>
             
 
           </div>

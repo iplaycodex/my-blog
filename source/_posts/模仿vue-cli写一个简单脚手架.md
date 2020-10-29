@@ -40,6 +40,8 @@ vue init webpack yourProject
 
 # 2. 思路
 
+<!--more-->
+
 前面的文章本人已经分享了自己编写的`HTML开发规范`,`CSS开发规范`以及`Javascript`开发规范.通过`code-review`来规范`HTML`和`CSS`的开发,通过`eslint`来规范`javascript`的开发.
 
 > 通过`eslint`来规范`js`的开发,本人会在这个集合中再写一篇专门介绍如何使用`eslint`来规范`js`的开发.

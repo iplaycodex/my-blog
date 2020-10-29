@@ -7,6 +7,12 @@ tags:
     - 前端工程化
 ---
 
+> 作者：[iplaycodex](http://iplaycodex.com)
+> 仓库：[github](https://github.com/iplaycodex)、[codePen](https://codepen.io/iplaycodex)
+> 博客：[掘金](https://juejin.im/user/3597257774478359)、[segmentfault](https://segmentfault.com/u/iplaycodex)、[知乎](https://www.zhihu.com/people/CallMeAllenLliu)、[简书](https://www.jianshu.com/u/9cd27f169c7e)、[博客园](https://www.cnblogs.com/)
+> 联系我：[iplaycodex@163.com](iplaycodex@163.com)
+> 特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起
+
 # 1. 前言
 
 `npm`是什么这里不必再多说,我相信现在做前端的没有不知道的.这里就不在赘述了.
@@ -108,6 +114,8 @@ npm publish
 npm i myFristNpmPackage --save
 ```
 
+这样就一个简单的`npm`包就发布完毕了,还是很简单的~
+
 # 8. 结束语
 
-这样就一个简单的`npm`包就发布完毕了,还是很简单的~
+❤️ 关注 + 点赞 + 收藏 + 评论 + 转发 ❤️ <br/>原创不易，鼓励笔者创作更好的文章~

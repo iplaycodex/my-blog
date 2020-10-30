@@ -9,13 +9,14 @@ categories:
 
 > 作者：[iplaycodex](http://iplaycodex.com)
 > 仓库：[github](https://github.com/iplaycodex)、[codePen](https://codepen.io/iplaycodex)
-> 博客：[掘金](https://juejin.im/user/3597257774478359)、[segmentfault](https://segmentfault.com/u/iplaycodex)、[知乎](https://www.zhihu.com/people/CallMeAllenLliu)、[简书](https://www.jianshu.com/u/9cd27f169c7e)、[博客园](https://www.cnblogs.com/)
+> 博客：[掘金](https://juejin.im/user/3597257774478359)、[segmentfault](https://segmentfault.com/u/iplaycodex)、[知乎](https://www.zhihu.com/people/CallMeAllenLliu)、[简书](https://www.jianshu.com/u/9cd27f169c7e)、[博客园](https://www.cnblogs.com/)、[leetcode](https://leetcode-cn.com/u/iplaycodex/)
+> 公众号：[FEZONE](http://iplaycodex.com)
 > 联系我：[iplaycodex@163.com](iplaycodex@163.com)
 > 特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起
 
 # 1. 问题
 
-我们在做网页开发的时候知道标签有自己的默认样式,例如`<ul/>`,`<li/>`等等.所以一般我们在开发项目的时候首先要做的就是先把标签的默认样式给清除掉.在开发 RN 的时候发现有些组件的默认属性很烦人.同样的需要重写这些默认属性.例如:
+我们在做网页开发的时候知道标签有自己的默认样式,例如`<ul/>`,`<li/>`等等.所以一般我们在开发项目的时候首先要做的就是先把标签的默认样式给清除掉.例如使用`reset.css` || `normalize.css`.在开发 RN 的时候发现有些组件的默认属性很烦人.同样的需要重写这些默认属性.例如:
 
 ```html
 <Text /> <TextInput />

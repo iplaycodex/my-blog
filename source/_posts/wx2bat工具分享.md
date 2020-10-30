@@ -9,7 +9,8 @@ categories:
 
 > 作者：[iplaycodex](http://iplaycodex.com)
 > 仓库：[github](https://github.com/iplaycodex)、[codePen](https://codepen.io/iplaycodex)
-> 博客：[掘金](https://juejin.im/user/3597257774478359)、[segmentfault](https://segmentfault.com/u/iplaycodex)、[知乎](https://www.zhihu.com/people/CallMeAllenLliu)、[简书](https://www.jianshu.com/u/9cd27f169c7e)、[博客园](https://www.cnblogs.com/)
+> 博客：[掘金](https://juejin.im/user/3597257774478359)、[segmentfault](https://segmentfault.com/u/iplaycodex)、[知乎](https://www.zhihu.com/people/CallMeAllenLliu)、[简书](https://www.jianshu.com/u/9cd27f169c7e)、[博客园](https://www.cnblogs.com/)、[leetcode](https://leetcode-cn.com/u/iplaycodex/)
+> 公众号：[FEZONE](http://iplaycodex.com)
 > 联系我：[iplaycodex@163.com](iplaycodex@163.com)
 > 特别声明：原创不易，未经授权不得对此文章进行转载或抄袭，否则按侵权处理，如需转载或开通公众号白名单可联系我，尊重原创尊重知识产权从我做起
 
